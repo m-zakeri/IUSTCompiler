@@ -5,7 +5,7 @@ The repository is assumed to be updated regularly. It would be appreciated if yo
 ## Examples
 The following figure shows how a single pass compiler can generate three address code for assignment statements with a minimal number of temp variables:
 
-![code_generation](./figs/code_generation.png)
+![code_generation](./docs/figs/code_generation.png)
 
 ## Structure
 The following describes the structure of the repository:
