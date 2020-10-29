@@ -10,7 +10,7 @@ grammer AssignmentStatement3 (version 3)
 
 -Changelog:
 -- v3.0
---- Add semantic rules to perferm type checking
+--- Add semantic rules to perform type checking
 --- Add semantic routines to generate intermediate representation (three addresses codes)
 -- v2.0
 
