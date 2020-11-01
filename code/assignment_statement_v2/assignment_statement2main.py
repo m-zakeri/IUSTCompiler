@@ -1,7 +1,24 @@
 """
-Main script for grammar assignment_statement_v1
+Main script for grammer AssignmentStatement4 (version 4)
+
+@author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
+@date: 20201029
+
+- Compiler generator:   ANTRL4.x
+- Target language(s):     Python3.x,
+
+
+-Changelog:
+-- v2
+--- Add attributes for grammar rules which are used to hold type and intermediate code of rules.
+
+- Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
+- Course website:   http://parsa.iust.ac.ir/courses/compilers/
+- Laboratory website:   http://reverse.iust.ac.ir/
 
 """
+__version__ = '0.1.0'
+__author__ = 'Morteza'
 
 from antlr4 import *
 

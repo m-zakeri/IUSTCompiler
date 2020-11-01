@@ -21,6 +21,10 @@ Main script for grammer AssignmentStatement4 (version 4)
 
 """
 
+__version__ = '0.1.0'
+__author__ = 'Morteza'
+
+
 from antlr4 import *
 
 from code.assignment_statement_v4.gen.AssignmentStatement4Lexer import AssignmentStatement4Lexer

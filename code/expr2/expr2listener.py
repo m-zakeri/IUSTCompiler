@@ -2,6 +2,10 @@
 Example of three address code generator with listener
 
 """
+
+__version__ = '0.1.0'
+__author__ = 'Morteza'
+
 from code.expr2.gen.Expr2Parser import Expr2Parser
 from code.expr2.gen.Expr2Listener import Expr2Listener
 

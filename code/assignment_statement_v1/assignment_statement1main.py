@@ -2,6 +2,8 @@
 Main script for grammar assignment_statement_v1
 
 """
+__version__ = '0.1.0'
+__author__ = 'Morteza'
 
 from antlr4 import *
 

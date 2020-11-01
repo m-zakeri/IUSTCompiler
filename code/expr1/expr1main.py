@@ -3,6 +3,9 @@ Main script for grammar Expr1
 
 """
 
+__version__ = '0.1.0'
+__author__ = 'Morteza'
+
 from antlr4 import *
 
 from code.expr1.gen.testLexer import testLexer
