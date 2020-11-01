@@ -12,7 +12,7 @@ grammer AssignmentStatement4 (version 4)
 -- v4.0
 --- Generate intermediate representation (three addresses codes) with minimum number of 'temp' variables
 -- v3.0
---- Add semantic rules to perferm type checking
+--- Add semantic rules to perform type checking
 --- Add semantic routines to generate intermediate representation (three addresses codes)
 
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)

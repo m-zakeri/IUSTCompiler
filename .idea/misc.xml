@@ -63,6 +63,26 @@
           <option name="language" value="Python3" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/grammars/AssignmentStatement2.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="D:\AnacondaProjects\iust_compilers_teaching\code\assignment_statement_v2\gen" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Python3" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/grammars/AssignmentStatement1.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="D:\AnacondaProjects\iust_compilers_teaching\code\assignment_statement_v1\gen" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="Python3" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
       </list>
     </option>
   </component>

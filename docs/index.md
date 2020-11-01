@@ -1,11 +1,11 @@
 # Compiler course code sniptes
-This repository contains several code snippets that  I develop to teach the ANTLR compiler generator at Iran University of Science and Technology (UST). Grammars have been written in ANTRL v4 format. For each grammar, the source code of Lexer and Parser is available in Python 3.x. 
+Our IUST-compiler course is now more practical than ever. This repository contains several code snippets that I developed to teach the ANTLR compiler generator at Iran University of Science and Technology (UST). Grammars have been written in ANTRL v4 format. For each grammar, the source code of Lexer and Parser is available in Python 3.x. 
 The repository is assumed to be updated regularly. It would be appreciated if you use this repository by forking it. For any question please contact me    `m-zakeri@live.com`
 
 ## Examples
 The following figure shows how a single pass compiler can generate three address code for assignment statements with a minimal number of temp variables:
 
-![code_generation](./docs/figs/code_generation.png)
+![code_generation](./figs/code_generation.png)
 
 ## Structure
 The following describes the structure of the repository:
@@ -22,8 +22,8 @@ The following describes the structure of the repository:
 
 `AssignmentStatement1.g4`: The grammar to handle multiple assignment statements and mathematical expressions in programming languages like *Pascal* and *C/C++*. 
 
-`AssignmentStatement2.g4`: Currently, it is the same `AssignmentStatement1.g4` grammar.
-
+`AssignmentStatement2.g4`: It is the same `AssignmentStatement1.g4` grammar
+plus attributes for code and type of rules.
  
 `AssignmentStatement3.g4`: The grammar to handle multiple assignment statements and mathematical expressions in programming languages like *Pascal* and *C/C++*. It provides semantic rules to perform type checking and semantic routines to generate intermediate representation.
 

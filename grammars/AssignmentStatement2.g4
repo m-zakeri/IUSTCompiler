@@ -10,6 +10,7 @@ grammer AssignmentStatement2 (version 2)
 
 -Changelog:
 -- v2
+--- add atribute for holding rule tyep and rule intermediate code
 ---
 
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
@@ -20,45 +21,34 @@ grammer AssignmentStatement2 (version 2)
 
 grammar AssignmentStatement2;
 
-start returns [n = str()]: prog EOF ;
+start returns [value_attr = str(), type_attr = str()]: prog EOF ;
 
-prog returns [n = str()]: prog assign | assign ;
+prog returns [value_attr = str(), type_attr = str()]: prog assign | assign ;
 
-assign returns [n = str()]: ID ':=' e=expr (NEWLINE | EOF) {n = $e.text};
+assign returns [value_attr = str(), type_attr = str()]: ID ':=' expr (NEWLINE | EOF) ;
 
-expr returns [n = str()] :
-    e=expr '+' t=term   { if $t.ctx.type == FLOAT:
-                                    n = str(float($e.text) + float($t.text))
-                                 else :
-                                    n = str(int($e.text) + int($t.text))}
-
-    | e=expr '-' t=term   { if $t.ctx.type == FLOAT:
-                                    n = str(float($e.text) - float($t.text))
-                                 else :
-                                    n = str(int($e.text) - int($t.text))}
-
-    | expr RELOP term
-    | t=term              {n=$t.text};
-term returns [n = str() ]:
-    t=term '*' f = factor      { if $t.ctx.type == FLOAT:
-                                    n = str(float($t.text) * float($f.text))
-                                 else :
-                                    n = str(int($t.text) * int($f.text))}
-
-    | t=term '/' f=factor      { if $t.ctx.type == FLOAT:
-                                    n = str(float($t.text) / float($f.text))
-                                 else :
-                                    n = str(int($t.text) / int($f.text))}
-    | f=factor                 {n= $f.text }
+expr returns [value_attr = str(), type_attr = str()]:
+    expr '+' term #expr_term_plus
+    | expr '-' term  #expr_term_minus
+    | expr RELOP term #expr_term_relop
+    | term #term4
     ;
-factor returns [n = str()]:
-    '(' expr ')'
-    | ID                 {n = ($ID.text)}
-    | number             {n = ($number.text)}
+
+term returns [value_attr = str(), type_attr = str()]:
+    term '*' factor #term_fact_mutiply
+    | term '/' factor #term_fact_divide
+    | factor #factor3
     ;
-number :
-    FLOAT
-    | INT
+
+factor returns [value_attr = str(), type_attr = str()]:
+    '(' expr ')' #fact_expr
+    | ID #fact_id
+    | number #fact_number
+    ;
+
+number returns [value_attr = str(), type_attr = str()]:
+    FLOAT #number_float
+    | INT #number_int
     ;
 
 /* Lexical Rules */

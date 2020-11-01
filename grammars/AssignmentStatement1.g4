@@ -20,7 +20,11 @@ grammer AssignmentStatement1 (version 1)
 
 grammar AssignmentStatement1;
 
-ass:   Id ':=' expr EOF;
+start: prog EOF ;
+
+prog: prog assign | assign;
+
+assign: Id ':=' expr (NEWLINE | EOF);
 
 expr:	expr '+' term
     |	expr '-' term
@@ -62,4 +66,6 @@ fragment
 fragment
         ESC : '\\"' | '\\\\' ;
 
-WS      : [ \t\n\r]+ -> skip;
+WS: [ \t\r]+ -> skip ;
+NEWLINE: '\n';
+RELOP: '<=' | '<' ;
