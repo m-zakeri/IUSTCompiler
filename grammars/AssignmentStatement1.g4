@@ -67,5 +67,5 @@ fragment
         ESC : '\\"' | '\\\\' ;
 
 WS: [ \t\r]+ -> skip ;
-NEWLINE: '\n';
+NEWLINE: '\n' ;
 RELOP: '<=' | '<' ;

@@ -3,7 +3,7 @@ This repository contains several code snippets that I developed to teach the ANT
 The repository is assumed to be updated regularly. It would be appreciated if you use this repository by forking it. For any question please contact me    `m-zakeri@live.com` or read [documentation](https://m-zakeri.github.io/IUSTCompiler/).
 
 ## Examples
-The following figure shows how a single pass compiler can generate three address code for assignment statements with a minimal number of temp variables:
+The following figure shows how a single pass compiler can generate three address code for assignment statements with minimal numbers of temp variables:
 
 ![code_generation](./docs/figs/code_generation.png)
 

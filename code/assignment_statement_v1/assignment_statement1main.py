@@ -15,11 +15,10 @@ import argparse
 
 
 class MyListener(AssignmentStatement1Listener):
-    def exitFactor(self, ctx:AssignmentStatement1Parser.FactorContext):
-        # print(type(ctx.number().getText()))
-        pass
+    def exitFactor(self, ctx: AssignmentStatement1Parser.FactorContext):
+        print('Dummy listener!')
 
-    def exitNumber(self, ctx:AssignmentStatement1Parser.NumberContext):
+    def exitNumber(self, ctx: AssignmentStatement1Parser.NumberContext):
         pass
 
 
@@ -35,11 +34,12 @@ def main(args):
     parser = AssignmentStatement1Parser(token_stream)
     # Step 5: Create parse tree
     parse_tree = parser.start()
+
     # Step 6: Create an instance of AssignmentStListener
     my_listener = MyListener()
     walker = ParseTreeWalker()
     walker.walk(t=parse_tree, listener=my_listener)
-
+    quit()
     # return
     lexer.reset()
     token = lexer.nextToken()
@@ -52,6 +52,6 @@ if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         '-n', '--file',
-        help='Input source', default=r'input.txt')
+        help='Input source', default=r'A.java')
     args = argparser.parse_args()
     main(args)

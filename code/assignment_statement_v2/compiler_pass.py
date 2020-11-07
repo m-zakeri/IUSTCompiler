@@ -31,6 +31,7 @@ class ThreeAddressCodeGeneratorListener(AssignmentStatement2Listener):
         ctx.type_attr = 'float'
         ctx.value_attr = float(ctx.getText())
 
+
     def exitNumber_int(self, ctx: AssignmentStatement2Parser.Number_intContext):
         ctx.type_attr = 'int'
         ctx.value_attr = int(ctx.getText())
@@ -42,9 +43,8 @@ class ThreeAddressCodeGeneratorListener(AssignmentStatement2Listener):
         ctx.value_attr = ctx.expr().value_attr
 
     def exitFact_id(self, ctx: AssignmentStatement2Parser.Fact_idContext):
-
         ctx.type_attr = 'string'
-        ctx.value_attr = ctx.getText()
+        ctx.value_attr = str(ctx.getText())
 
     def exitFact_number(self, ctx: AssignmentStatement2Parser.Fact_numberContext):
         ctx.type_attr = ctx.number().type_attr
