@@ -49,8 +49,8 @@ def main(args):
     parse_tree = parser.start()
 
     # Step 6: Create an instance of AssignmentStListener
-    code_generator_listener = ThreeAddressCodeGeneratorListener()
-    # code_generator_listener = ThreeAddressCodeGenerator2Listener()
+    # code_generator_listener = ThreeAddressCodeGeneratorListener()
+    code_generator_listener = ThreeAddressCodeGenerator2Listener()
 
     # Step 7(a): Walk parse tree with a customized listener (Automatically)
     walker = ParseTreeWalker()
@@ -66,6 +66,6 @@ if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         '-n', '--file',
-        help='Input source', default=r'A.java')
+        help='Input source', default=r'input.txt')
     args = argparser.parse_args()
     main(args)

@@ -37,7 +37,6 @@ def main(args):
     print('Input stream:')
     print(stream)
 
-
     # Step 2: Create an instance of AssignmentStLexer
     lexer = Java9_v2Lexer(stream)
     # Step 3: Convert the input source into a list of tokens
