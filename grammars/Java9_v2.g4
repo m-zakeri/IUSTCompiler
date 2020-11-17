@@ -9,7 +9,7 @@
  *  modification, are permitted provided that the following conditions
  *  are met:
  *
- *  1. Redistributions of source code must retain the above copyright
+ *  1. Redistributions of source language_apps must retain the above copyright
  *     notice, this list of conditions and the following disclaimer.
  *  2. Redistributions in binary form must reproduce the above copyright
  *     notice, this list of conditions and the following disclaimer in the
@@ -44,20 +44,20 @@
  *  $ grun Java9 compilationUnit *.java
  *
  * Or,
-~/antlr/code/grammars-v4/java9 $ java Test .
-/Users/parrt/antlr/code/grammars-v4/java9/./Java9BaseListener.java
-/Users/parrt/antlr/code/grammars-v4/java9/./Java9Lexer.java
-/Users/parrt/antlr/code/grammars-v4/java9/./Java9Listener.java
-/Users/parrt/antlr/code/grammars-v4/java9/./Java9Parser.java
-/Users/parrt/antlr/code/grammars-v4/java9/./Test.java
+~/antlr/language_apps/grammars-v4/java9 $ java Test .
+/Users/parrt/antlr/language_apps/grammars-v4/java9/./Java9BaseListener.java
+/Users/parrt/antlr/language_apps/grammars-v4/java9/./Java9Lexer.java
+/Users/parrt/antlr/language_apps/grammars-v4/java9/./Java9Listener.java
+/Users/parrt/antlr/language_apps/grammars-v4/java9/./Java9Parser.java
+/Users/parrt/antlr/language_apps/grammars-v4/java9/./Test.java
 Total lexer+parser time 30844ms.
-~/antlr/code/grammars-v4/java9 $ java Test examples/module-info.java
+~/antlr/language_apps/grammars-v4/java9 $ java Test examples/module-info.java
 /home/kwong/projects/grammars-v4/java9/examples/module-info.java
 Total lexer+parser time 914ms.
-~/antlr/code/grammars-v4/java9 $ java Test examples/TryWithResourceDemo.java
+~/antlr/language_apps/grammars-v4/java9 $ java Test examples/TryWithResourceDemo.java
 /home/kwong/projects/grammars-v4/java9/examples/TryWithResourceDemo.java
 Total lexer+parser time 3634ms.
-~/antlr/code/grammars-v4/java9 $ java Test examples/helloworld.java
+~/antlr/language_apps/grammars-v4/java9 $ java Test examples/helloworld.java
 /home/kwong/projects/grammars-v4/java9/examples/helloworld.java
 Total lexer+parser time 2497ms.
 

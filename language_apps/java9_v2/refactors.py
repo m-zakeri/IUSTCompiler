@@ -9,10 +9,10 @@ __author__ = 'Morteza'
 from antlr4 import *
 from antlr4.TokenStreamRewriter import TokenStreamRewriter
 
-from code.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
-from code.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
-from code.java9_v2.gen.Java9_v2Listener import Java9_v2Listener
-from code.java9_v2.gen.Java9_v2Visitor import Java9_v2Visitor
+from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
+from language_apps.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
+from language_apps.java9_v2.gen.Java9_v2Listener import Java9_v2Listener
+from language_apps.java9_v2.gen.Java9_v2Visitor import Java9_v2Visitor
 
 
 class EncapsulateFiledRefactoringListener(Java9_v2Listener):
@@ -27,7 +27,7 @@ class EncapsulateFiledRefactoringListener(Java9_v2Listener):
         """
         self.token_stream = common_token_stream
         self.field_identifier = field_identifier
-        # Move all the tokens in the source code in a buffer, token_stream_rewriter.
+        # Move all the tokens in the source language_apps in a buffer, token_stream_rewriter.
         if common_token_stream is not None:
             self.token_stream_rewriter = TokenStreamRewriter(common_token_stream)
         else:

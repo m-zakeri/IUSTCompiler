@@ -103,7 +103,7 @@ def draw(g: nx.DiGraph = None):
     colors = [g[u][v]['color'] for u, v in g.edges]
     nx.draw(g,
             with_labels=False,
-            node_size=1000,
+            node_size=500,
             node_color='black',
             edge_color=colors,
             pos=pos,
@@ -116,7 +116,8 @@ def draw(g: nx.DiGraph = None):
     for node in g.nodes():
         # set the node name as the key and the label as its value
         node_labels[node] = node.value
-    nx.draw_networkx_labels(g, pos, node_labels, font_size=16, font_color='w')
+    nx.draw_networkx_labels(g, pos, node_labels, font_size=12, font_color='w')
+    plt.savefig('../../docs/figs/ast1.png')
     plt.show()
 
 

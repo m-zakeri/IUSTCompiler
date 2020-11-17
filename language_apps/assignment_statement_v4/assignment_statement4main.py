@@ -1,15 +1,16 @@
 """
-
-Main script for grammer AssignmentStatement3 (version 3)
+Main script for grammer AssignmentStatement4 (version 4)
 
 @author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
-@date: 20201028
+@date: 20201029
 
 - Compiler generator:   ANTRL4.x
 - Target language(s):     Python3.x,
 
 
 -Changelog:
+-- v4.0
+--- Generate intermediate representation (three addresses codes) with minimum number of 'temp' variables
 -- v3.0
 --- Add semantic rules to perferm type checking
 --- Add semantic routines to generate intermediate representation (three addresses codes)
@@ -18,20 +19,23 @@ Main script for grammer AssignmentStatement3 (version 3)
 - Course website:   http://parsa.iust.ac.ir/courses/compilers/
 - Laboratory website:   http://reverse.iust.ac.ir/
 
-
 """
+
+__version__ = '0.1.0'
+__author__ = 'Morteza'
+
 
 from antlr4 import *
 
-from code.assignment_statement_v3.gen.AssignmentStatement3Lexer import AssignmentStatement3Lexer
-from code.assignment_statement_v3.gen.AssignmentStatement3Parser import AssignmentStatement3Parser
-from code.assignment_statement_v3.gen.AssignmentStatement3Listener import AssignmentStatement3Listener
+from language_apps.assignment_statement_v4.gen.AssignmentStatement4Lexer import AssignmentStatement4Lexer
+from language_apps.assignment_statement_v4.gen.AssignmentStatement4Parser import AssignmentStatement4Parser
+from language_apps.assignment_statement_v4.gen.AssignmentStatement4Listener import AssignmentStatement4Listener
 
 import argparse
 
 
-class MyListener(AssignmentStatement3Listener):
-    def exitFactor(self, ctx: AssignmentStatement3Parser.FactorContext):
+class MyListener(AssignmentStatement4Listener):
+    def exitFactor(self, ctx: AssignmentStatement4Parser.FactorContext):
         pass
 
 
@@ -44,11 +48,11 @@ def main(args):
     print('Compiler result:')
 
     # Step 2: Create an instance of AssignmentStLexer
-    lexer = AssignmentStatement3Lexer(stream)
+    lexer = AssignmentStatement4Lexer(stream)
     # Step 3: Convert the input source into a list of tokens
     token_stream = CommonTokenStream(lexer)
     # Step 4: Create an instance of the AssignmentStParser
-    parser = AssignmentStatement3Parser(token_stream)
+    parser = AssignmentStatement4Parser(token_stream)
     # Step 5: Create parse tree
     parse_tree = parser.start()
     # Step 6: Create an instance of AssignmentStListener

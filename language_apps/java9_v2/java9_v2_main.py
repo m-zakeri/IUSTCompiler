@@ -23,9 +23,9 @@ __author__ = 'Morteza'
 
 from antlr4 import *
 
-from code.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
-from code.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
-from code.java9_v2.refactors import EncapsulateFiledRefactoringListener
+from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
+from language_apps.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
+from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener
 
 import argparse
 

@@ -9,9 +9,9 @@ __author__ = 'Morteza'
 
 from antlr4 import *
 
-from code.expr2.gen.Expr2Lexer import Expr2Lexer
-from code.expr2.gen.Expr2Parser import Expr2Parser
-from code.expr2.expr2listener import *
+from language_apps.expr2.gen.Expr2Lexer import Expr2Lexer
+from language_apps.expr2.gen.Expr2Parser import Expr2Parser
+from language_apps.expr2.expr2listener import *
 
 # Step 0: Give an input
 input_string = 'y = (2 + 5 + (3*6)) * 8 / 2'

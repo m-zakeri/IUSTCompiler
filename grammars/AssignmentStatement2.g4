@@ -5,12 +5,12 @@ grammer AssignmentStatement2 (version 2)
 @date: 20201029
 
 - Compiler generator:   ANTRL4.x
-- Target language(s):     Python3.x,
+- Target language(s):   Python3.x,
 
 
 -Changelog:
--- v2
---- add atribute for holding rule tyep and rule intermediate code
+-- v2.0
+--- add atribute for holding rule tyep and rule intermediate representations (AST and Three-addresses codes)
 ---
 
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)

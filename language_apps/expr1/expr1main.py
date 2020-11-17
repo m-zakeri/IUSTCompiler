@@ -8,8 +8,8 @@ __author__ = 'Morteza'
 
 from antlr4 import *
 
-from code.expr1.gen.testLexer import testLexer
-from code.expr1.gen.testParser import testParser
+from language_apps.expr1.gen.testLexer import testLexer
+from language_apps.expr1.gen.testParser import testParser
 
 # Step 0: Input program
 input_string = 'y = a + b * c -'

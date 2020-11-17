@@ -1,13 +1,13 @@
 """
-Example of three address code generator with listener
+Example of three address language_apps generator with listener
 
 """
 
 __version__ = '0.1.0'
 __author__ = 'Morteza'
 
-from code.expr2.gen.Expr2Parser import Expr2Parser
-from code.expr2.gen.Expr2Listener import Expr2Listener
+from language_apps.expr2.gen.Expr2Parser import Expr2Parser
+from language_apps.expr2.gen.Expr2Listener import Expr2Listener
 
 
 class DummyListener(Expr2Listener):
@@ -22,7 +22,7 @@ class DummyListener(Expr2Listener):
 
 class TreeAddressCode(Expr2Listener):
     """
-        Generate three address code for part of expression rule of CPP14 grammar
+        Generate three address language_apps for part of expression rule of CPP14 grammar
     """
 
     def __init__(self):
@@ -54,16 +54,16 @@ class TreeAddressCode(Expr2Listener):
         print(temp, '=', ctx.term().code, '*', ctx.fact().code)
         ctx.code = temp
 
-        # self.value = int(ctx.term().code) * int(ctx.fact().code)
-        # ctx.code = self.value
+        # self.value = int(ctx.term().language_apps) * int(ctx.fact().language_apps)
+        # ctx.language_apps = self.value
 
     def exitTerm2(self, ctx: Expr2Parser.Term1Context):
         temp = self.create_temp()
         print(temp, '=', ctx.term().code, '/', ctx.fact().code)
         ctx.code = temp
 
-        # self.value = int(ctx.term().code) / int(ctx.fact().code)
-        # ctx.code = self.value
+        # self.value = int(ctx.term().language_apps) / int(ctx.fact().language_apps)
+        # ctx.language_apps = self.value
 
     def exitTerm3(self, ctx: Expr2Parser.Term3Context):
         ctx.code = ctx.fact().code
@@ -73,16 +73,16 @@ class TreeAddressCode(Expr2Listener):
         print(temp, '=', ctx.expr().code, '+', ctx.term().code)
         ctx.code = temp
 
-        # self.value = int(ctx.expr().code) + int(ctx.term().code)
-        # ctx.code = self.value
+        # self.value = int(ctx.expr().language_apps) + int(ctx.term().language_apps)
+        # ctx.language_apps = self.value
 
     def exitExpr2(self, ctx: Expr2Parser.Expr1Context):
         temp = self.create_temp()
         print(temp, '=', ctx.expr().code, '-', ctx.term().code)
         ctx.code = temp
 
-        # self.value = int(ctx.expr().code) - int(ctx.term().code)
-        # ctx.code = self.value
+        # self.value = int(ctx.expr().language_apps) - int(ctx.term().language_apps)
+        # ctx.language_apps = self.value
 
     def exitExpr3(self, ctx: Expr2Parser.Expr1Context):
         ctx.code = ctx.term().code

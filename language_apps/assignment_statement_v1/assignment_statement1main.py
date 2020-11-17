@@ -7,9 +7,9 @@ __author__ = 'Morteza'
 
 from antlr4 import *
 
-from code.assignment_statement_v1.gen.AssignmentStatement1Lexer import AssignmentStatement1Lexer
-from code.assignment_statement_v1.gen.AssignmentStatement1Parser import AssignmentStatement1Parser
-from code.assignment_statement_v1.gen.AssignmentStatement1Listener import AssignmentStatement1Listener
+from language_apps.assignment_statement_v1.gen.AssignmentStatement1Lexer import AssignmentStatement1Lexer
+from language_apps.assignment_statement_v1.gen.AssignmentStatement1Parser import AssignmentStatement1Parser
+from language_apps.assignment_statement_v1.gen.AssignmentStatement1Listener import AssignmentStatement1Listener
 
 import argparse
 
