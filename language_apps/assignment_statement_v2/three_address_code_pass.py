@@ -1,20 +1,40 @@
 """
-ANTLR 4.x listener and visitor implementation for intermediate code generation
+ANTLR 4.x listener and visitor implementation for intermediate code generation (Three addresses code)
+
+@author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
+@date: 20201017
+
+- Compiler generator:   ANTRL4.x
+- Target language(s):     Python3.x,
+
+
+-Changelog:
+-- v2.1.0
+--- Add support for AST intermediate representation using module `ast_pass`
+--- Change `compiler_pass` module to `three_address_code_pass`
+-- v2.0.0
+--- Add attributes for grammar rules which are used to hold type and intermediate language_apps of rules.
+
+- Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
+- Course website:   http://parsa.iust.ac.ir/courses/compilers/
+- Laboratory website:   http://reverse.iust.ac.ir/
+
+
 """
 __version__ = '0.1.0'
 __author__ = 'Morteza'
 
-from code.assignment_statement_v2.gen.AssignmentStatement2Listener import AssignmentStatement2Listener
-from code.assignment_statement_v2.gen.AssignmentStatement2Visitor import AssignmentStatement2Visitor
+from language_apps.assignment_statement_v2.gen.AssignmentStatement2Listener import AssignmentStatement2Listener
+from language_apps.assignment_statement_v2.gen.AssignmentStatement2Visitor import AssignmentStatement2Visitor
 
-from code.assignment_statement_v2.gen.AssignmentStatement2Parser import AssignmentStatement2Parser
+from language_apps.assignment_statement_v2.gen.AssignmentStatement2Parser import AssignmentStatement2Parser
 
 
 # ----------------------
 # Listener pattern
 class ThreeAddressCodeGeneratorListener(AssignmentStatement2Listener):
     """
-    Type checking and generating three address code (not optimized)
+    Type checking and generating three address language_apps (not optimized)
     """
 
     def __init__(self):
@@ -30,7 +50,6 @@ class ThreeAddressCodeGeneratorListener(AssignmentStatement2Listener):
     def exitNumber_float(self, ctx: AssignmentStatement2Parser.Number_floatContext):
         ctx.type_attr = 'float'
         ctx.value_attr = float(ctx.getText())
-
 
     def exitNumber_int(self, ctx: AssignmentStatement2Parser.Number_intContext):
         ctx.type_attr = 'int'
@@ -139,7 +158,7 @@ class ThreeAddressCodeGeneratorListener(AssignmentStatement2Listener):
 # Listener 2
 class ThreeAddressCodeGenerator2Listener(AssignmentStatement2Listener):
     """
-    Type checking and generating three address code (optimizing number of temporary variables)
+    Type checking and generating three address language_apps (optimizing number of temporary variables)
     """
 
     def __init__(self):
@@ -304,7 +323,7 @@ class ThreeAddressCodeGenerator2Listener(AssignmentStatement2Listener):
 # Visitor pattern
 class ThreeAddressCodeGeneratorVisitor(AssignmentStatement2Visitor):
     """
-    Type checking and generating three address code (not optimized regarding to the number of temporary variables)
+    Type checking and generating three address language_apps (not optimized regarding to the number of temporary variables)
     Utilizing ANTLR 4.x Visitor mechanism
     """
 
@@ -442,7 +461,7 @@ class ThreeAddressCodeGeneratorVisitor(AssignmentStatement2Visitor):
 # Visitor pattern 2
 class ThreeAddressCodeGenerator2Visitor(AssignmentStatement2Visitor):
     """
-    Type checking and generating three address code (optimizing number of temporary variables)
+    Type checking and generating three address language_apps (optimizing number of temporary variables)
     Utilizing ANTLR 4.x Visitor mechanism
     """
 
