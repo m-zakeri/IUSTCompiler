@@ -1,7 +1,29 @@
 """
-Main script for grammar assignment_statement_v1
+Main script for grammar AssignmentStatement1 (version 1)
+
+## author
+Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
+
+## date
+20201029
+
+## Required
+- Compiler generator:   ANTLR 4.x
+- Target language(s):   Python 3.8.x
+
+
+## Changelog
+### v2.0.0
+- A lexer and parser for simple grammar without any attribute or listener
+
+
+## Refs
+- Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
+- Course website:   http://parsa.iust.ac.ir/courses/compilers/
+- Laboratory website:   http://reverse.iust.ac.ir/
 
 """
+
 __version__ = '0.1.0'
 __author__ = 'Morteza'
 
@@ -23,6 +45,14 @@ class MyListener(AssignmentStatement1Listener):
 
 
 def main(args):
+    """
+    Create lexer and parser
+
+    Args:
+
+        args (str):
+        return (None):
+    """
     # Step 1: Load input source into stream
     stream = FileStream(args.file, encoding='utf8')
     # input_stream = StdinStream()

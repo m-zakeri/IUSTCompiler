@@ -10,7 +10,7 @@ grammer AssignmentStatement2 (version 2)
 
 -Changelog:
 -- v2.0
---- add atribute for holding rule tyep and rule intermediate representations (AST and Three-addresses codes)
+--- add attribute for holding rule type and rule intermediate representations (AST and Three-addresses codes)
 ---
 
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)

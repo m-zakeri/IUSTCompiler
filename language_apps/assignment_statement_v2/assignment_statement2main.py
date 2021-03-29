@@ -1,27 +1,37 @@
 """
-Main script for grammer AssignmentStatement2 (version 2)
+Main script for grammar AssignmentStatement2 (version 2)
+Contains attributes for holding rule type and rule intermediate representations
+ (AST and Three-addresses codes)
 
-@author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
-@date: 20201029
+## author
+Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 
-- Compiler generator:   ANTRL4.x
-- Target language(s):     Python3.x,
+## date
+20201029
+
+- Compiler generator:   ANTLR 4.x
+- Target language(s):   Python 3.8.x
 
 
--Changelog:
--- v2.1.0
---- Add support for AST intermediate representation using module `ast_pass`
---- Change `compiler_pass` module to `three_address_code_pass`
--- v2.0.0
---- Add attributes for grammar rules which are used to hold type and intermediate language_apps of rules.
+## Changelog
 
+### v2.1.0
+- Add support for AST intermediate representation using module `ast_pass`
+- Change `compiler_pass` module to `three_address_code_pass`
+
+### v2.0.0
+- Add attributes for grammar rules which are used to hold type and intermediate language_apps of rules.
+
+## Refs
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
 - Course website:   http://parsa.iust.ac.ir/courses/compilers/
 - Laboratory website:   http://reverse.iust.ac.ir/
 
 """
+
 __version__ = '2.1.0'
 __author__ = 'Morteza'
+
 
 import queue
 import random
@@ -41,6 +51,14 @@ import argparse
 
 
 def main(args):
+    """
+    Create lexer and parser and execute AST listener
+
+    Args:
+
+        param (args):
+        return (None):
+    """
     # Step 1: Load input source into stream
     stream = FileStream(args.file, encoding='utf8')
     print('Input language_apps:\n{0}'.format(stream))
@@ -86,9 +104,12 @@ def main(args):
 
 def draw(g: nx.DiGraph = None):
     """
+    Draw abstract syntax tree
 
-    :param g:
-    :return:
+    Args:
+
+        g (nx.DiGraph)
+        return (None)
     """
     pos = nx.kamada_kawai_layout(G=g)
     pos = graphviz_layout(G=g,
@@ -122,31 +143,34 @@ def draw(g: nx.DiGraph = None):
 
 
 def hierarchy_pos(G, root=None, width=1., vert_gap=0.2, vert_loc=0, xcenter=0.5):
-    '''
+    """
     From Joel's answer at https://stackoverflow.com/a/29597209/2966723.
     Licensed under Creative Commons Attribution-Share Alike
 
     If the graph is a tree this will return the positions to plot this in a
     hierarchical layout.
 
-    G: the graph (must be a tree)
+    Args:
 
-    root: the root node of current branch
-    - if the tree is directed and this is not given,
-      the root will be found and used
-    - if the tree is directed and this is given, then
-      the positions will be just for the descendants of this node.
-    - if the tree is undirected and not given,
-      then a random choice will be used.
+        G (nx.Graph): the graph (must be a tree)
 
-    width: horizontal space allocated for this branch - avoids overlap with other branches
+        root (nx.Node): the root node of current branch
+        - if the tree is directed and this is not given,
+          the root will be found and used
+        - if the tree is directed and this is given, then
+          the positions will be just for the descendants of this node.
+        - if the tree is undirected and not given,
+          then a random choice will be used.
 
-    vert_gap: gap between levels of hierarchy
+        width (float): horizontal space allocated for this branch - avoids overlap with other branches
 
-    vert_loc: vertical location of root
+        vert_gap (float): gap between levels of hierarchy
 
-    xcenter: horizontal location of root
-    '''
+        vert_loc (float): vertical location of root
+
+        xcenter (float): horizontal location of root
+    """
+
     if not nx.is_tree(G):
         raise TypeError('cannot use hierarchy_pos on a graph that is not a tree')
 
@@ -157,13 +181,13 @@ def hierarchy_pos(G, root=None, width=1., vert_gap=0.2, vert_loc=0, xcenter=0.5)
             root = random.choice(list(G.nodes))
 
     def _hierarchy_pos(G, root, width=1., vert_gap=0.2, vert_loc=0, xcenter=0.5, pos=None, parent=None):
-        '''
+        """"
         see hierarchy_pos docstring for most arguments
 
         pos: a dict saying where all nodes go if they have been assigned
         parent: parent of this branch. - only affects it if non-directed
 
-        '''
+        """
 
         if pos is None:
             pos = {root: (xcenter, vert_loc)}

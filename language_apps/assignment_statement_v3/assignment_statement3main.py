@@ -1,19 +1,26 @@
 """
+Main script for grammar AssignmentStatement3 (version 3)
+Contains semantic rules to perform type checking and
+semantic routines to generate intermediate representation (three addresses codes)
 
-Main script for grammer AssignmentStatement3 (version 3)
+## author
+Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 
-@author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
-@date: 20201028
+## date
+20201028
 
-- Compiler generator:   ANTRL4.x
-- Target language(s):     Python3.x,
+## Required
+- Compiler generator:   ANTLR 4.x
+- Target language(s):   Python 3.8.x
 
 
--Changelog:
--- v3.0
---- Add semantic rules to perferm type checking
---- Add semantic routines to generate intermediate representation (three addresses codes)
+## Changelog
+### v3.0
+- Add semantic rules to perferm type checking
+- Add semantic routines to generate intermediate representation (three addresses codes)
 
+
+## Refs
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
 - Course website:   http://parsa.iust.ac.ir/courses/compilers/
 - Laboratory website:   http://reverse.iust.ac.ir/
@@ -36,6 +43,15 @@ class MyListener(AssignmentStatement3Listener):
 
 
 def main(args):
+    """
+    Create lexer and parser for language application
+
+    Args:
+
+        args (string): command line arguments
+        return (None):
+    """
+
     # Step 1: Load input source into stream
     stream = FileStream(args.file, encoding='utf8')
     # input_stream = StdinStream()

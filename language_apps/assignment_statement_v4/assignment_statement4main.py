@@ -1,20 +1,29 @@
 """
-Main script for grammer AssignmentStatement4 (version 4)
+Main script for grammar AssignmentStatement4 (version 4)
+Contains semantic rules to perform type checking and
+semantic routines to generate intermediate representation (three addresses codes)
+Also, generates intermediate representation (three addresses codes) with minimum number of 'temp' variables
 
-@author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
-@date: 20201029
+## author
+Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 
-- Compiler generator:   ANTRL4.x
-- Target language(s):     Python3.x,
+## date
+20201029
+
+## Required
+- Compiler generator:   ANTLR 4.x
+- Target language(s):   Python 3.8.x
 
 
--Changelog:
--- v4.0
---- Generate intermediate representation (three addresses codes) with minimum number of 'temp' variables
--- v3.0
---- Add semantic rules to perferm type checking
---- Add semantic routines to generate intermediate representation (three addresses codes)
+## Changelog
+### v4.0
+- Generate intermediate representation (three addresses codes) with minimum number of 'temp' variables
 
+###v3.0
+- Add semantic rules to perferm type checking
+- Add semantic routines to generate intermediate representation (three addresses codes)
+
+## Refs
 - Reference: Compiler book by Dr. Saeed Parsa (http://parsa.iust.ac.ir/)
 - Course website:   http://parsa.iust.ac.ir/courses/compilers/
 - Laboratory website:   http://reverse.iust.ac.ir/
@@ -40,6 +49,15 @@ class MyListener(AssignmentStatement4Listener):
 
 
 def main(args):
+    """
+    Create lexer and parser for language application
+
+    Args:
+
+        args (string): command line arguments
+        return (None):
+    """
+
     # Step 1: Load input source into stream
     stream = FileStream(args.file, encoding='utf8')
     # input_stream = StdinStream()
