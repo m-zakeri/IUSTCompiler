@@ -1,0 +1,57 @@
+site_name: IUST Compiler (v0.1.2)
+site_url: https://m-zakeri.github.io
+repo_url: https://github.com/m-zakeri/IUSTCompiler
+site_description: Compiler Course (Dragon)
+site_author: Morteza Zakeri
+copyright: © 2020-2021 Reverse engineering laboratory
+
+theme:
+  name: material
+  palette:
+    scheme: preference
+    primary: purple
+  icon:
+    logo: material/library
+  features:
+    - header.autohide
+  extra:
+    social:
+      - icon: fontawesome/brands/linkedin
+        link: https://www.linkedin.com/in/mortazazakeri/
+
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - import os
+          selection:
+            members: True
+
+nav:
+    - Home: index.md
+    - Lectures:
+        - Lexical analysis: lectures/lexical_analysis.md
+    - ANTLR turorials:
+        - Basic: antlr_tutorials/antlr_basics.md
+        - Advanced: antlr_tutorials/antlr_advanced.md
+    - Language applications:
+        - Main: language_applications/main.md
+        - Assignment statement 1: language_applications/assignment_statement1main.md
+        - Assignment statement 2: language_applications/assignment_statement2main.md
+        - Assignment statement 3: language_applications/assignment_statement3main.md
+        - Assignment statement 4: language_applications/assignment_statement4main.md
+    - Assignments:
+        - Writing assignments: assignments/writing_assignments.md
+        - Programming assignments: assignments/programming_assignment.md
+    - Projects:
+        - Source code refactoring: projects/core_refactorings_development.md
+        - Code smell detection: projects/core_code_smell_development.md
+        - Clean code: projects/core_clean_code_development.md
+        - Refactoring to patterns: projects/core_refactoring_to_design_patterns_development.md
+        - Source code instrumentation: projects/core_source_code_instrumentation_development.md
+
+    - Issue Tracker: 'https://github.com/m-zakeri/IUSTCompiler/issues'
