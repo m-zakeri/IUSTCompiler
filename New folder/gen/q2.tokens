@@ -1,0 +1,13 @@
+MainClass=1
+ClassDeclaration=2
+VarDeclaration=3
+Type=4
+MethodDeclaration=5
+Statement=6
+Expression=7
+Expression_prim=8
+Identifier=9
+COMMENT=10
+LINE_COMMENT=11
+IDENTIFIER=12
+INTEGER_LITERAL=13
