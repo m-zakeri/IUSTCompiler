@@ -1,0 +1,268 @@
+Compiler result:
+main:
+T1 = 10
+push T1
+call Start , 1
+pop T2
+push T2
+call System.out.println , 0
+pop T2
+QS:
+Start:
+pop sz
+T3 = sz
+push T3
+call Init , 1
+pop T4
+aux01 = T4
+call Print , 0
+pop T5
+aux01 = T5
+T6 = 9999
+push T6
+call System.out.println , 0
+pop T6
+T7 = size
+T8 = 1
+T9 = T7 - T8
+aux01 = T9
+T10 = 0
+push T10
+T11 = aux01
+push T11
+call Sort , 2
+pop T12
+aux01 = T12
+call Print , 0
+pop T13
+aux01 = T13
+T14 = 0
+push T14
+return
+Sort:
+pop left
+pop right
+T15 = 0
+t = T15
+T16 = left
+T17 = right
+T18 = T16 < T17
+if not T18 goto L1
+T19 = number
+T20 = right
+T21 = T19 [ T20 ]
+v = T21
+T22 = left
+T23 = 1
+T24 = T22 - T23
+i = T24
+T25 = right
+j = T25
+T26 = true
+cont01 = T26
+L3:
+T27 = cont01
+if not T27 goto L4
+T28 = true
+cont02 = T28
+L5:
+T29 = cont02
+if not T29 goto L6
+T30 = i
+T31 = 1
+T32 = T30 + T31
+i = T32
+T33 = number
+T34 = i
+T35 = T33 [ T34 ]
+aux03 = T35
+T36 = aux03
+T37 = v
+T38 = T36 < T37
+T39 = T38
+T40 = not T39
+if not T40 goto L7
+T41 = false
+cont02 = T41
+cont02 = T41
+goto L8
+T42 = true
+cont02 = T42
+L7:
+cont02 = T42
+goto L8
+L8:
+
+goto L5
+L6:
+T43 = true
+cont02 = T43
+L9:
+T44 = cont02
+if not T44 goto L10
+T45 = j
+T46 = 1
+T47 = T45 - T46
+j = T47
+T48 = number
+T49 = j
+T50 = T48 [ T49 ]
+aux03 = T50
+T51 = v
+T52 = aux03
+T53 = T51 < T52
+T54 = T53
+T55 = not T54
+if not T55 goto L11
+T56 = false
+cont02 = T56
+cont02 = T56
+goto L12
+T57 = true
+cont02 = T57
+L11:
+cont02 = T57
+goto L12
+L12:
+
+goto L9
+L10:
+T58 = number
+T59 = i
+T60 = T58 [ T59 ]
+t = T60
+T61 = i
+T62 = number
+T63 = j
+T64 = T62 [ T63 ]
+number [T64]= T64
+T65 = j
+T66 = t
+number [T66]= T66
+T67 = j
+T68 = i
+T69 = 1
+T70 = T68 + T69
+T71 = T70
+T72 = T67 < T71
+if not T72 goto L13
+T73 = false
+cont01 = T73
+cont01 = T73
+goto L14
+T74 = true
+cont01 = T74
+L13:
+cont01 = T74
+goto L14
+L14:
+
+goto L3
+L4:
+T75 = j
+T76 = number
+T77 = i
+T78 = T76 [ T77 ]
+number [T78]= T78
+T79 = i
+T80 = number
+T81 = right
+T82 = T80 [ T81 ]
+number [T82]= T82
+T83 = right
+T84 = t
+number [T84]= T84
+T85 = left
+push T85
+T86 = i
+T87 = 1
+T88 = T86 - T87
+push T88
+call Sort , 2
+pop T89
+nt = T89
+T90 = i
+T91 = 1
+T92 = T90 + T91
+push T92
+T93 = right
+push T93
+call Sort , 2
+pop T94
+nt = T94
+
+goto L2
+T95 = 0
+nt = T95
+L1:
+nt = T95
+goto L2
+L2:
+T96 = 0
+push T96
+return
+Print:
+T97 = 0
+j = T97
+L15:
+T98 = j
+T99 = size
+T100 = T99
+T101 = T98 < T100
+if not T101 goto L16
+T102 = number
+T103 = j
+T104 = T102 [ T103 ]
+push T104
+call System.out.println , 0
+pop T104
+T105 = j
+T106 = 1
+T107 = T105 + T106
+j = T107
+
+goto L15
+L16:
+T108 = 0
+push T108
+return
+Init:
+pop sz
+T109 = sz
+size = T109
+T110 = sz
+number =
+T111 = 0
+T112 = 20
+number [T112]= T112
+T113 = 1
+T114 = 7
+number [T114]= T114
+T115 = 2
+T116 = 12
+number [T116]= T116
+T117 = 3
+T118 = 18
+number [T118]= T118
+T119 = 4
+T120 = 2
+number [T120]= T120
+T121 = 5
+T122 = 11
+number [T122]= T122
+T123 = 6
+T124 = 6
+number [T124]= T124
+T125 = 7
+T126 = 9
+number [T126]= T126
+T127 = 8
+T128 = 19
+number [T128]= T128
+T129 = 9
+T130 = 5
+number [T130]= T130
+T131 = 0
+push T131
+return
+
