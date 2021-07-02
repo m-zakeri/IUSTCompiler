@@ -1,54 +1,50 @@
 grammar Q2;
 
-program:
+program returns[value_attr = str(), type_attr = str()]:
     mainClass (classDeclaration)* EOF;
 
-mainClass :
+mainClass returns[value_attr = str(), type_attr = str()]:
     CLASS Identifier L_BRACE PUBLIC STATIC VOID  MAIN L_PAREN STRING L_BRACK R_BRACK Identifier R_PAREN L_BRACE statement R_BRACE R_BRACE;
 
-classDeclaration :
+classDeclaration returns[value_attr = str(), type_attr = str()] :
     CLASS Identifier (EXTENDS Identifier)? L_BRACE (varDeclaration)* (methodDeclaration)* R_BRACE;
 
-varDeclaration :
+varDeclaration returns[value_attr = str(), type_attr = str()]:
     type_t Identifier SEMI;
 
-methodDeclaration :
+methodDeclaration returns[value_attr = str(), type_attr = str()] :
     PUBLIC type_t Identifier L_PAREN (type_t Identifier (COMMA type_t Identifier)*)? R_PAREN L_BRACE (varDeclaration)* (statement)* RETURN expression SEMI R_BRACE;
 
-type_t :
-    INT L_BRACK R_BRACK
-    | BOOLEAN
-    | INT
-    | Identifier
+type_t returns[value_attr = str(), type_attr = str()] :
+    INT L_BRACK R_BRACK     #array_int
+    | BOOLEAN               #bool
+    | INT                   #int
+    | Identifier            #id
     ;
 
-statement :
-         L_BRACE (statement)* R_BRACE
-         | IF L_PAREN expression R_PAREN statement ELSE statement
-         | WHILE L_PAREN expression R_PAREN statement
-         | 'System.out.println' L_PAREN expression R_PAREN SEMI
-         | Identifier ASSIGN expression SEMI
-         | Identifier L_BRACK expression R_BRACK ASSIGN expression SEMI
+statement returns[value_attr = str(), type_attr = str()] :
+         L_BRACE (statement)* R_BRACE                                   #braket_statement
+         | IF L_PAREN expression R_PAREN statement ELSE statement       #if_statement
+         | Identifier ASSIGN expression SEMI                            #equal_statement
+         | WHILE L_PAREN expression R_PAREN statement                   #while_statement
+         | 'System.out.println' L_PAREN expression R_PAREN SEMI         #print
+         | Identifier L_BRACK expression R_BRACK ASSIGN expression SEMI #equal_array_statement
          ;
-expression
-        : expression AND expression
-        | expression LT expression
-        | expression (PLUS | MINUS) expression
-        | expression TIMES expression
-        | expression L_BRACK expression R_BRACK
-        | expression DOT LENGTH
-        | expression DOT Identifier L_PAREN (expression (COMMA expression)*)? R_PAREN
-        | INT_VAL
-        | TRUE
-        | FALSE
-        | Identifier
-        | THIS
-        | NEW INT L_BRACK expression R_BRACK
-        | NEW Identifier L_PAREN R_PAREN
-        | BANG expression
-        | L_PAREN expression R_PAREN
+expression returns[value_attr = str(), type_attr = str()] :
+          expression L_BRACK expression R_BRACK                                         #array_expression
+        | expression DOT LENGTH                                                         #length_expression
+        | expression DOT Identifier L_PAREN (expression (COMMA expression)*)? R_PAREN   #dot_par_expression
+        | INT_VAL                                                                       #number
+        | BANG expression                                                               #not_expression
+        | BOOL                                                                          #keywords
+        | Identifier                                                                    #word
+        | NEW INT L_BRACK expression R_BRACK                                            #new_array_expression
+        | NEW Identifier L_PAREN R_PAREN                                                #new_identifier
+        | L_PAREN expression R_PAREN                                                    #in_par_expression
+        | expression OP expression                                                      #operations_expression
         ;
 
+BOOL    :TRUE | FALSE | THIS;
 // Keywords
 BOOLEAN : 'boolean';
 CLASS   : 'class';
@@ -72,14 +68,15 @@ WHILE   : 'while';
 // Operators
 ASSIGN  : '=';
 GT      : '>';
-LT      : '<';
+//LT      : '<';
+OP      : '&&' | '<' | '+' | '-' | '*';
 GE      : '>=';
 LE      : '<=';
-PLUS    : '+';
-MINUS   : '-';
-TIMES   : '*';
+//PLUS    : '+';
+//MINUS   : '-';
+//TIMES   : '*';
 BANG    : '!';
-AND     : '&&';
+//AND     : '&&';
 OR      : '||';
 
 // Separators
