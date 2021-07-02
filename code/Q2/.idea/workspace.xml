@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a437553-4788-45eb-aa8c-473606a25622" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/comilers.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/csv-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dictionaries/Morteza.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/1/b/1b878bfe082f44d87130bf045d81b20891f0e642" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/5/a/5a78ceb83924ba022311fbd1f506beef623ca66f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/9/2/9210e17471e2d098cf92ff841730846a19faf6a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/b/a/ba52f1c6fa72234f2f37b731f571c78c4c5710a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/e/8/e8f2119269c07455e6b71d46f71097ed5018607e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Q3/threeAdresseCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/threeAdresseCode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJava.interp" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJava.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJava.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJava.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaLexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaLexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaListener.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaListener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gen/MiniJavaVisitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Q3/gen/MiniJavaVisitor.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1um3FWVqBPKCv8F7YtHwb7kSuXf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Q3" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a437553-4788-45eb-aa8c-473606a25622" name="Default Changelist" comment="" />
+      <created>1625256833642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625256833642</updated>
+      <workItem from="1625256834853" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

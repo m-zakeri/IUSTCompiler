@@ -5,8 +5,7 @@ class Test{
 }
 class TS{
     public int Start(int sz){
-        int m = 1
-        int k = 0
+        m = 1;
         if(m < 10){
             k = 10;
         }
@@ -15,7 +14,7 @@ class TS{
         }
         while(k<12)
         {
-            k ++;
+            k = k + 1;
         }
         return 0;
     }
