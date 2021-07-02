@@ -1,0 +1,22 @@
+class Test{
+    public static void main(String[] a){
+        System.out.println(new TS().Start(10));
+    }
+}
+class TS{
+    public int Start(int sz){
+        int m = 1
+        int k = 0
+        if(m < 10){
+            k = 10;
+        }
+        else{
+            k = 5;
+        }
+        while(k<12)
+        {
+            k ++;
+        }
+        return 0;
+    }
+}

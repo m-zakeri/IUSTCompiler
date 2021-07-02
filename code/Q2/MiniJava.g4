@@ -1,106 +1,103 @@
 grammar MiniJava;
 
-program:
-    mainClass ( classDecleration )* EOF ;
+program returns[value_attr = str(), type_attr = str()]:
+    mainClass (classDeclaration)* EOF;
 
-mainClass:
-    Class Identifier
-        LBrace
-            Public Static Void Main LPran StringType LBrack RBrack Identifier RPran
-            LBrace
-                statement
-            RBrace
-        RBrace ;
+mainClass returns[value_attr = str(), type_attr = str()]:
+    CLASS identifier LBRACE PUBLIC STATIC VOID MAIN LPAREN STRING LBRACK RBRACK identifier RPAREN LBRACE statement RBRACE RBRACE;
 
-classDecleration:
-    Class Identifier (Extends Identifier)?
-    LBrace
-        varDecleration* methodDecleration*
-    RBrace;
+classDeclaration returns[value_attr = str(), type_attr = str()]:
+    CLASS identifier (EXTENDS identifier)? LBRACE (varDeclaration)* (methodDeclaration)* RBRACE;
 
-varDecleration:
-    type Identifier SemiColon;
+varDeclaration returns[value_attr = str(), type_attr = str()]:
+    type_t identifier SEMI;
 
-methodDecleration:
-    Public type Identifier LPran (type Identifier (Comma type Identifier)*)? RPran
-    LBrace
-        varDecleration* statement* Return exp SemiColon
-    RBrace;
+methodDeclaration returns[value_attr = str(), type_attr = str()]:
+    PUBLIC type_t identifier LPAREN (type_t identifier (COMMA type_t identifier)*)? RPAREN LBRACE (varDeclaration)* (statement)* RETURN expression SEMI RBRACE;
 
-type:
-      IntType LBrack RBrack
-    | BoolType
-    | IntType
-    | Identifier;
+type_t returns[value_attr = str(), type_attr = str()]:
+    INT LBRACK RBRACK
+    | BOOLEAN
+    | INT
+    | identifier
+    ;
 
-statement:
-      LBrace
-        statement*
-      RBrace
-    | If LPran exp RPran statement Else statement
-    | While LPran exp RPran statement
-    | 'System.out.println' LPran exp RPran SemiColon
-    | Identifier Equals exp SemiColon
-    | Identifier LBrack exp RBrack Equals exp SemiColon;
+statement returns[value_attr = str(), type_attr = str()]:
+           LBRACE (statement)* RBRACE                            #bracket_statmetn
+         | IF LPAREN expression RPAREN statement ELSE statement  #if_statment
+         | WHILE LPAREN expression RPAREN statement              #while_statment
+         | 'System.out.println' LPAREN expression RPAREN SEMI    #output_statment
+         | identifier EQ expression SEMI                         #equal_statment
+         | identifier LBRACK expression RBRACK EQ expression SEMI #equal_array_statment
+         ;
+expression returns[value_attr = str(), type_attr = str()]:
+          expression AND expression                             #and_exp
+        | expression LT expression                              #lt_exp
+        | expression (PLUS | MINUS) expression                  #plus_minus_exp
+        | expression MUL expression                             #mul_exp
+        | expression LBRACK expression RBRACK                   #bracket_exp
+        | expression DOT LENGTH                                 #len_exp
+        | expression DOT identifier LPAREN (expression (COMMA expression)*)? RPAREN  #dot_par_expression
+        | INT_VAL                                               #num_exp
+        | TRUE                                                  #true_exp
+        | FALSE                                                 #false_exp
+        | identifier                                            #identifier_exp
+        | THIS                                                  #this_exp
+        | NEW INT LBRACK expression RBRACK                      #new_array_exp
+        | NEW identifier LPAREN RPAREN                          #new_identifier
+        | NOT expression                                        #not_exp
+        | LPAREN expression RPAREN                              #in_par_expression
+        ;
 
-exp:
-      exp ( BinaryOperator ) exp
-    | exp LBrack exp RBrack
-    | exp Dot 'length'
-    | exp Dot Identifier LPran ( exp ( Comma exp )* )? RPran
-    | Integer
-    | True
-    | False
-    | Identifier
-    | This
-    | New IntType LBrack exp RBrack
-    | New Identifier LPran RPran
-    | Not exp
-    | LPran exp RPran;
+identifier returns[value_attr = str(), type_attr = str()]:
+    Identifier;
 
+BOOLEAN : 'boolean';
+CLASS   : 'class';
+ELSE    : 'else';
+EXTENDS : 'extends';
+FALSE   : 'false';
+IF      : 'if';
+INT     : 'int';
+LENGTH  : 'length';
+MAIN    : 'main';
+NEW     : 'new';
+PUBLIC  : 'public';
+RETURN  : 'return';
+STATIC  : 'static';
+STRING  : 'String';
+THIS    : 'this';
+TRUE    : 'true';
+VOID    : 'void';
+WHILE   : 'while';
+EQ      : '=';
+LT      : '<';
+PLUS    : '+';
+MINUS   : '-';
+MUL     : '*';
+NOT     : '!';
+AND     : '&&';
+LPAREN  : '(';
+RPAREN  : ')';
+LBRACK  : '[';
+RBRACK  : ']';
+LBRACE  : '{';
+RBRACE  : '}';
+COMMA   : ',';
+DOT     : '.';
+SEMI    : ';';
+Identifier : LETTER (LETTER | DIGIT)*;
+INT_VAL : ('0' | N_DIGIT DIGIT*);
 
-Class: 'class';
-Public: 'public';
-Static: 'static';
-Void: 'void';
-Main: 'main';
-LBrace: '{';
-RBrace: '}';
-LPran: '(';
-RPran: ')';
-LBrack: '[';
-RBrack: ']';
-If: 'if';
-Else: 'else';
-While: 'while';
-SemiColon: ';';
-Equals: '=';
-Dot: '.';
-Comma: ',';
-True: 'true';
-False: 'false';
-This: 'this';
-New: 'new';
-IntType: 'int';
-StringType: 'String';
-BoolType: 'bool';
-Not: '!';
-BinaryOperator: '&&'|'<'|'+'|'-'|'*';
-Extends: 'extends';
-Return: 'return';
+fragment LETTER  :
+    [a-zA-Z_];
 
-Integer:
-    '0'
-    | N_Digit Digit*;
-
-N_Digit :
-    [1-9];
-
-Digit :
+fragment DIGIT   :
     [0-9];
 
-Identifier:
-    Letter (Letter | Digit)*;
+fragment N_DIGIT  :
+    [1-9];
 
-Letter:
-    [a-zA-Z$_];
+WS      : [ \t\r\n]+ -> skip ;
+COMMENT : '/*' .*? '*/' -> skip;
+LINE_COMMENT: '//' ~[\r\n]* -> skip;
