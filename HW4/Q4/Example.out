@@ -1,0 +1,193 @@
+BEGINS:
+
+
+		 aux01 = 
+
+		 aux01 = 
+
+
+		 aux01 = size-1
+
+		 aux01 = 
+
+		 aux01 = 
+
+		 t = 0
+
+		 if (left<right) goto Label_13
+
+		 nt = 0		 goto Label_14
+Label_13:		T_1=sizeOf(number)
+		T_1=T_1*right
+		T_1= &number+T_1
+		 v = *T_1
+
+		 i = left-1
+
+		 j = right
+
+		 cont01 = true
+		 goto Label_11
+Label_12:
+		 cont02 = true
+		 goto Label_3
+Label_4:
+		 i = i+1
+		T_2=sizeOf(number)
+		T_2=T_2*i
+		T_2= &number+T_2
+		 aux03 = *T_2
+		 T_3 = aux03<v
+		 if (!T_3) goto Label_1
+
+		 cont02 = true		 goto Label_2
+Label_1:
+		 cont02 = falseLabel_2:		
+Label_3
+		 if(cont02) goto Label_4
+
+
+		 cont02 = true
+		 goto Label_7
+Label_8:
+		 j = j-1
+		T_4=sizeOf(number)
+		T_4=T_4*j
+		T_4= &number+T_4
+		 aux03 = *T_4
+		 T_5 = v<aux03
+		 if (!T_5) goto Label_5
+
+		 cont02 = true		 goto Label_6
+Label_5:
+		 cont02 = falseLabel_6:		
+Label_7
+		 if(cont02) goto Label_8
+
+		T_6=sizeOf(number)
+		T_6=T_6*i
+		T_6= &number+T_6
+		 t = *T_6
+
+		T_7=sizeOf(number)
+		T_7=T_7*j
+		T_7= &number+T_7
+		T_8 = sizeOfnumber
+		T_8=T_8*i
+		T_8= &number+T_8
+		*T_8=*T_7
+
+
+		T_9 = sizeOfnumber
+		T_9=T_9*j
+		T_9= &number+T_9
+		*T_9=t
+		 T_10 = i+1
+		 if (j<T_10) goto Label_9
+
+		 cont01 = true		 goto Label_10
+Label_9:
+		 cont01 = falseLabel_10:		
+Label_11
+		 if(cont01) goto Label_12
+
+
+		T_11=sizeOf(number)
+		T_11=T_11*i
+		T_11= &number+T_11
+		T_12 = sizeOfnumber
+		T_12=T_12*j
+		T_12= &number+T_12
+		*T_12=*T_11
+
+		T_13=sizeOf(number)
+		T_13=T_13*right
+		T_13= &number+T_13
+		T_14 = sizeOfnumber
+		T_14=T_14*i
+		T_14= &number+T_14
+		*T_14=*T_13
+
+
+		T_15 = sizeOfnumber
+		T_15=T_15*right
+		T_15= &number+T_15
+		*T_15=t
+
+		 nt = 
+
+		 nt = 
+Label_14:		
+
+		 j = 0
+		 goto Label_15
+Label_16:
+
+		 j = j+1
+Label_15
+		 if(j<size) goto Label_16
+
+
+		 size = sz
+
+		 number = 
+
+
+		T_17 = sizeOfnumber
+		T_17=T_17*0
+		T_17= &number+T_17
+		*T_17=20
+
+
+		T_18 = sizeOfnumber
+		T_18=T_18*1
+		T_18= &number+T_18
+		*T_18=7
+
+
+		T_19 = sizeOfnumber
+		T_19=T_19*2
+		T_19= &number+T_19
+		*T_19=12
+
+
+		T_20 = sizeOfnumber
+		T_20=T_20*3
+		T_20= &number+T_20
+		*T_20=18
+
+
+		T_21 = sizeOfnumber
+		T_21=T_21*4
+		T_21= &number+T_21
+		*T_21=2
+
+
+		T_22 = sizeOfnumber
+		T_22=T_22*5
+		T_22= &number+T_22
+		*T_22=11
+
+
+		T_23 = sizeOfnumber
+		T_23=T_23*6
+		T_23= &number+T_23
+		*T_23=6
+
+
+		T_24 = sizeOfnumber
+		T_24=T_24*7
+		T_24= &number+T_24
+		*T_24=9
+
+
+		T_25 = sizeOfnumber
+		T_25=T_25*8
+		T_25= &number+T_25
+		*T_25=19
+
+
+		T_26 = sizeOfnumber
+		T_26=T_26*9
+		T_26= &number+T_26
+		*T_26=5

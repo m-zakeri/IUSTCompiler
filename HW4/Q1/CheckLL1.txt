@@ -1,0 +1,4 @@
+to see if the given grammar is LL1 or not we should check if it has ambiguity or not
+and since it has left recursision since it got the expression of the form
+Expression ::= Expression op Expression
+so it is not LL(k)
