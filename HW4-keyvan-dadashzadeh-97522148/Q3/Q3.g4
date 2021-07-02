@@ -182,6 +182,8 @@ if $varEXP.type_attr == "str": #right side is math exper
     $value_attr = f"{temp} = {$varEXP.value_attr}\n{$varID.text} = {temp}"
     self.add_to_method_body(f"\t{temp} = {$varEXP.value_attr}")
     self.add_to_method_body(f"\t{$varID.text} = {temp}")
+elif $varEXP.type_attr == "arr":
+    pass
 else:
     $value_attr = f"{$varID.text} = {$varEXP.value_attr}"
     self.add_to_method_body('\t' + $value_attr)
@@ -256,6 +258,7 @@ $type_attr = self.var_dict[$iden.text]
 }
             |	New IntegerType LBrack first=expression RBrack
 {
+$type_attr = "arr"
 self.current_function_params += 1
 }
             |	New identifier LPran RPran

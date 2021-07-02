@@ -1252,6 +1252,8 @@ class Q3Parser ( Parser ):
                     localctx.value_attr = f"{temp} = {localctx.varEXP.value_attr}\n{(None if localctx.varID is None else self._input.getText(localctx.varID.start,localctx.varID.stop))} = {temp}"
                     self.add_to_method_body(f"\t{temp} = {localctx.varEXP.value_attr}")
                     self.add_to_method_body(f"\t{(None if localctx.varID is None else self._input.getText(localctx.varID.start,localctx.varID.stop))} = {temp}")
+                elif localctx.varEXP.type_attr == "arr":
+                    pass
                 else:
                     localctx.value_attr = f"{(None if localctx.varID is None else self._input.getText(localctx.varID.start,localctx.varID.stop))} = {localctx.varEXP.value_attr}"
                     self.add_to_method_body('\t' + localctx.value_attr)
@@ -1452,6 +1454,7 @@ class Q3Parser ( Parser ):
                 self.state = 205
                 self.match(Q3Parser.RBrack)
 
+                localctx.type_attr = "arr"
                 self.current_function_params += 1
 
                 pass
