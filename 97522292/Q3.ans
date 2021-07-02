@@ -1,0 +1,51 @@
+3 Code Address:
+
+		T1=num < x
+		T2=k < num
+		m = T1 && T2
+		T3=num2 < x2
+		T4=k2 < num2
+		n = T3 && T4
+		if (m < 10) goto L1
+		k = 5
+		goto L2
+L1:		k = 10
+L2:
+		T5=k * 5
+		T6=sizeOf(arr)
+		T6=T6*5
+		T6= &arr+T6
+		*T6 = sz + T5
+		T7=num < 7
+		if (k && T7) goto L3
+		T14=sizeOf(arr)
+		T14=T14*5
+		T14= &arr+T14
+		T15=*T14
+		k = T15 + k
+		goto L4
+L3:		T8=num - k
+		T9=T8 * a
+		T10=sizeOf(arr)
+		T10=T10*1
+		T10= &arr+T10
+		*T10 = b + T9
+		T11=sizeOf(arr)
+		T11=T11*2
+		T11= &arr+T11
+		T12=*T11
+		T13=k * 10
+		k = T12 + T13
+L4:
+		T16=sizeOf(arr)
+		T16=T16*2
+		T16= &arr+T16
+		T17=*T16
+		T18=k * 5
+		k = T17 + T18
+		goto L5
+L6:		T19=sizeOf(arr)
+		T19=T19*5
+		T19= &arr+T19
+		*T19 = num + x
+L5:		if (k < num) goto L6
