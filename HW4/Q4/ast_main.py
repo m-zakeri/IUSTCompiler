@@ -27,10 +27,9 @@ def main(args):
     parse_tree = parser.program()
 
     # Step 6: Create an instance of AssignmentStListener
-    # code_generator_listener = ThreeAddressCodeGeneratorListener()
     code_generator_listener = ASTListener()
 
-    # Step 7(a): Walk parse tree with a customized listener (Automatically)
+    # Step 7: Walk parse tree with a customized listener (Automatically)
     walker = ParseTreeWalker()
     walker.walk(t=parse_tree, listener=code_generator_listener)
 
