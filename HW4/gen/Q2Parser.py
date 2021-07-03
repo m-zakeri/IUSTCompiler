@@ -11,8 +11,8 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3.")
-        buf.write("\u00de\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3+")
+        buf.write("\u00d3\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
         buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
         buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4\62\n\4\3")
@@ -25,83 +25,76 @@ def serializedATN():
         buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3")
         buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
         buf.write("\3\b\3\b\3\b\5\b\u009c\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\5\t\u00b4\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\7\t\u00d1\n\t\f\t\16\t\u00d4\13\t")
-        buf.write("\5\t\u00d6\n\t\3\t\7\t\u00d9\n\t\f\t\16\t\u00dc\13\t\3")
-        buf.write("\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\33\34\2\u00f7\2")
-        buf.write("\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2\2\2\nF\3\2")
-        buf.write("\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00b3\3\2\2\2\22\26")
-        buf.write("\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25\30\3\2\2\2\26")
-        buf.write("\24\3\2\2\2\26\27\3\2\2\2\27\31\3\2\2\2\30\26\3\2\2\2")
-        buf.write("\31\32\7\2\2\3\32\3\3\2\2\2\33\34\7\5\2\2\34\35\7*\2\2")
-        buf.write("\35\36\7%\2\2\36\37\7\16\2\2\37 \7\20\2\2 !\7\24\2\2!")
-        buf.write("\"\7\f\2\2\"#\7!\2\2#$\7\21\2\2$%\7#\2\2%&\7$\2\2&\'\7")
-        buf.write("*\2\2\'(\7\"\2\2()\7%\2\2)*\5\16\b\2*+\7&\2\2+,\7&\2\2")
-        buf.write(",\5\3\2\2\2-.\7\5\2\2.\61\7*\2\2/\60\7\7\2\2\60\62\7*")
-        buf.write("\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\67\7%")
-        buf.write("\2\2\64\66\5\b\5\2\65\64\3\2\2\2\669\3\2\2\2\67\65\3\2")
-        buf.write("\2\2\678\3\2\2\28=\3\2\2\29\67\3\2\2\2:<\5\n\6\2;:\3\2")
-        buf.write("\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2\2>@\3\2\2\2?=\3\2\2\2")
-        buf.write("@A\7&\2\2A\7\3\2\2\2BC\5\f\7\2CD\7*\2\2DE\7)\2\2E\t\3")
-        buf.write("\2\2\2FG\7\16\2\2GH\5\f\7\2HI\7*\2\2IU\7!\2\2JK\5\f\7")
-        buf.write("\2KR\7*\2\2LM\7\'\2\2MN\5\f\7\2NO\7*\2\2OQ\3\2\2\2PL\3")
-        buf.write("\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2SV\3\2\2\2TR\3\2\2")
-        buf.write("\2UJ\3\2\2\2UV\3\2\2\2VW\3\2\2\2WX\7\"\2\2X\\\7%\2\2Y")
-        buf.write("[\5\b\5\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]b")
-        buf.write("\3\2\2\2^\\\3\2\2\2_a\5\16\b\2`_\3\2\2\2ad\3\2\2\2b`\3")
-        buf.write("\2\2\2bc\3\2\2\2ce\3\2\2\2db\3\2\2\2ef\7\17\2\2fg\5\20")
-        buf.write("\t\2gh\7)\2\2hi\7&\2\2i\13\3\2\2\2jk\7\n\2\2kl\7#\2\2")
-        buf.write("lq\7$\2\2mq\7\4\2\2nq\7\n\2\2oq\7*\2\2pj\3\2\2\2pm\3\2")
-        buf.write("\2\2pn\3\2\2\2po\3\2\2\2q\r\3\2\2\2rv\7%\2\2su\5\16\b")
-        buf.write("\2ts\3\2\2\2ux\3\2\2\2vt\3\2\2\2vw\3\2\2\2wy\3\2\2\2x")
-        buf.write("v\3\2\2\2y\u009c\7&\2\2z{\7\t\2\2{|\7!\2\2|}\5\20\t\2")
-        buf.write("}~\7\"\2\2~\177\5\16\b\2\177\u0080\7\6\2\2\u0080\u0081")
-        buf.write("\5\16\b\2\u0081\u009c\3\2\2\2\u0082\u0083\7\25\2\2\u0083")
-        buf.write("\u0084\7!\2\2\u0084\u0085\5\20\t\2\u0085\u0086\7\"\2\2")
-        buf.write("\u0086\u0087\5\16\b\2\u0087\u009c\3\2\2\2\u0088\u0089")
-        buf.write("\7\3\2\2\u0089\u008a\7!\2\2\u008a\u008b\5\20\t\2\u008b")
-        buf.write("\u008c\7\"\2\2\u008c\u008d\7)\2\2\u008d\u009c\3\2\2\2")
-        buf.write("\u008e\u008f\7*\2\2\u008f\u0090\7\26\2\2\u0090\u0091\5")
-        buf.write("\20\t\2\u0091\u0092\7)\2\2\u0092\u009c\3\2\2\2\u0093\u0094")
-        buf.write("\7*\2\2\u0094\u0095\7#\2\2\u0095\u0096\5\20\t\2\u0096")
-        buf.write("\u0097\7$\2\2\u0097\u0098\7\26\2\2\u0098\u0099\5\20\t")
-        buf.write("\2\u0099\u009a\7)\2\2\u009a\u009c\3\2\2\2\u009br\3\2\2")
-        buf.write("\2\u009bz\3\2\2\2\u009b\u0082\3\2\2\2\u009b\u0088\3\2")
-        buf.write("\2\2\u009b\u008e\3\2\2\2\u009b\u0093\3\2\2\2\u009c\17")
-        buf.write("\3\2\2\2\u009d\u009e\b\t\1\2\u009e\u00b4\7+\2\2\u009f")
-        buf.write("\u00b4\7\23\2\2\u00a0\u00b4\7\b\2\2\u00a1\u00b4\7*\2\2")
-        buf.write("\u00a2\u00b4\7\22\2\2\u00a3\u00a4\7\r\2\2\u00a4\u00a5")
-        buf.write("\7\n\2\2\u00a5\u00a6\7#\2\2\u00a6\u00a7\5\20\t\2\u00a7")
-        buf.write("\u00a8\7$\2\2\u00a8\u00b4\3\2\2\2\u00a9\u00aa\7\r\2\2")
-        buf.write("\u00aa\u00ab\7*\2\2\u00ab\u00ac\7!\2\2\u00ac\u00b4\7\"")
-        buf.write("\2\2\u00ad\u00ae\7\36\2\2\u00ae\u00b4\5\20\t\4\u00af\u00b0")
-        buf.write("\7!\2\2\u00b0\u00b1\5\20\t\2\u00b1\u00b2\7\"\2\2\u00b2")
-        buf.write("\u00b4\3\2\2\2\u00b3\u009d\3\2\2\2\u00b3\u009f\3\2\2\2")
-        buf.write("\u00b3\u00a0\3\2\2\2\u00b3\u00a1\3\2\2\2\u00b3\u00a2\3")
-        buf.write("\2\2\2\u00b3\u00a3\3\2\2\2\u00b3\u00a9\3\2\2\2\u00b3\u00ad")
-        buf.write("\3\2\2\2\u00b3\u00af\3\2\2\2\u00b4\u00da\3\2\2\2\u00b5")
-        buf.write("\u00b6\f\22\2\2\u00b6\u00b7\7\37\2\2\u00b7\u00d9\5\20")
-        buf.write("\t\23\u00b8\u00b9\f\21\2\2\u00b9\u00ba\7\30\2\2\u00ba")
-        buf.write("\u00d9\5\20\t\22\u00bb\u00bc\f\20\2\2\u00bc\u00bd\t\2")
-        buf.write("\2\2\u00bd\u00d9\5\20\t\21\u00be\u00bf\f\17\2\2\u00bf")
-        buf.write("\u00c0\7\35\2\2\u00c0\u00d9\5\20\t\20\u00c1\u00c2\f\16")
-        buf.write("\2\2\u00c2\u00c3\7#\2\2\u00c3\u00c4\5\20\t\2\u00c4\u00c5")
-        buf.write("\7$\2\2\u00c5\u00d9\3\2\2\2\u00c6\u00c7\f\r\2\2\u00c7")
-        buf.write("\u00c8\7(\2\2\u00c8\u00d9\7\13\2\2\u00c9\u00ca\f\f\2\2")
-        buf.write("\u00ca\u00cb\7(\2\2\u00cb\u00cc\7*\2\2\u00cc\u00d5\7!")
-        buf.write("\2\2\u00cd\u00d2\5\20\t\2\u00ce\u00cf\7\'\2\2\u00cf\u00d1")
-        buf.write("\5\20\t\2\u00d0\u00ce\3\2\2\2\u00d1\u00d4\3\2\2\2\u00d2")
-        buf.write("\u00d0\3\2\2\2\u00d2\u00d3\3\2\2\2\u00d3\u00d6\3\2\2\2")
-        buf.write("\u00d4\u00d2\3\2\2\2\u00d5\u00cd\3\2\2\2\u00d5\u00d6\3")
-        buf.write("\2\2\2\u00d6\u00d7\3\2\2\2\u00d7\u00d9\7\"\2\2\u00d8\u00b5")
-        buf.write("\3\2\2\2\u00d8\u00b8\3\2\2\2\u00d8\u00bb\3\2\2\2\u00d8")
-        buf.write("\u00be\3\2\2\2\u00d8\u00c1\3\2\2\2\u00d8\u00c6\3\2\2\2")
-        buf.write("\u00d8\u00c9\3\2\2\2\u00d9\u00dc\3\2\2\2\u00da\u00d8\3")
-        buf.write("\2\2\2\u00da\u00db\3\2\2\2\u00db\21\3\2\2\2\u00dc\u00da")
-        buf.write("\3\2\2\2\22\26\61\67=RU\\bpv\u009b\u00b3\u00d2\u00d5\u00d8")
-        buf.write("\u00da")
+        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5")
+        buf.write("\t\u00b2\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00c6\n\t\f\t\16\t")
+        buf.write("\u00c9\13\t\5\t\u00cb\n\t\3\t\7\t\u00ce\n\t\f\t\16\t\u00d1")
+        buf.write("\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\2\2\u00e7\2\22")
+        buf.write("\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2\2\2\nF\3\2\2\2")
+        buf.write("\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00b1\3\2\2\2\22\26\5")
+        buf.write("\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25\30\3\2\2\2\26\24")
+        buf.write("\3\2\2\2\26\27\3\2\2\2\27\31\3\2\2\2\30\26\3\2\2\2\31")
+        buf.write("\32\7\2\2\3\32\3\3\2\2\2\33\34\7\6\2\2\34\35\7\'\2\2\35")
+        buf.write("\36\7\"\2\2\36\37\7\17\2\2\37 \7\21\2\2 !\7\25\2\2!\"")
+        buf.write("\7\r\2\2\"#\7\36\2\2#$\7\22\2\2$%\7 \2\2%&\7!\2\2&\'\7")
+        buf.write("\'\2\2\'(\7\37\2\2()\7\"\2\2)*\5\16\b\2*+\7#\2\2+,\7#")
+        buf.write("\2\2,\5\3\2\2\2-.\7\6\2\2.\61\7\'\2\2/\60\7\b\2\2\60\62")
+        buf.write("\7\'\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\67")
+        buf.write("\7\"\2\2\64\66\5\b\5\2\65\64\3\2\2\2\669\3\2\2\2\67\65")
+        buf.write("\3\2\2\2\678\3\2\2\28=\3\2\2\29\67\3\2\2\2:<\5\n\6\2;")
+        buf.write(":\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2\2>@\3\2\2\2?=\3")
+        buf.write("\2\2\2@A\7#\2\2A\7\3\2\2\2BC\5\f\7\2CD\7\'\2\2DE\7&\2")
+        buf.write("\2E\t\3\2\2\2FG\7\17\2\2GH\5\f\7\2HI\7\'\2\2IU\7\36\2")
+        buf.write("\2JK\5\f\7\2KR\7\'\2\2LM\7$\2\2MN\5\f\7\2NO\7\'\2\2OQ")
+        buf.write("\3\2\2\2PL\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2SV\3\2")
+        buf.write("\2\2TR\3\2\2\2UJ\3\2\2\2UV\3\2\2\2VW\3\2\2\2WX\7\37\2")
+        buf.write("\2X\\\7\"\2\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2")
+        buf.write("\\]\3\2\2\2]b\3\2\2\2^\\\3\2\2\2_a\5\16\b\2`_\3\2\2\2")
+        buf.write("ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2\2db\3\2\2\2ef\7")
+        buf.write("\20\2\2fg\5\20\t\2gh\7&\2\2hi\7#\2\2i\13\3\2\2\2jk\7\13")
+        buf.write("\2\2kl\7 \2\2lq\7!\2\2mq\7\5\2\2nq\7\13\2\2oq\7\'\2\2")
+        buf.write("pj\3\2\2\2pm\3\2\2\2pn\3\2\2\2po\3\2\2\2q\r\3\2\2\2rv")
+        buf.write("\7\"\2\2su\5\16\b\2ts\3\2\2\2ux\3\2\2\2vt\3\2\2\2vw\3")
+        buf.write("\2\2\2wy\3\2\2\2xv\3\2\2\2y\u009c\7#\2\2z{\7\n\2\2{|\7")
+        buf.write("\36\2\2|}\5\20\t\2}~\7\37\2\2~\177\5\16\b\2\177\u0080")
+        buf.write("\7\7\2\2\u0080\u0081\5\16\b\2\u0081\u009c\3\2\2\2\u0082")
+        buf.write("\u0083\7\'\2\2\u0083\u0084\7\27\2\2\u0084\u0085\5\20\t")
+        buf.write("\2\u0085\u0086\7&\2\2\u0086\u009c\3\2\2\2\u0087\u0088")
+        buf.write("\7\26\2\2\u0088\u0089\7\36\2\2\u0089\u008a\5\20\t\2\u008a")
+        buf.write("\u008b\7\37\2\2\u008b\u008c\5\16\b\2\u008c\u009c\3\2\2")
+        buf.write("\2\u008d\u008e\7\3\2\2\u008e\u008f\7\36\2\2\u008f\u0090")
+        buf.write("\5\20\t\2\u0090\u0091\7\37\2\2\u0091\u0092\7&\2\2\u0092")
+        buf.write("\u009c\3\2\2\2\u0093\u0094\7\'\2\2\u0094\u0095\7 \2\2")
+        buf.write("\u0095\u0096\5\20\t\2\u0096\u0097\7!\2\2\u0097\u0098\7")
+        buf.write("\27\2\2\u0098\u0099\5\20\t\2\u0099\u009a\7&\2\2\u009a")
+        buf.write("\u009c\3\2\2\2\u009br\3\2\2\2\u009bz\3\2\2\2\u009b\u0082")
+        buf.write("\3\2\2\2\u009b\u0087\3\2\2\2\u009b\u008d\3\2\2\2\u009b")
+        buf.write("\u0093\3\2\2\2\u009c\17\3\2\2\2\u009d\u009e\b\t\1\2\u009e")
+        buf.write("\u00b2\7(\2\2\u009f\u00a0\7\34\2\2\u00a0\u00b2\5\20\t")
+        buf.write("\t\u00a1\u00b2\7\4\2\2\u00a2\u00b2\7\'\2\2\u00a3\u00a4")
+        buf.write("\7\16\2\2\u00a4\u00a5\7\13\2\2\u00a5\u00a6\7 \2\2\u00a6")
+        buf.write("\u00a7\5\20\t\2\u00a7\u00a8\7!\2\2\u00a8\u00b2\3\2\2\2")
+        buf.write("\u00a9\u00aa\7\16\2\2\u00aa\u00ab\7\'\2\2\u00ab\u00ac")
+        buf.write("\7\36\2\2\u00ac\u00b2\7\37\2\2\u00ad\u00ae\7\36\2\2\u00ae")
+        buf.write("\u00af\5\20\t\2\u00af\u00b0\7\37\2\2\u00b0\u00b2\3\2\2")
+        buf.write("\2\u00b1\u009d\3\2\2\2\u00b1\u009f\3\2\2\2\u00b1\u00a1")
+        buf.write("\3\2\2\2\u00b1\u00a2\3\2\2\2\u00b1\u00a3\3\2\2\2\u00b1")
+        buf.write("\u00a9\3\2\2\2\u00b1\u00ad\3\2\2\2\u00b2\u00cf\3\2\2\2")
+        buf.write("\u00b3\u00b4\f\3\2\2\u00b4\u00b5\7\31\2\2\u00b5\u00ce")
+        buf.write("\5\20\t\4\u00b6\u00b7\f\r\2\2\u00b7\u00b8\7 \2\2\u00b8")
+        buf.write("\u00b9\5\20\t\2\u00b9\u00ba\7!\2\2\u00ba\u00ce\3\2\2\2")
+        buf.write("\u00bb\u00bc\f\f\2\2\u00bc\u00bd\7%\2\2\u00bd\u00ce\7")
+        buf.write("\f\2\2\u00be\u00bf\f\13\2\2\u00bf\u00c0\7%\2\2\u00c0\u00c1")
+        buf.write("\7\'\2\2\u00c1\u00ca\7\36\2\2\u00c2\u00c7\5\20\t\2\u00c3")
+        buf.write("\u00c4\7$\2\2\u00c4\u00c6\5\20\t\2\u00c5\u00c3\3\2\2\2")
+        buf.write("\u00c6\u00c9\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c7\u00c8\3")
+        buf.write("\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7\3\2\2\2\u00ca\u00c2")
+        buf.write("\3\2\2\2\u00ca\u00cb\3\2\2\2\u00cb\u00cc\3\2\2\2\u00cc")
+        buf.write("\u00ce\7\37\2\2\u00cd\u00b3\3\2\2\2\u00cd\u00b6\3\2\2")
+        buf.write("\2\u00cd\u00bb\3\2\2\2\u00cd\u00be\3\2\2\2\u00ce\u00d1")
+        buf.write("\3\2\2\2\u00cf\u00cd\3\2\2\2\u00cf\u00d0\3\2\2\2\u00d0")
+        buf.write("\21\3\2\2\2\u00d1\u00cf\3\2\2\2\22\26\61\67=RU\\bpv\u009b")
+        buf.write("\u00b1\u00c7\u00ca\u00cd\u00cf")
         return buf.getvalue()
 
 
@@ -115,22 +108,21 @@ class Q2Parser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'System.out.println'", "'boolean'", "'class'", 
-                     "'else'", "'extends'", "'false'", "'if'", "'int'", 
-                     "'length'", "'main'", "'new'", "'public'", "'return'", 
-                     "'static'", "'String'", "'this'", "'true'", "'void'", 
-                     "'while'", "'='", "'>'", "'<'", "'>='", "'<='", "'+'", 
-                     "'-'", "'*'", "'!'", "'&&'", "'||'", "'('", "')'", 
-                     "'['", "']'", "'{'", "'}'", "','", "'.'", "';'" ]
+    literalNames = [ "<INVALID>", "'System.out.println'", "<INVALID>", "'boolean'", 
+                     "'class'", "'else'", "'extends'", "'false'", "'if'", 
+                     "'int'", "'length'", "'main'", "'new'", "'public'", 
+                     "'return'", "'static'", "'String'", "'this'", "'true'", 
+                     "'void'", "'while'", "'='", "'>'", "<INVALID>", "'>='", 
+                     "'<='", "'!'", "'||'", "'('", "')'", "'['", "']'", 
+                     "'{'", "'}'", "','", "'.'", "';'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "BOOLEAN", "CLASS", "ELSE", 
-                      "EXTENDS", "FALSE", "IF", "INT", "LENGTH", "MAIN", 
-                      "NEW", "PUBLIC", "RETURN", "STATIC", "STRING", "THIS", 
-                      "TRUE", "VOID", "WHILE", "ASSIGN", "GT", "LT", "GE", 
-                      "LE", "PLUS", "MINUS", "TIMES", "BANG", "AND", "OR", 
-                      "L_PAREN", "R_PAREN", "L_BRACK", "R_BRACK", "L_BRACE", 
-                      "R_BRACE", "COMMA", "DOT", "SEMI", "Identifier", "INT_VAL", 
-                      "WS", "COMMENT", "LINE_COMMENT" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "BOOL", "BOOLEAN", "CLASS", 
+                      "ELSE", "EXTENDS", "FALSE", "IF", "INT", "LENGTH", 
+                      "MAIN", "NEW", "PUBLIC", "RETURN", "STATIC", "STRING", 
+                      "THIS", "TRUE", "VOID", "WHILE", "ASSIGN", "GT", "OP", 
+                      "GE", "LE", "BANG", "OR", "L_PAREN", "R_PAREN", "L_BRACK", 
+                      "R_BRACK", "L_BRACE", "R_BRACE", "COMMA", "DOT", "SEMI", 
+                      "Identifier", "INT_VAL", "WS", "COMMENT", "LINE_COMMENT" ]
 
     RULE_program = 0
     RULE_mainClass = 1
@@ -146,49 +138,46 @@ class Q2Parser ( Parser ):
 
     EOF = Token.EOF
     T__0=1
-    BOOLEAN=2
-    CLASS=3
-    ELSE=4
-    EXTENDS=5
-    FALSE=6
-    IF=7
-    INT=8
-    LENGTH=9
-    MAIN=10
-    NEW=11
-    PUBLIC=12
-    RETURN=13
-    STATIC=14
-    STRING=15
-    THIS=16
-    TRUE=17
-    VOID=18
-    WHILE=19
-    ASSIGN=20
-    GT=21
-    LT=22
-    GE=23
-    LE=24
-    PLUS=25
-    MINUS=26
-    TIMES=27
-    BANG=28
-    AND=29
-    OR=30
-    L_PAREN=31
-    R_PAREN=32
-    L_BRACK=33
-    R_BRACK=34
-    L_BRACE=35
-    R_BRACE=36
-    COMMA=37
-    DOT=38
-    SEMI=39
-    Identifier=40
-    INT_VAL=41
-    WS=42
-    COMMENT=43
-    LINE_COMMENT=44
+    BOOL=2
+    BOOLEAN=3
+    CLASS=4
+    ELSE=5
+    EXTENDS=6
+    FALSE=7
+    IF=8
+    INT=9
+    LENGTH=10
+    MAIN=11
+    NEW=12
+    PUBLIC=13
+    RETURN=14
+    STATIC=15
+    STRING=16
+    THIS=17
+    TRUE=18
+    VOID=19
+    WHILE=20
+    ASSIGN=21
+    GT=22
+    OP=23
+    GE=24
+    LE=25
+    BANG=26
+    OR=27
+    L_PAREN=28
+    R_PAREN=29
+    L_BRACK=30
+    R_BRACK=31
+    L_BRACE=32
+    R_BRACE=33
+    COMMA=34
+    DOT=35
+    SEMI=36
+    Identifier=37
+    INT_VAL=38
+    WS=39
+    COMMENT=40
+    LINE_COMMENT=41
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -205,6 +194,8 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
         def mainClass(self):
             return self.getTypedRuleContext(Q2Parser.MainClassContext,0)
@@ -276,6 +267,8 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
         def CLASS(self):
             return self.getToken(Q2Parser.CLASS, 0)
@@ -404,6 +397,8 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
         def CLASS(self):
             return self.getToken(Q2Parser.CLASS, 0)
@@ -517,6 +512,8 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
         def type_t(self):
             return self.getTypedRuleContext(Q2Parser.Type_tContext,0)
@@ -575,6 +572,8 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
         def PUBLIC(self):
             return self.getToken(Q2Parser.PUBLIC, 0)
@@ -741,39 +740,119 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
 
-        def INT(self):
-            return self.getToken(Q2Parser.INT, 0)
-
-        def L_BRACK(self):
-            return self.getToken(Q2Parser.L_BRACK, 0)
-
-        def R_BRACK(self):
-            return self.getToken(Q2Parser.R_BRACK, 0)
-
-        def BOOLEAN(self):
-            return self.getToken(Q2Parser.BOOLEAN, 0)
-
-        def Identifier(self):
-            return self.getToken(Q2Parser.Identifier, 0)
 
         def getRuleIndex(self):
             return Q2Parser.RULE_type_t
 
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+            self.value_attr = ctx.value_attr
+            self.type_attr = ctx.type_attr
+
+
+
+    class BoolContext(Type_tContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.Type_tContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def BOOLEAN(self):
+            return self.getToken(Q2Parser.BOOLEAN, 0)
+
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterType_t" ):
-                listener.enterType_t(self)
+            if hasattr( listener, "enterBool" ):
+                listener.enterBool(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitType_t" ):
-                listener.exitType_t(self)
+            if hasattr( listener, "exitBool" ):
+                listener.exitBool(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitType_t" ):
-                return visitor.visitType_t(self)
+            if hasattr( visitor, "visitBool" ):
+                return visitor.visitBool(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class IdContext(Type_tContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.Type_tContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterId" ):
+                listener.enterId(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitId" ):
+                listener.exitId(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitId" ):
+                return visitor.visitId(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class IntContext(Type_tContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.Type_tContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def INT(self):
+            return self.getToken(Q2Parser.INT, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInt" ):
+                listener.enterInt(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInt" ):
+                listener.exitInt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInt" ):
+                return visitor.visitInt(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Array_intContext(Type_tContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.Type_tContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def INT(self):
+            return self.getToken(Q2Parser.INT, 0)
+        def L_BRACK(self):
+            return self.getToken(Q2Parser.L_BRACK, 0)
+        def R_BRACK(self):
+            return self.getToken(Q2Parser.R_BRACK, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArray_int" ):
+                listener.enterArray_int(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArray_int" ):
+                listener.exitArray_int(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArray_int" ):
+                return visitor.visitArray_int(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -786,6 +865,7 @@ class Q2Parser ( Parser ):
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
+                localctx = Q2Parser.Array_intContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 104
                 self.match(Q2Parser.INT)
@@ -796,18 +876,21 @@ class Q2Parser ( Parser ):
                 pass
 
             elif la_ == 2:
+                localctx = Q2Parser.BoolContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 107
                 self.match(Q2Parser.BOOLEAN)
                 pass
 
             elif la_ == 3:
+                localctx = Q2Parser.IntContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 108
                 self.match(Q2Parser.INT)
                 pass
 
             elif la_ == 4:
+                localctx = Q2Parser.IdContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
                 self.state = 109
                 self.match(Q2Parser.Identifier)
@@ -829,13 +912,31 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
+
+
+        def getRuleIndex(self):
+            return Q2Parser.RULE_statement
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+            self.value_attr = ctx.value_attr
+            self.type_attr = ctx.type_attr
+
+
+
+    class Braket_statementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def L_BRACE(self):
             return self.getToken(Q2Parser.L_BRACE, 0)
-
         def R_BRACE(self):
             return self.getToken(Q2Parser.R_BRACE, 0)
-
         def statement(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(Q2Parser.StatementContext)
@@ -843,60 +944,192 @@ class Q2Parser ( Parser ):
                 return self.getTypedRuleContext(Q2Parser.StatementContext,i)
 
 
-        def IF(self):
-            return self.getToken(Q2Parser.IF, 0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBraket_statement" ):
+                listener.enterBraket_statement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBraket_statement" ):
+                listener.exitBraket_statement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBraket_statement" ):
+                return visitor.visitBraket_statement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class PrintContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def L_PAREN(self):
             return self.getToken(Q2Parser.L_PAREN, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
 
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
+        def SEMI(self):
+            return self.getToken(Q2Parser.SEMI, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrint" ):
+                listener.enterPrint(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrint" ):
+                listener.exitPrint(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrint" ):
+                return visitor.visitPrint(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Equal_array_statementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+        def L_BRACK(self):
+            return self.getToken(Q2Parser.L_BRACK, 0)
         def expression(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(Q2Parser.ExpressionContext)
             else:
                 return self.getTypedRuleContext(Q2Parser.ExpressionContext,i)
 
+        def R_BRACK(self):
+            return self.getToken(Q2Parser.R_BRACK, 0)
+        def ASSIGN(self):
+            return self.getToken(Q2Parser.ASSIGN, 0)
+        def SEMI(self):
+            return self.getToken(Q2Parser.SEMI, 0)
 
-        def R_PAREN(self):
-            return self.getToken(Q2Parser.R_PAREN, 0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterEqual_array_statement" ):
+                listener.enterEqual_array_statement(self)
 
-        def ELSE(self):
-            return self.getToken(Q2Parser.ELSE, 0)
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitEqual_array_statement" ):
+                listener.exitEqual_array_statement(self)
 
-        def WHILE(self):
-            return self.getToken(Q2Parser.WHILE, 0)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEqual_array_statement" ):
+                return visitor.visitEqual_array_statement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Equal_statementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+        def ASSIGN(self):
+            return self.getToken(Q2Parser.ASSIGN, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
 
         def SEMI(self):
             return self.getToken(Q2Parser.SEMI, 0)
 
-        def Identifier(self):
-            return self.getToken(Q2Parser.Identifier, 0)
-
-        def ASSIGN(self):
-            return self.getToken(Q2Parser.ASSIGN, 0)
-
-        def L_BRACK(self):
-            return self.getToken(Q2Parser.L_BRACK, 0)
-
-        def R_BRACK(self):
-            return self.getToken(Q2Parser.R_BRACK, 0)
-
-        def getRuleIndex(self):
-            return Q2Parser.RULE_statement
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStatement" ):
-                listener.enterStatement(self)
+            if hasattr( listener, "enterEqual_statement" ):
+                listener.enterEqual_statement(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStatement" ):
-                listener.exitStatement(self)
+            if hasattr( listener, "exitEqual_statement" ):
+                listener.exitEqual_statement(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitStatement" ):
-                return visitor.visitStatement(self)
+            if hasattr( visitor, "visitEqual_statement" ):
+                return visitor.visitEqual_statement(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class If_statementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def IF(self):
+            return self.getToken(Q2Parser.IF, 0)
+        def L_PAREN(self):
+            return self.getToken(Q2Parser.L_PAREN, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
+        def statement(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(Q2Parser.StatementContext)
+            else:
+                return self.getTypedRuleContext(Q2Parser.StatementContext,i)
+
+        def ELSE(self):
+            return self.getToken(Q2Parser.ELSE, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIf_statement" ):
+                listener.enterIf_statement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIf_statement" ):
+                listener.exitIf_statement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIf_statement" ):
+                return visitor.visitIf_statement(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class While_statementContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def WHILE(self):
+            return self.getToken(Q2Parser.WHILE, 0)
+        def L_PAREN(self):
+            return self.getToken(Q2Parser.L_PAREN, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
+        def statement(self):
+            return self.getTypedRuleContext(Q2Parser.StatementContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterWhile_statement" ):
+                listener.enterWhile_statement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitWhile_statement" ):
+                listener.exitWhile_statement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhile_statement" ):
+                return visitor.visitWhile_statement(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -910,6 +1143,7 @@ class Q2Parser ( Parser ):
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
+                localctx = Q2Parser.Braket_statementContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 112
                 self.match(Q2Parser.L_BRACE)
@@ -928,6 +1162,7 @@ class Q2Parser ( Parser ):
                 pass
 
             elif la_ == 2:
+                localctx = Q2Parser.If_statementContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 120
                 self.match(Q2Parser.IF)
@@ -946,46 +1181,50 @@ class Q2Parser ( Parser ):
                 pass
 
             elif la_ == 3:
+                localctx = Q2Parser.Equal_statementContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 128
-                self.match(Q2Parser.WHILE)
+                self.match(Q2Parser.Identifier)
                 self.state = 129
-                self.match(Q2Parser.L_PAREN)
+                self.match(Q2Parser.ASSIGN)
                 self.state = 130
                 self.expression(0)
                 self.state = 131
-                self.match(Q2Parser.R_PAREN)
-                self.state = 132
-                self.statement()
-                pass
-
-            elif la_ == 4:
-                self.enterOuterAlt(localctx, 4)
-                self.state = 134
-                self.match(Q2Parser.T__0)
-                self.state = 135
-                self.match(Q2Parser.L_PAREN)
-                self.state = 136
-                self.expression(0)
-                self.state = 137
-                self.match(Q2Parser.R_PAREN)
-                self.state = 138
                 self.match(Q2Parser.SEMI)
                 pass
 
-            elif la_ == 5:
-                self.enterOuterAlt(localctx, 5)
-                self.state = 140
-                self.match(Q2Parser.Identifier)
-                self.state = 141
-                self.match(Q2Parser.ASSIGN)
-                self.state = 142
+            elif la_ == 4:
+                localctx = Q2Parser.While_statementContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 133
+                self.match(Q2Parser.WHILE)
+                self.state = 134
+                self.match(Q2Parser.L_PAREN)
+                self.state = 135
                 self.expression(0)
+                self.state = 136
+                self.match(Q2Parser.R_PAREN)
+                self.state = 137
+                self.statement()
+                pass
+
+            elif la_ == 5:
+                localctx = Q2Parser.PrintContext(self, localctx)
+                self.enterOuterAlt(localctx, 5)
+                self.state = 139
+                self.match(Q2Parser.T__0)
+                self.state = 140
+                self.match(Q2Parser.L_PAREN)
+                self.state = 141
+                self.expression(0)
+                self.state = 142
+                self.match(Q2Parser.R_PAREN)
                 self.state = 143
                 self.match(Q2Parser.SEMI)
                 pass
 
             elif la_ == 6:
+                localctx = Q2Parser.Equal_array_statementContext(self, localctx)
                 self.enterOuterAlt(localctx, 6)
                 self.state = 145
                 self.match(Q2Parser.Identifier)
@@ -1019,30 +1258,130 @@ class Q2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.value_attr = str()
+            self.type_attr = str()
+
+
+        def getRuleIndex(self):
+            return Q2Parser.RULE_expression
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+            self.value_attr = ctx.value_attr
+            self.type_attr = ctx.type_attr
+
+
+    class NumberContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def INT_VAL(self):
             return self.getToken(Q2Parser.INT_VAL, 0)
 
-        def TRUE(self):
-            return self.getToken(Q2Parser.TRUE, 0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNumber" ):
+                listener.enterNumber(self)
 
-        def FALSE(self):
-            return self.getToken(Q2Parser.FALSE, 0)
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNumber" ):
+                listener.exitNumber(self)
 
-        def Identifier(self):
-            return self.getToken(Q2Parser.Identifier, 0)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumber" ):
+                return visitor.visitNumber(self)
+            else:
+                return visitor.visitChildren(self)
 
-        def THIS(self):
-            return self.getToken(Q2Parser.THIS, 0)
+
+    class Not_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def BANG(self):
+            return self.getToken(Q2Parser.BANG, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNot_expression" ):
+                listener.enterNot_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNot_expression" ):
+                listener.exitNot_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNot_expression" ):
+                return visitor.visitNot_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class New_identifierContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def NEW(self):
             return self.getToken(Q2Parser.NEW, 0)
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+        def L_PAREN(self):
+            return self.getToken(Q2Parser.L_PAREN, 0)
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
 
-        def INT(self):
-            return self.getToken(Q2Parser.INT, 0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNew_identifier" ):
+                listener.enterNew_identifier(self)
 
-        def L_BRACK(self):
-            return self.getToken(Q2Parser.L_BRACK, 0)
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNew_identifier" ):
+                listener.exitNew_identifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNew_identifier" ):
+                return visitor.visitNew_identifier(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class KeywordsContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def BOOL(self):
+            return self.getToken(Q2Parser.BOOL, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterKeywords" ):
+                listener.enterKeywords(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitKeywords" ):
+                listener.exitKeywords(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKeywords" ):
+                return visitor.visitKeywords(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Dot_par_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def expression(self, i:int=None):
             if i is None:
@@ -1050,60 +1389,208 @@ class Q2Parser ( Parser ):
             else:
                 return self.getTypedRuleContext(Q2Parser.ExpressionContext,i)
 
-
-        def R_BRACK(self):
-            return self.getToken(Q2Parser.R_BRACK, 0)
-
-        def L_PAREN(self):
-            return self.getToken(Q2Parser.L_PAREN, 0)
-
-        def R_PAREN(self):
-            return self.getToken(Q2Parser.R_PAREN, 0)
-
-        def BANG(self):
-            return self.getToken(Q2Parser.BANG, 0)
-
-        def AND(self):
-            return self.getToken(Q2Parser.AND, 0)
-
-        def LT(self):
-            return self.getToken(Q2Parser.LT, 0)
-
-        def PLUS(self):
-            return self.getToken(Q2Parser.PLUS, 0)
-
-        def MINUS(self):
-            return self.getToken(Q2Parser.MINUS, 0)
-
-        def TIMES(self):
-            return self.getToken(Q2Parser.TIMES, 0)
-
         def DOT(self):
             return self.getToken(Q2Parser.DOT, 0)
-
-        def LENGTH(self):
-            return self.getToken(Q2Parser.LENGTH, 0)
-
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+        def L_PAREN(self):
+            return self.getToken(Q2Parser.L_PAREN, 0)
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
         def COMMA(self, i:int=None):
             if i is None:
                 return self.getTokens(Q2Parser.COMMA)
             else:
                 return self.getToken(Q2Parser.COMMA, i)
 
-        def getRuleIndex(self):
-            return Q2Parser.RULE_expression
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpression" ):
-                listener.enterExpression(self)
+            if hasattr( listener, "enterDot_par_expression" ):
+                listener.enterDot_par_expression(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpression" ):
-                listener.exitExpression(self)
+            if hasattr( listener, "exitDot_par_expression" ):
+                listener.exitDot_par_expression(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpression" ):
-                return visitor.visitExpression(self)
+            if hasattr( visitor, "visitDot_par_expression" ):
+                return visitor.visitDot_par_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class In_par_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def L_PAREN(self):
+            return self.getToken(Q2Parser.L_PAREN, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+        def R_PAREN(self):
+            return self.getToken(Q2Parser.R_PAREN, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIn_par_expression" ):
+                listener.enterIn_par_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIn_par_expression" ):
+                listener.exitIn_par_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIn_par_expression" ):
+                return visitor.visitIn_par_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Operations_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(Q2Parser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(Q2Parser.ExpressionContext,i)
+
+        def OP(self):
+            return self.getToken(Q2Parser.OP, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOperations_expression" ):
+                listener.enterOperations_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOperations_expression" ):
+                listener.exitOperations_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOperations_expression" ):
+                return visitor.visitOperations_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Array_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(Q2Parser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(Q2Parser.ExpressionContext,i)
+
+        def L_BRACK(self):
+            return self.getToken(Q2Parser.L_BRACK, 0)
+        def R_BRACK(self):
+            return self.getToken(Q2Parser.R_BRACK, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArray_expression" ):
+                listener.enterArray_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArray_expression" ):
+                listener.exitArray_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArray_expression" ):
+                return visitor.visitArray_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class WordContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(Q2Parser.Identifier, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterWord" ):
+                listener.enterWord(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitWord" ):
+                listener.exitWord(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWord" ):
+                return visitor.visitWord(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class New_array_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def NEW(self):
+            return self.getToken(Q2Parser.NEW, 0)
+        def INT(self):
+            return self.getToken(Q2Parser.INT, 0)
+        def L_BRACK(self):
+            return self.getToken(Q2Parser.L_BRACK, 0)
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+        def R_BRACK(self):
+            return self.getToken(Q2Parser.R_BRACK, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNew_array_expression" ):
+                listener.enterNew_array_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNew_array_expression" ):
+                listener.exitNew_array_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNew_array_expression" ):
+                return visitor.visitNew_array_expression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Length_expressionContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a Q2Parser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(Q2Parser.ExpressionContext,0)
+
+        def DOT(self):
+            return self.getToken(Q2Parser.DOT, 0)
+        def LENGTH(self):
+            return self.getToken(Q2Parser.LENGTH, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLength_expression" ):
+                listener.enterLength_expression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLength_expression" ):
+                listener.exitLength_expression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLength_expression" ):
+                return visitor.visitLength_expression(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1119,35 +1606,48 @@ class Q2Parser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 177
+            self.state = 175
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
+                localctx = Q2Parser.NumberContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+
                 self.state = 156
                 self.match(Q2Parser.INT_VAL)
                 pass
 
             elif la_ == 2:
+                localctx = Q2Parser.Not_expressionContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 157
-                self.match(Q2Parser.TRUE)
+                self.match(Q2Parser.BANG)
+                self.state = 158
+                self.expression(7)
                 pass
 
             elif la_ == 3:
-                self.state = 158
-                self.match(Q2Parser.FALSE)
+                localctx = Q2Parser.KeywordsContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 159
+                self.match(Q2Parser.BOOL)
                 pass
 
             elif la_ == 4:
-                self.state = 159
+                localctx = Q2Parser.WordContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 160
                 self.match(Q2Parser.Identifier)
                 pass
 
             elif la_ == 5:
-                self.state = 160
-                self.match(Q2Parser.THIS)
-                pass
-
-            elif la_ == 6:
+                localctx = Q2Parser.New_array_expressionContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 161
                 self.match(Q2Parser.NEW)
                 self.state = 162
@@ -1160,7 +1660,10 @@ class Q2Parser ( Parser ):
                 self.match(Q2Parser.R_BRACK)
                 pass
 
-            elif la_ == 7:
+            elif la_ == 6:
+                localctx = Q2Parser.New_identifierContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 167
                 self.match(Q2Parser.NEW)
                 self.state = 168
@@ -1171,25 +1674,21 @@ class Q2Parser ( Parser ):
                 self.match(Q2Parser.R_PAREN)
                 pass
 
-            elif la_ == 8:
+            elif la_ == 7:
+                localctx = Q2Parser.In_par_expressionContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 171
-                self.match(Q2Parser.BANG)
-                self.state = 172
-                self.expression(2)
-                pass
-
-            elif la_ == 9:
-                self.state = 173
                 self.match(Q2Parser.L_PAREN)
-                self.state = 174
+                self.state = 172
                 self.expression(0)
-                self.state = 175
+                self.state = 173
                 self.match(Q2Parser.R_PAREN)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 216
+            self.state = 205
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1197,133 +1696,89 @@ class Q2Parser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 214
+                    self.state = 203
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = Q2Parser.Operations_expressionContext(self, Q2Parser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 179
-                        if not self.precpred(self._ctx, 16):
+                        self.state = 177
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 16)")
-                        self.state = 180
-                        self.match(Q2Parser.AND)
-                        self.state = 181
-                        self.expression(17)
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
+                        self.state = 178
+                        self.match(Q2Parser.OP)
+                        self.state = 179
+                        self.expression(2)
                         pass
 
                     elif la_ == 2:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = Q2Parser.Array_expressionContext(self, Q2Parser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 182
-                        if not self.precpred(self._ctx, 15):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 15)")
-                        self.state = 183
-                        self.match(Q2Parser.LT)
-                        self.state = 184
-                        self.expression(16)
-                        pass
-
-                    elif la_ == 3:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 185
-                        if not self.precpred(self._ctx, 14):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 14)")
-                        self.state = 186
-                        _la = self._input.LA(1)
-                        if not(_la==Q2Parser.PLUS or _la==Q2Parser.MINUS):
-                            self._errHandler.recoverInline(self)
-                        else:
-                            self._errHandler.reportMatch(self)
-                            self.consume()
-                        self.state = 187
-                        self.expression(15)
-                        pass
-
-                    elif la_ == 4:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 188
-                        if not self.precpred(self._ctx, 13):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
-                        self.state = 189
-                        self.match(Q2Parser.TIMES)
-                        self.state = 190
-                        self.expression(14)
-                        pass
-
-                    elif la_ == 5:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 191
-                        if not self.precpred(self._ctx, 12):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
-                        self.state = 192
-                        self.match(Q2Parser.L_BRACK)
-                        self.state = 193
-                        self.expression(0)
-                        self.state = 194
-                        self.match(Q2Parser.R_BRACK)
-                        pass
-
-                    elif la_ == 6:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 196
+                        self.state = 180
                         if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
-                        self.state = 197
-                        self.match(Q2Parser.DOT)
-                        self.state = 198
-                        self.match(Q2Parser.LENGTH)
+                        self.state = 181
+                        self.match(Q2Parser.L_BRACK)
+                        self.state = 182
+                        self.expression(0)
+                        self.state = 183
+                        self.match(Q2Parser.R_BRACK)
                         pass
 
-                    elif la_ == 7:
-                        localctx = Q2Parser.ExpressionContext(self, _parentctx, _parentState)
+                    elif la_ == 3:
+                        localctx = Q2Parser.Length_expressionContext(self, Q2Parser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 199
+                        self.state = 185
                         if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
-                        self.state = 200
+                        self.state = 186
                         self.match(Q2Parser.DOT)
-                        self.state = 201
+                        self.state = 187
+                        self.match(Q2Parser.LENGTH)
+                        pass
+
+                    elif la_ == 4:
+                        localctx = Q2Parser.Dot_par_expressionContext(self, Q2Parser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 188
+                        if not self.precpred(self._ctx, 9):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
+                        self.state = 189
+                        self.match(Q2Parser.DOT)
+                        self.state = 190
                         self.match(Q2Parser.Identifier)
-                        self.state = 202
+                        self.state = 191
                         self.match(Q2Parser.L_PAREN)
-                        self.state = 211
+                        self.state = 200
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Q2Parser.FALSE) | (1 << Q2Parser.NEW) | (1 << Q2Parser.THIS) | (1 << Q2Parser.TRUE) | (1 << Q2Parser.BANG) | (1 << Q2Parser.L_PAREN) | (1 << Q2Parser.Identifier) | (1 << Q2Parser.INT_VAL))) != 0):
-                            self.state = 203
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Q2Parser.BOOL) | (1 << Q2Parser.NEW) | (1 << Q2Parser.BANG) | (1 << Q2Parser.L_PAREN) | (1 << Q2Parser.Identifier) | (1 << Q2Parser.INT_VAL))) != 0):
+                            self.state = 192
                             self.expression(0)
-                            self.state = 208
+                            self.state = 197
                             self._errHandler.sync(self)
                             _la = self._input.LA(1)
                             while _la==Q2Parser.COMMA:
-                                self.state = 204
+                                self.state = 193
                                 self.match(Q2Parser.COMMA)
-                                self.state = 205
+                                self.state = 194
                                 self.expression(0)
-                                self.state = 210
+                                self.state = 199
                                 self._errHandler.sync(self)
                                 _la = self._input.LA(1)
 
 
 
-                        self.state = 213
+                        self.state = 202
                         self.match(Q2Parser.R_PAREN)
                         pass
 
              
-                self.state = 218
+                self.state = 207
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
 
@@ -1349,31 +1804,19 @@ class Q2Parser ( Parser ):
 
     def expression_sempred(self, localctx:ExpressionContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 16)
+                return self.precpred(self._ctx, 1)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 15)
-         
-
-            if predIndex == 2:
-                return self.precpred(self._ctx, 14)
-         
-
-            if predIndex == 3:
-                return self.precpred(self._ctx, 13)
-         
-
-            if predIndex == 4:
-                return self.precpred(self._ctx, 12)
-         
-
-            if predIndex == 5:
                 return self.precpred(self._ctx, 11)
          
 
-            if predIndex == 6:
+            if predIndex == 2:
                 return self.precpred(self._ctx, 10)
+         
+
+            if predIndex == 3:
+                return self.precpred(self._ctx, 9)
          
 
 
