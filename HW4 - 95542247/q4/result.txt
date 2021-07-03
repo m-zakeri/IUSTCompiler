@@ -1,0 +1,225 @@
+
+Result:
+{} 	───	▓
+Parent: {}
+		assign 	───	assign 	───	if else 	───	▓
+Parent: assign
+			i 	───	operand 	───	▓
+Parent: assign
+				aux03 	───	[ ] 	───	▓
+Parent: if else
+					! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: operand
+						i 	───	1 	───	▓
+Parent: [ ]
+							number 	───	i 	───	▓
+Parent: operand
+								aux03 	───	v 	───	▓
+Parent: assign
+									cont02 	───	false 	───	▓
+Parent: assign
+										cont02 	───	true 	───	▓
+{} 	───	▓
+Parent: {}
+		assign 	───	assign 	───	if else 	───	▓
+Parent: assign
+			j 	───	operand 	───	▓
+Parent: assign
+				aux03 	───	[ ] 	───	▓
+Parent: if else
+					! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: operand
+						j 	───	1 	───	▓
+Parent: [ ]
+							number 	───	j 	───	▓
+Parent: operand
+								v 	───	aux03 	───	▓
+Parent: assign
+									cont02 	───	false 	───	▓
+Parent: assign
+										cont02 	───	true 	───	▓
+{} 	───	▓
+Parent: {}
+		assign 	───	while 	───	assign 	───	while 	───	assign 	───	assgin [] 	───	assgin [] 	───	if else 	───	▓
+Parent: assign
+			cont02 	───	true 	───	▓
+Parent: while
+				cont02 	───	{} 	───	▓
+Parent: assign
+					cont02 	───	true 	───	▓
+Parent: while
+						cont02 	───	{} 	───	▓
+Parent: assign
+							t 	───	[ ] 	───	▓
+Parent: assgin []
+								number 	───	i 	───	[ ] 	───	▓
+Parent: assgin []
+									number 	───	j 	───	t 	───	▓
+Parent: if else
+										operand 	───	assign 	───	assign 	───	▓
+Parent: {}
+											assign 	───	assign 	───	if else 	───	▓
+Parent: {}
+												assign 	───	assign 	───	if else 	───	▓
+Parent: [ ]
+													number 	───	i 	───	▓
+Parent: [ ]
+														number 	───	j 	───	▓
+Parent: operand
+															j 	───	() 	───	operand 	───	▓
+Parent: assign
+																cont01 	───	false 	───	▓
+Parent: assign
+																	cont01 	───	true 	───	▓
+Parent: assign
+																		i 	───	operand 	───	▓
+Parent: assign
+																			aux03 	───	[ ] 	───	▓
+Parent: if else
+																				! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: assign
+																					j 	───	operand 	───	▓
+Parent: assign
+																						aux03 	───	[ ] 	───	▓
+Parent: if else
+																							! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: operand
+																								i 	───	1 	───	▓
+Parent: operand
+																									i 	───	1 	───	▓
+Parent: [ ]
+																										number 	───	i 	───	▓
+Parent: operand
+																											aux03 	───	v 	───	▓
+Parent: assign
+																												cont02 	───	false 	───	▓
+Parent: assign
+																													cont02 	───	true 	───	▓
+Parent: operand
+																														j 	───	1 	───	▓
+Parent: [ ]
+																															number 	───	j 	───	▓
+Parent: operand
+																																v 	───	aux03 	───	▓
+Parent: assign
+																																	cont02 	───	false 	───	▓
+Parent: assign
+																																		cont02 	───	true 	───	▓
+{} 	───	▓
+Parent: {}
+		assign 	───	assign 	───	assign 	───	assign 	───	while 	───	assgin [] 	───	assgin [] 	───	assgin [] 	───	assign 	───	assign 	───	▓
+Parent: assign
+			v 	───	[ ] 	───	▓
+Parent: assign
+				i 	───	operand 	───	▓
+Parent: assign
+					j 	───	right 	───	▓
+Parent: assign
+						cont01 	───	true 	───	▓
+Parent: while
+							cont01 	───	{} 	───	▓
+Parent: assgin []
+								number 	───	j 	───	[ ] 	───	▓
+Parent: assgin []
+									number 	───	i 	───	[ ] 	───	▓
+Parent: assgin []
+										number 	───	right 	───	t 	───	▓
+Parent: assign
+											nt 	───	call 	───	▓
+Parent: assign
+												nt 	───	call 	───	▓
+Parent: [ ]
+													number 	───	right 	───	▓
+Parent: operand
+														left 	───	1 	───	▓
+Parent: {}
+															assign 	───	while 	───	assign 	───	while 	───	assign 	───	assgin [] 	───	assgin [] 	───	if else 	───	▓
+Parent: [ ]
+																number 	───	i 	───	▓
+Parent: [ ]
+																	number 	───	right 	───	▓
+Parent: call
+																		this 	───	Sort 	───	left 	───	operand 	───	▓
+Parent: call
+																			this 	───	Sort 	───	operand 	───	right 	───	▓
+Parent: assign
+																				cont02 	───	true 	───	▓
+Parent: while
+																					cont02 	───	{} 	───	▓
+Parent: assign
+																						cont02 	───	true 	───	▓
+Parent: while
+																							cont02 	───	{} 	───	▓
+Parent: assign
+																								t 	───	[ ] 	───	▓
+Parent: assgin []
+																									number 	───	i 	───	[ ] 	───	▓
+Parent: assgin []
+																										number 	───	j 	───	t 	───	▓
+Parent: if else
+																											operand 	───	assign 	───	assign 	───	▓
+Parent: operand
+																												i 	───	1 	───	▓
+Parent: operand
+																													i 	───	1 	───	▓
+Parent: {}
+																														assign 	───	assign 	───	if else 	───	▓
+Parent: {}
+																															assign 	───	assign 	───	if else 	───	▓
+Parent: [ ]
+																																number 	───	i 	───	▓
+Parent: [ ]
+																																	number 	───	j 	───	▓
+Parent: operand
+																																		j 	───	() 	───	operand 	───	▓
+Parent: assign
+																																			cont01 	───	false 	───	▓
+Parent: assign
+																																				cont01 	───	true 	───	▓
+Parent: assign
+																																					i 	───	operand 	───	▓
+Parent: assign
+																																						aux03 	───	[ ] 	───	▓
+Parent: if else
+																																							! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: assign
+																																								j 	───	operand 	───	▓
+Parent: assign
+																																									aux03 	───	[ ] 	───	▓
+Parent: if else
+																																										! 	───	() 	───	operand 	───	assign 	───	assign 	───	▓
+Parent: operand
+																																											i 	───	1 	───	▓
+Parent: operand
+																																												i 	───	1 	───	▓
+Parent: [ ]
+																																													number 	───	i 	───	▓
+Parent: operand
+																																														aux03 	───	v 	───	▓
+Parent: assign
+																																															cont02 	───	false 	───	▓
+Parent: assign
+																																																cont02 	───	true 	───	▓
+Parent: operand
+																																																	j 	───	1 	───	▓
+Parent: [ ]
+																																																		number 	───	j 	───	▓
+Parent: operand
+																																																			v 	───	aux03 	───	▓
+Parent: assign
+																																																				cont02 	───	false 	───	▓
+Parent: assign
+																																																					cont02 	───	true 	───	▓
+{} 	───	▓
+Parent: {}
+		print 	───	assign 	───	▓
+Parent: print
+			[ ] 	───	▓
+Parent: assign
+				j 	───	operand 	───	▓
+Parent: [ ]
+					number 	───	j 	───	▓
+Parent: operand
+						j 	───	1 	───	▓
+
+Process finished with exit code 0
