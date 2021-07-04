@@ -1,143 +1,165 @@
 grammar tac;
 
-@parser::members {
-
-conversion = {
-    'float': float,
-    'int': int,
-}
-
-tmp_cnt = name_cnt = 0
-declare_dict = {}
-function_stack_size = 0
-param_count = 0
-method_text = None
-
-
+@parser::members{
+label_counter = 0
+temp_counter = 0
 def create_temp(self):
-    self.function_stack_size += 4
-    self.tmp_cnt += 1
-    return f"T{self.tmp_cnt}"
-
-def get_temp(self):
-    return f"T{self.tmp_cnt}"
-
-def generate_name(self):
-    self.name_cnt += 1
-    return f"L{self.name_cnt}"
-
-def get_label(self):
-    return f"L{self.name_cnt}"
-
-def is_temp(self, tmp: str):
-    return tmp[0] == 'T'
+    self.temp_counter += 1
+    return '_t' + str(self.temp_counter)
 
 def remove_temp(self):
-    self.tmp_cnt -= 1
+    self.temp_counter -= 1
 
-def declare(self, type, name):
-    if name in self.declare_dict:
-        self.declare_dict[name] = type
-        return
-    self.declare_dict[name] = type
+def get_temp(self):
+    return f'_t{self.temp_counter}'
 
-def clear_declare_dict(self):
-    self.declare_dict.clear()
-
-def create_method_text(self):
-    if self.method_text is not None:
-        self.method_text.close()
-
-def get_type(self, name):
-    if name in self.declare_dict:
-        return self.declare_dict[name]
-    return None
+def create_label(self):
+    self.label_counter += 1
+    return '_L{self.label_counter}'
 }
-
-
 
 program:
-    mainClass ( classDecl )* EOF
-    ;
-
-mainClass: 'class' identifier '{' mainMethodDeclaration '}' ;
-
-
-mainMethodDeclaration:
+    main=mainClass ( cls=classDecleration )* EOF
 {
-print("main:")
-self.create_method_text()
-self.function_stack_size = 0
-}
-     'public' 'static' 'void' 'main' '(' 'String' '[' ']' identifier ')''{'st=statement'}'
-{
-print(f"\tbeginFunc {self.function_stack_size}\n{self.method_text.getvalue()}\tret")
+f = open('result.txt', 'w')
+tac = $main.tac + $cls.tac
+f.write(tac)
+f.close()
 }
     ;
-
-classDecl:
-    'class' identifier ('extends' identifier)?
-    '{'
-        varDeclaration* methodDecl*
-    '}'
-    ;
-
-
-methodDecl:
+mainClass returns [tac = str()]:
+    'class' identifier  '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' identifier ')' '{' st=statement '}' '}'
 {
-self.create_method_text()
-self.function_stack_size = 0
-}
-    methodDeclName '(' (methodParam (',' methodParam)*)? ')'
-    ;
-
-varDeclaration returns []:
-    tp=type id=identifier ';'
-    {
-    self.declare($tp.text, $id.text)
-    self.function_stack_size += 4
-    }
-    ;
-
-
-methodDeclName:
-    'public' type id=identifier
-{
-print(f"{$id.text}:")
+$tac = $st.tac
 }
     ;
-
-methodParam:
-    t=type id=identifier
+classDecleration returns [tac = str()]:
+    'class' identifier ( 'extends' identifier )? '{' ( varDeclaration )* ( method=methodDeclaration {
+$tac += $method.tac
+    } )* '}'
+    ;
+varDeclaration:
+    typeId identifier ';'
+    ;
+methodDeclaration returns [tac = str()]:
+    'public' typeId identifier '(' ( typeId identifier ( ',' typeId identifier )* )? ')'
+    '{' ( varDeclaration )* ( st=statement {$tac += $st.tac} )* 'return' exp=expression {
+$tac += f"\n PushParam {$exp.tac} \n ret \n"
+    } ';' '}'
+    ;
+typeId:
+    'int' '[' ']'
+    |'boolean'
+    |'int'
+    |identifier
+    ;
+statement returns [tac = str()]:
+    '{' ( st=statement {
+$tac += $st.tac
+    })* '}'
+    |'if' '(' exp=expression ')' st1=statement 'else' st2=statement
 {
-self.declare($t.text, $id.text)
+l_true = self.create_label()
+l_after = self.create_label()
+tac = f"If {$exp.tac} GoTo {l_true}\n"
+tac += f"{$st2.tac}\n"
+tac += f"Goto {l_after}\n"
+tac += f"{l_true} {$st1.tac}\n"
+tac += f"{l_after}:\n"
+$tac = tac
+}
+    |'while' '(' exp=expression ')' st=statement
+{
+l_while = self.create_label()
+l_st = self.create_label()
+l_after = self.create_label()
+$tac = f"{l_while}: if {$exp.tac} Goto {l_st}\n"
+$tac += f"Goto {l_after}\n"
+$tac += f"{l_st}: {$st.tac}\n"
+$tac += f"Goto {l_while}\n"
+$tac += f"{l_after}:\n"
+}
+    |'System.out.println' '(' exp=expression ')' ';'
+{
+t = self.create_temp()
+$tac = f"{t} = {$exp.tac} \n"
+}
+    |id1=identifier '=' exp=expression ';'
+{
+t = self.create_temp()
+$tac = f"{t} = {$exp.tac} \n"
+$tac += $id1.text + ' = ' + t + '\n'
+}
+    |id1=identifier '[' exp1=expression ']' '=' exp2=expression ';'
+{
+t1 = self.create_temp()
+$tac = t1 + ' = ' + $exp1.tac + '\n'
+t2 = self.create_temp()
+$tac += f"{t2} = {$exp2.tac} \n"
+$tac += f"{$id1.text} [{t1}] = {t2} \n"
 }
     ;
-
-
-type returns [size_attr = int()]:
-      'int' '[' ']'
-    | 'bool'
+expression returns [tac = str()]:
+    exp1=expression opt=( '&&' | '<' | '+' | '-' | '*' ) exp2=expression
 {
-$size_attr = 1
+$tac =$exp1.tac + $opt.text + $exp2.tac
 }
-    | 'int'
+    |exp1=expression '[' exp2=expression ']'
 {
-$size_attr = 4
+$tac = $exp1.tac + '[' + $exp2.tac + ']' + '\n'
+}
+    |exp1=expression '.' 'length'
+{
+$tac = 'len ' + '(' + $exp1.tac + ')' + '\n'
+}
+    |exp1=expression '.' id1=identifier '(' ( exp2=expression {$tac = 'PushParam ' + $exp2.tac + '\n'} 
+    ( ',' exp3=expression {$tac += 'PushParam ' + $exp3.tac + '\n'})* )? ')'
+{
+$tac = f"Call {$exp1.tac} {$id1.tac}\n"
+$tac += "PopParams"
+}
+    | Integer
+{
+$tac = $Integer.text
+}
+    |'true'
+{
+$tac = "true"
+}
+    |'false'
+{
+$tac = "false"
+}
+    |id1=identifier
+{
+$tac = $id1.text
+}
+    |'this'
+{
+$tac = "this"
+}
+    |'new' 'int' '[' exp1=expression ']'
+{
+$tac = $exp1.tac
+}
+    |'new' id1=identifier '(' ')'
+{
+$tac = $id1.tac
+}
+    |'!' exp1=expression
+{
+$tac = "~"+$exp1.tac
+}
+    |'(' exp1=expression ')'
+{
+$tac = $exp1.tac
 }
 ;
-
-
-binOp:
-    '&&'|'<'|'+'|'-'|'*'
+identifier returns [tac = str()]:
+    Identifier {$tac = $Identifier.text}
     ;
 
-identifier: Identifier;
-
-
-Identifier:
-    Letter LetterOrDigit*
-    ;
+Identifier: Letter LetterOrDigit*;
 
 fragment LetterOrDigit
     : Letter
@@ -148,13 +170,14 @@ fragment Letter
     | ~[\u0000-\u007F\uD800-\uDBFF]
     | [\uD800-\uDBFF] [\uDC00-\uDFFF]
     ;
-
 Integer:
-    [0-9]+;
-
+    [0-9]+
+    ;
 WS:
     [ \t\r\n\u000C]+ -> channel(HIDDEN);
 COMMENT:
-    '/*' .*? '*/'    -> channel(HIDDEN);
+    '/*' .*? '*/' -> channel(HIDDEN)
+    ;
 LINE_COMMENT:
-    '//' ~[\r\n]*    -> channel(HIDDEN);
+    '//' ~[\r\n]* -> channel(HIDDEN)
+    ;
