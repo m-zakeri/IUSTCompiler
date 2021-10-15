@@ -19,9 +19,9 @@ class Main():
         :param name:
         :return:
         """
-        print(f'Welcome to our deragon course {name}.')
+        print(f'Welcome to our dragon course {name}.')
 
 
 # Main driver
 if __name__ == '__main__':
-    Main.print_welcome('COMPILER')
+    Main.print_welcome('IUST-COMPILER')
