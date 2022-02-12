@@ -18,24 +18,25 @@ Main script for grammer Java9_v2 (version 2)
 
 """
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'Morteza'
+
+import argparse
 
 from antlr4 import *
 
 from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
 from language_apps.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
-from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener
-
-import argparse
+from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener, ManipulateComments
+from language_apps.java9_v2.metrics import DesignMetrics, DesignMetrics2
 
 
 def main(args):
     # Step 1: Load input source into stream
     stream = FileStream(args.file, encoding='utf8')
     # input_stream = StdinStream()
-    print('Input stream:')
-    print(stream)
+    # print('Input stream:')
+    # print(stream)
 
     # Step 2: Create an instance of AssignmentStLexer
     lexer = Java9_v2Lexer(stream)
@@ -43,21 +44,32 @@ def main(args):
     token_stream = CommonTokenStream(lexer)
     # Step 4: Create an instance of the AssignmentStParser
     parser = Java9_v2Parser(token_stream)
-    parser.getTokenStream()
+    # parser.getTokenStream()
     # Step 5: Create parse tree
     parse_tree = parser.compilationUnit()
-    # Step 6: Create an instance of AssignmentStListener
-    my_listener = EncapsulateFiledRefactoringListener(common_token_stream=token_stream, field_identifier='f')
+    # Step 6: Create an instance of JavaListener based on the specific application, `--app`
+    if args.app == 1:
+        my_listener = EncapsulateFiledRefactoringListener(common_token_stream=token_stream, field_identifier='f')
+    elif args.app == 2:
+        my_listener = DesignMetrics()
+    elif args.app == 3:
+        my_listener = DesignMetrics2(class_name='A')
+    elif args.app == 4:
+        my_listener = ManipulateComments(common_token_stream=token_stream, name='Morteza')
+    else:
+        raise ValueError('Invalid input application code')
     walker = ParseTreeWalker()
     walker.walk(t=parse_tree, listener=my_listener)
 
-    print('Compiler result:')
-    print(my_listener.token_stream_rewriter.getDefaultText())
-
-    with open('A.refactored.java', mode='w', newline='') as f:
-        f.write(my_listener.token_stream_rewriter.getDefaultText())
-
-
+    print('Results:')
+    if args.app == 1 or args.app == 4:
+        print(my_listener.token_stream_rewriter.getDefaultText())
+        # with open('A.refactored.java', mode='w', newline='') as f:
+        #     f.write(my_listener.token_stream_rewriter.getDefaultText())
+    elif args.app == 2:
+        print(f'DSC={my_listener.get_design_size}')
+    elif args.app == 3:
+        print(f'number of private field in class A is {my_listener.get_number_of_private_attr}')
 
 
 if __name__ == '__main__':
@@ -65,5 +77,6 @@ if __name__ == '__main__':
     argparser.add_argument(
         '-n', '--file',
         help='Input source', default=r'A.java')
+    argparser.add_argument('--app', type=int, required=True, default=1)
     args = argparser.parse_args()
     main(args)
