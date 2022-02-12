@@ -12,6 +12,13 @@ Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 - Compiler generator:   ANTLR 4.x
 - Target language(s):   Python 3.8.x
 
+## Install pygraphviz
+To draw AST as a binary tree you need to install the pygraphviz
+1- download and install graphviz (for Windows/ Linux)
+2- add graphviz to system path
+3- install pygraphviz using the following command
+ python -m pip install --global-option=build_ext  --global-option="-IC:\Program Files\Graphviz\include" --global-option="-LC:\Program Files\Graphviz\lib" pygraphviz
+
 
 ## Changelog
 
@@ -31,7 +38,6 @@ Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 
 __version__ = '2.1.0'
 __author__ = 'Morteza'
-
 
 import queue
 import random
@@ -112,10 +118,10 @@ def draw(g: nx.DiGraph = None):
         return (None)
     """
     pos = nx.kamada_kawai_layout(G=g)
-    pos = graphviz_layout(G=g,
-                          prog='dot',
-                          # prog='circo',
-                          )
+    # pos = graphviz_layout(G=g,
+    #                       prog='dot',
+    #                       prog='circo',
+    # )
     # pos = nx.bipartite_layout(G=g, nodes=g.nodes)
     # pos = nx.spectral_layout(G=g)
     # pos = hierarchy_pos(G=g,)
