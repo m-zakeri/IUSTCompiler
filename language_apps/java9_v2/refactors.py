@@ -1,12 +1,15 @@
 """
-The scripts implements different refactoring operations
+The `refactors`script implements different refactoring operations for Java language
 
 
 """
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'Morteza'
 
+from typing import List
+
 from antlr4 import *
+from antlr4.Token import CommonToken
 from antlr4.TokenStreamRewriter import TokenStreamRewriter
 
 from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
@@ -17,9 +20,10 @@ from language_apps.java9_v2.gen.Java9_v2Visitor import Java9_v2Visitor
 
 class EncapsulateFiledRefactoringListener(Java9_v2Listener):
     """
-    To implement the encapsulate filed refactored
-    Encapsulate field: Make a public field private and provide accessors
+    This class implements the encapsulate-filed refactoring.
+    Encapsulate-field: Make a public field private and provide accessors.
     """
+
     def __init__(self, common_token_stream: CommonTokenStream = None,
                  field_identifier: str = None):
         """
@@ -81,3 +85,30 @@ class EncapsulateFiledRefactoringListener(Java9_v2Listener):
         self.token_stream_rewriter.replaceRange(from_idx=hidden[0].tokenIndex,
                                                 to_idx=hidden[-1].tokenIndex,
                                                 text='/*After refactoring (Refactored version)*/\n')
+
+
+class ManipulateComments(Java9_v2Listener):
+    """
+    Add the author name in the first of every comment in the program
+    """
+
+    def __init__(self, common_token_stream: CommonTokenStream = None, name: str = None):
+        self.token_stream = common_token_stream
+        self.name = name
+        # Move all the tokens in the source language_apps in a buffer, token_stream_rewriter.
+        if common_token_stream is not None:
+            self.token_stream_rewriter = TokenStreamRewriter(common_token_stream)
+        else:
+            raise TypeError('common_token_stream is None')
+
+    def enterCompilationUnit1(self, ctx: Java9_v2Parser.CompilationUnit1Context):
+        hidden: List[CommonToken] = self.token_stream.getHiddenTokensToLeft(
+            ctx.start.tokenIndex,
+            channel=-1
+        )
+        # print(hidden)
+        # print(hidden[-1].start)
+        self.token_stream_rewriter.replaceIndex(
+            index=hidden[0].tokenIndex,
+            text=f'{hidden[0].text[:2]}{self.name} {hidden[0].text[2:]}'
+        )
