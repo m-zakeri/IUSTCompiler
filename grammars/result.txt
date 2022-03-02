@@ -1,0 +1,177 @@
+_t1 = Call QS Start
+PopParams 
+_t2 = Call this Init
+PopParams 
+aux01 = _t2
+_t3 = Call this Print
+PopParams 
+aux01 = _t3
+_t4 = 9999 
+_t5 = size-1 
+aux01 = _t5
+_t6 = Call this Sort
+PopParams 
+aux01 = _t6
+_t7 = Call this Print
+PopParams 
+aux01 = _t7
+
+ PushParam 0 
+ ret 
+_t8 = 0 
+t = _t8
+If left<right GoTo _L16
+_t39 = 0 
+nt = _t39
+
+Goto _L17
+_L16 _t9 = number[right]
+ 
+v = _t9
+_t10 = left-1 
+i = _t10
+_t11 = right 
+j = _t11
+_t12 = true 
+cont01 = _t12
+_L13: if cont01 Goto _L14
+Goto _L15
+_L14: _t13 = true 
+cont02 = _t13
+_L3: if cont02 Goto _L4
+Goto _L5
+_L4: _t14 = i+1 
+i = _t14
+_t15 = number[i]
+ 
+aux03 = _t15
+If ~aux03<v GoTo _L1
+_t17 = true 
+cont02 = _t17
+
+Goto _L2
+_L1 _t16 = false 
+cont02 = _t16
+
+_L2:
+
+Goto _L3
+_L5:
+_t18 = true 
+cont02 = _t18
+_L8: if cont02 Goto _L9
+Goto _L10
+_L9: _t19 = j-1 
+j = _t19
+_t20 = number[j]
+ 
+aux03 = _t20
+If ~v<aux03 GoTo _L6
+_t22 = true 
+cont02 = _t22
+
+Goto _L7
+_L6 _t21 = false 
+cont02 = _t21
+
+_L7:
+
+Goto _L8
+_L10:
+_t23 = number[i]
+ 
+t = _t23
+_t24 = i
+_t25 = number[j]
+ 
+number [_t24] = _t25 
+_t26 = j
+_t27 = t 
+number [_t26] = _t27 
+_t28 = i+1 
+aux03 = _t28
+If j<i+1 GoTo _L11
+_t30 = true 
+cont01 = _t30
+
+Goto _L12
+_L11 _t29 = false 
+cont01 = _t29
+
+_L12:
+
+Goto _L13
+_L15:
+_t31 = j
+_t32 = number[i]
+ 
+number [_t31] = _t32 
+_t33 = i
+_t34 = number[right]
+ 
+number [_t33] = _t34 
+_t35 = right
+_t36 = t 
+number [_t35] = _t36 
+_t37 = Call this Sort
+PopParams 
+nt = _t37
+_t38 = Call this Sort
+PopParams 
+nt = _t38
+
+_L17:
+
+ PushParam 0 
+ ret 
+_t40 = 0 
+j = _t40
+_L18: if j<size Goto _L19
+Goto _L20
+_L19: _t41 = number[j]
+ 
+_t42 = j+1 
+j = _t42
+
+Goto _L18
+_L20:
+
+ PushParam 0 
+ ret 
+_t43 = sz 
+size = _t43
+_t44 = sz 
+number = _t44
+_t45 = 0
+_t46 = 20 
+number [_t45] = _t46 
+_t47 = 1
+_t48 = 7 
+number [_t47] = _t48 
+_t49 = 2
+_t50 = 12 
+number [_t49] = _t50 
+_t51 = 3
+_t52 = 18 
+number [_t51] = _t52 
+_t53 = 4
+_t54 = 2 
+number [_t53] = _t54 
+_t55 = 5
+_t56 = 11 
+number [_t55] = _t56 
+_t57 = 6
+_t58 = 6 
+number [_t57] = _t58 
+_t59 = 7
+_t60 = 9 
+number [_t59] = _t60 
+_t61 = 8
+_t62 = 19 
+number [_t61] = _t62 
+_t63 = 9
+_t64 = 5 
+number [_t63] = _t64 
+
+ PushParam 0 
+ ret 
