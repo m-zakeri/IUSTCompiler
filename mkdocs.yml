@@ -59,10 +59,14 @@ nav:
         - Writing assignments: assignments/writing_assignments.md
         - Programming assignments: assignments/programming_assignment.md
     - Projects:
-        - Source code refactoring: projects/core_refactorings_development.md
+        - Index: projects/index.md
+        - Symbol table: projects/core_symbol_table_development.md
+        - Software metrics: projects/core_software_metrics_development.md
         - Code smell detection: projects/core_code_smell_development.md
-        - Clean code: projects/core_clean_code_development.md
         - Refactoring to patterns: projects/core_refactoring_to_design_patterns_development.md
+        - Source code refactoring: projects/core_refactorings_development.md
+        - Clean code: projects/core_clean_code_development.md
         - Source code instrumentation: projects/core_source_code_instrumentation_development.md
+        - MiniJava compiler development: projects/mini_java_compiler_development.md
 
     - Issue Tracker: 'https://github.com/m-zakeri/IUSTCompiler/issues'

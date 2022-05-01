@@ -1,3 +1,3 @@
 # Core source code instrumentation development
 
-To be announced.
+Visit the [CodA project documentation](https://m-zakeri.github.io/CodA/).
