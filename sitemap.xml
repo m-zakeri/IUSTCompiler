@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://m-zakeri.github.io/projects/</loc>
+         <lastmod>2022-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://m-zakeri.github.io/projects/core_clean_code_development/</loc>
          <lastmod>2022-05-01</lastmod>
          <changefreq>daily</changefreq>
@@ -81,7 +86,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://m-zakeri.github.io/projects/core_software_metrics_development/</loc>
+         <lastmod>2022-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://m-zakeri.github.io/projects/core_source_code_instrumentation_development/</loc>
+         <lastmod>2022-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://m-zakeri.github.io/projects/core_symbol_table_development/</loc>
+         <lastmod>2022-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://m-zakeri.github.io/projects/mini_java_compiler_development/</loc>
          <lastmod>2022-05-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
