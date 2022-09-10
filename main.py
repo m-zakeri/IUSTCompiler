@@ -5,6 +5,7 @@ This module do not contains any code.
 Please refer to `language_apps` package to find classroom code snippets.
 
 """
+import re
 
 
 class Main():
@@ -20,6 +21,22 @@ class Main():
         :return:
         """
         print(f'Welcome to our dragon course {name}.')
+
+    def tokenize_name(self, method_name):
+        method_name = 'getSdfsdfsdtudentNsdfdsfumber'
+
+        identifier_parts = list()
+        # First: split based-on CamelCase
+        matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', method_name)
+        camel_cases = [m.group(0) for m in matches]
+
+        # Second: split based-on underscore character '_'
+        for case in camel_cases:
+            case = case.lower()
+            case = case.split('_')
+            identifier_parts.extend(case)
+
+        print(f'Method name tokens {camel_cases}.')
 
 
 # Main driver
