@@ -20,7 +20,9 @@ grammer AssignmentStatement1 (version 1)
 
 grammar AssignmentStatement1;
 
-start: prog EOF ;
+start: prog EOF;
+
+
 
 prog: prog assign | assign;
 
@@ -48,7 +50,7 @@ number  : INT | FLOAT;
 
 
 /* Lexical Rules */
-Id      : LETTER(LETTER|DIGIT)*;
+Id      : LETTER(LETTER|DIGIT)*;   /*    */
 
 INT     : DIGIT+;
 
