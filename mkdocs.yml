@@ -3,7 +3,7 @@ site_url: https://m-zakeri.github.io
 repo_url: https://github.com/m-zakeri/IUSTCompiler
 site_description: Compiler (dragon) course materials and codes
 site_author: Morteza Zakeri-Nasrabadi
-copyright: © 2020-2021 Reverse engineering laboratory
+copyright: © 2020-2022 Reverse engineering laboratory
 
 theme:
   name: material
@@ -43,6 +43,7 @@ plugins:
 
 nav:
     - Home: index.md
+    - Announcements: announcements.md
     - Lectures:
         - Lexical analysis: lectures/lexical_analysis.md
     - ANTLR tutorials:
