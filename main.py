@@ -1,14 +1,13 @@
 """
 The main module of IUST Compiler project.
 
-This module do not contains any code.
-Please refer to `language_apps` package to find classroom code snippets.
+Refer to `language_apps` package to find classroom code snippets.
 
 """
 import re
 
 
-class Main():
+class Main:
     """Welcome to Compiler course
     This file contains the main script for all code snippets
     """
