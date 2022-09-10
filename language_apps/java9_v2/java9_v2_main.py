@@ -24,10 +24,11 @@ __author__ = 'Morteza'
 import argparse
 
 from antlr4 import *
+from antlr4.TokenStreamRewriter import TokenStreamRewriter
 
 from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
 from language_apps.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
-from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener, ManipulateComments
+from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener, ManipulateComments, ManipulateComments2
 from language_apps.java9_v2.metrics import DesignMetrics, DesignMetrics2
 
 
@@ -42,11 +43,25 @@ def main(args):
     lexer = Java9_v2Lexer(stream)
     # Step 3: Convert the input source into a list of tokens
     token_stream = CommonTokenStream(lexer)
+
+
+
     # Step 4: Create an instance of the AssignmentStParser
     parser = Java9_v2Parser(token_stream)
+
     # parser.getTokenStream()
     # Step 5: Create parse tree
     parse_tree = parser.compilationUnit()
+
+    token_stream_rewriter = TokenStreamRewriter(token_stream)
+    for token in token_stream.tokens:
+        if token.type in [117, 118]:
+            token_stream_rewriter.replaceIndex(
+                index=token.tokenIndex,
+                text=f'{token.text[:2]} @author: Morteza {token.text[2:]}'
+            )
+    print(token_stream_rewriter.getDefaultText())
+
     # Step 6: Create an instance of JavaListener based on the specific application, `--app`
     if args.app == 1:
         my_listener = EncapsulateFiledRefactoringListener(common_token_stream=token_stream, field_identifier='f')
@@ -55,7 +70,7 @@ def main(args):
     elif args.app == 3:
         my_listener = DesignMetrics2(class_name='A')
     elif args.app == 4:
-        my_listener = ManipulateComments(common_token_stream=token_stream, name='Morteza')
+        my_listener = ManipulateComments2(common_token_stream=token_stream, name='Morteza')
     else:
         raise ValueError('Invalid input application code')
     walker = ParseTreeWalker()

@@ -110,5 +110,57 @@ class ManipulateComments(Java9_v2Listener):
         # print(hidden[-1].start)
         self.token_stream_rewriter.replaceIndex(
             index=hidden[0].tokenIndex,
-            text=f'{hidden[0].text[:2]}{self.name} {hidden[0].text[2:]}'
+            text=f'{hidden[0].text[:2]} {self.name} {hidden[0].text[2:]}'
         )
+
+
+class ManipulateComments2(Java9_v2Listener):
+    """
+    Add the author name in the first of every comment in the program
+    """
+
+    def __init__(self, common_token_stream: CommonTokenStream = None, name: str = None):
+        self.token_stream = common_token_stream
+        self.name = name
+        # Move all the tokens in the source language_apps in a buffer, token_stream_rewriter.
+        if common_token_stream is not None:
+            self.token_stream_rewriter = TokenStreamRewriter(common_token_stream)
+        else:
+            raise TypeError('common_token_stream is None')
+
+    def enterEveryRule(self, ctx: ParserRuleContext):
+        hidden_left: List[CommonToken] = self.token_stream.getHiddenTokensToLeft(
+            ctx.start.tokenIndex,
+            channel=-1
+        )
+
+        hidden_right: List[CommonToken] = self.token_stream.getHiddenTokensToRight(
+            ctx.start.tokenIndex,
+            channel=-1
+        )
+
+        if hidden_left is None and hidden_right is None:
+            return
+        elif hidden_left is None:
+            hidden = hidden_right
+        elif hidden_right is None:
+            hidden = hidden_left
+        else:
+            hidden = hidden_left + hidden_right
+
+        index = 0
+        index_in_list = 0
+        is_there_a_comment = False
+        for i, token in enumerate(hidden):
+            if token.type in [117, 118]:
+                index = token.tokenIndex
+                index_in_list = i
+                is_there_a_comment = True
+                break
+        if is_there_a_comment:
+            self.token_stream_rewriter.replaceIndex(
+                index=index,
+                text=f'{hidden[index_in_list].text[:2]} @author: {self.name} {hidden[index_in_list].text[2:]}'
+            )
+
+        # self.token_stream_rewriter.getDefaultText()
