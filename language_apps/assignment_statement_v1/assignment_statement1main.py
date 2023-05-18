@@ -28,6 +28,7 @@ __version__ = '0.1.0'
 __author__ = 'Morteza'
 
 from antlr4 import *
+from antlr4.error import ErrorStrategy
 
 from language_apps.assignment_statement_v1.gen.AssignmentStatement1Lexer import AssignmentStatement1Lexer
 from language_apps.assignment_statement_v1.gen.AssignmentStatement1Parser import AssignmentStatement1Parser
@@ -62,6 +63,11 @@ def main(args):
     token_stream = CommonTokenStream(lexer)
     # Step 4: Create an instance of the AssignmentStParser
     parser = AssignmentStatement1Parser(token_stream)
+    parser._interp.predictionMode = PredictionMode.SLL
+
+    #x = DescriptiveErrorListener()
+    #parser.addErrorListener()
+
     # Step 5: Create parse tree
     parse_tree = parser.start()
 
@@ -81,7 +87,7 @@ def main(args):
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
-        '-n', '--file',
+        '-f', '--file',
         help='Input source', default=r'input.txt')
-    args = argparser.parse_args()
-    main(args)
+    args_ = argparser.parse_args()
+    main(args_)

@@ -4,7 +4,7 @@ ANTLR 4.x listener and visitor implementation for intermediate code generation (
 @author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 @date: 20201017
 
-- Compiler generator:   ANTRL4.x
+- Compiler generator:   ANTLR4.x
 - Target language(s):     Python3.x,
 
 

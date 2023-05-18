@@ -91,5 +91,5 @@ if __name__ == '__main__':
     argparser.add_argument(
         '-n', '--file',
         help='Input source', default=r'A.java')
-    args = argparser.parse_args()
-    main(args)
+    args_ = argparser.parse_args()
+    main(args_)
