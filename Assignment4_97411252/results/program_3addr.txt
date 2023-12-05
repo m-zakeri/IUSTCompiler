@@ -1,0 +1,150 @@
+main:
+BeginFunc
+Call QS,0
+Pop T1
+Push 10
+Call T1.Start,1
+Pop T1
+Push T1
+Call System.out.println,1
+EndFunc
+
+Start:
+BeginFunc
+Push sz
+Call this.Init,1
+Pop T1
+aux01 = T1
+Call this.Print,0
+Pop T2
+aux01 = T2
+Push 9999
+Call System.out.println,1
+T3 = size - 1
+aux01 = T3
+Push 0
+Push aux01
+Call this.Sort,2
+Pop T4
+aux01 = T4
+Call this.Print,0
+Pop T5
+aux01 = T5
+EndFunc
+
+Sort:
+BeginFunc
+t = 0
+T1 = left < right
+if(T1) goto <L13>
+nt = 0
+goto <L14>
+<L13>:
+T2 = number[right]
+v = T2
+T3 = left - 1
+i = T3
+j = right
+cont01 = true
+goto <L11>
+<L12>:
+cont02 = true
+goto <L3>
+<L4>:
+T4 = i + 1
+i = T4
+T5 = number[i]
+aux03 = T5
+T6 = aux03 < v
+T6 = !T6
+if(T6) goto <L1>
+cont02 = true
+goto <L2>
+<L1>:
+cont02 = false
+<L2>:
+<L3>:
+if(cont02) goto <L4>
+cont02 = true
+goto <L7>
+<L8>:
+T7 = j - 1
+j = T7
+T8 = number[j]
+aux03 = T8
+T9 = v < aux03
+T9 = !T9
+if(T9) goto <L5>
+cont02 = true
+goto <L6>
+<L5>:
+cont02 = false
+<L6>:
+<L7>:
+if(cont02) goto <L8>
+T10 = number[i]
+t = T10
+T11 = number[j]
+number[i] = T11
+number[j] = t
+T12 = i + 1
+T12 = j < T12
+if(T12) goto <L9>
+cont01 = true
+goto <L10>
+<L9>:
+cont01 = false
+<L10>:
+<L11>:
+if(cont01) goto <L12>
+T13 = number[i]
+number[j] = T13
+T14 = number[right]
+number[i] = T14
+number[right] = t
+T15 = i - 1
+Push left
+Push T15
+Call this.Sort,2
+Pop T16
+nt = T16
+T17 = i + 1
+Push T17
+Push right
+Call this.Sort,2
+Pop T18
+nt = T18
+<L14>:
+EndFunc
+
+Print:
+BeginFunc
+j = 0
+goto <L15>
+<L16>:
+T2 = number[j]
+Push T2
+Call System.out.println,1
+T3 = j + 1
+j = T3
+<L15>:
+T1 = j < size
+if(T1) goto <L16>
+EndFunc
+
+Init:
+BeginFunc
+size = sz
+T1 = new int[sz]
+number = T1
+number[0] = 20
+number[1] = 7
+number[2] = 12
+number[3] = 18
+number[4] = 2
+number[5] = 11
+number[6] = 6
+number[7] = 9
+number[8] = 19
+number[9] = 5
+EndFunc

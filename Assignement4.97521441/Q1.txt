@@ -1,0 +1,12 @@
+to determine wether a grammar is LL(k) first we determine it is LL(1) or not:
+1) not having left recursion => in exp there is left recursion, because at first view it's not clear to choose which of
+the exps.
+2) there is no intersection between first sets of the rules that have "|" => in exp the first set would be "true, false,
+Integer, New, !, (" that all of the rules start with exp have 
+we have no lambda expression.
+so it is not LL(1).
+
+
+To prove that it is LL(2) we should see two inputs at one glance, there can not be ambiguity.
+so it is LL(2).
+for k>2 we have something like LL(2) 
