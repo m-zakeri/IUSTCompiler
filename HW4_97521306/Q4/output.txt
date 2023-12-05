@@ -1,0 +1,328 @@
+Result:
+
+println
+Start
+10
+=
+Init
+sz
+=
+Print
+println
+9999
+=
+-
+size    ───     1
+=
+Sort
+0       ───     aux01
+=
+Print
+=
+0
+=
+=
+-
+left    ───     1
+=
+right
+=
+true
+=
+true
+=
++
+i       ───     1
+=
+=
+false
+=
+true
+if
+!       ───     =       ───     else
+<
+false
+=
+aux03   ───     v
+true
+statements
+=       ───     =       ───     if
++
+!       ───     =       ───     else
+i       ───     1
+<
+false
+=
+aux03   ───     v
+true
+while
+cont02  ───     statements
+=       ───     =       ───     if
++
+!       ───     =       ───     else
+i       ───     1
+<
+false
+=
+aux03   ───     v
+true
+=
+true
+=
+-
+j       ───     1
+=
+=
+false
+=
+true
+if
+!       ───     =       ───     else
+<
+false
+=
+v       ───     aux03
+true
+statements
+=       ───     =       ───     if
+-
+!       ───     =       ───     else
+j       ───     1
+<
+false
+=
+v       ───     aux03
+true
+while
+cont02  ───     statements
+=       ───     =       ───     if
+-
+!       ───     =       ───     else
+j       ───     1
+<
+false
+=
+v       ───     aux03
+true
+=
+=
+=
+t
+=
+false
+=
+true
+if
+<       ───     =       ───     else
+j       ───     +
+false
+=
+i       ───     1
+true
+statements
+=       ───     while   ───     =       ───     while   ───     =       ───     =       ───     =       ───     if
+true
+cont02  ───     statements
+true
+cont02  ───     statements
+t
+<       ───     =       ───     else
+=       ───     =       ───     if
+=       ───     =       ───     if
+j       ───     +
+false
+=
++
+!       ───     =       ───     else
+-
+!       ───     =       ───     else
+i       ───     1
+true
+i       ───     1
+<
+false
+=
+j       ───     1
+<
+false
+=
+aux03   ───     v
+true
+v       ───     aux03
+true
+while
+cont01  ───     statements
+=       ───     while   ───     =       ───     while   ───     =       ───     =       ───     =       ───     if
+true
+cont02  ───     statements
+true
+cont02  ───     statements
+t
+<       ───     =       ───     else
+=       ───     =       ───     if
+=       ───     =       ───     if
+j       ───     +
+false
+=
++
+!       ───     =       ───     else
+-
+!       ───     =       ───     else
+i       ───     1
+true
+i       ───     1
+<
+false
+=
+j       ───     1
+<
+false
+=
+aux03   ───     v
+true
+v       ───     aux03
+true
+=
+=
+=
+t
+=
+Sort
+left    ───     -
+i       ───     1
+=
+Sort
++       ───     right
+i       ───     1
+statements
+=       ───     =       ───     =       ───     =       ───     while   ───     =       ───     =       ───     =       ───     =       ───     =
+-
+right
+true
+cont01  ───     statements
+t
+Sort
+Sort
+left    ───     1
+=       ───     while   ───     =       ───     while   ───     =       ───     =       ───     =       ───     if
+left    ───     -
++       ───     right
+true
+cont02  ───     statements
+true
+cont02  ───     statements
+t
+<       ───     =       ───     else
+i       ───     1
+i       ───     1
+=       ───     =       ───     if
+=       ───     =       ───     if
+j       ───     +
+false
+=
++
+!       ───     =       ───     else
+-
+!       ───     =       ───     else
+i       ───     1
+true
+i       ───     1
+<
+false
+=
+j       ───     1
+<
+false
+=
+aux03   ───     v
+true
+v       ───     aux03
+true
+=
+0
+if
+<       ───     statements      ───     else
+left    ───     right
+=       ───     =       ───     =       ───     =       ───     while   ───     =       ───     =       ───     =       ───     =       ───     =
+=
+-
+right
+true
+cont01  ───     statements
+t
+Sort
+Sort
+0
+left    ───     1
+=       ───     while   ───     =       ───     while   ───     =       ───     =       ───     =       ───     if
+left    ───     -
++       ───     right
+true
+cont02  ───     statements
+true
+cont02  ───     statements
+t
+<       ───     =       ───     else
+i       ───     1
+i       ───     1
+=       ───     =       ───     if
+=       ───     =       ───     if
+j       ───     +
+false
+=
++
+!       ───     =       ───     else
+-
+!       ───     =       ───     else
+i       ───     1
+true
+i       ───     1
+<
+false
+=
+j       ───     1
+<
+false
+=
+aux03   ───     v
+true
+v       ───     aux03
+true
+=
+0
+println
+=
++
+j       ───     1
+statements
+println ───     =
++
+j       ───     1
+while
+<       ───     statements
+j       ───     size
+println ───     =
++
+j       ───     1
+=
+sz
+=
+=
+20
+=
+7
+=
+12
+=
+18
+=
+2
+=
+11
+=
+6
+=
+9
+=
+19
+=
