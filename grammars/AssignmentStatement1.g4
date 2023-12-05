@@ -4,7 +4,7 @@ grammer AssignmentStatement1 (version 1)
 @author: Morteza Zakeri, (http://webpages.iust.ac.ir/morteza_zakeri/)
 @date: 20201025
 
-- Compiler generator:   ANTRL4.x
+- Compiler generator:   ANTLR4.x
 - Target language(s):     Python3.x,
 
 
