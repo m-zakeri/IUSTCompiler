@@ -1,0 +1,1 @@
+This grammar is not a LL(K) grammar for the reason of having Left Recursion!

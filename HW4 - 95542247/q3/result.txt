@@ -1,0 +1,216 @@
+Result:
+T1 = push 10
+call QSStart
+pop params
+
+
+print(T1)
+T2 = push sz
+call thisInit
+pop params
+
+
+aux01 = T2
+T3 = push 
+call thisPrint
+pop params
+
+
+aux01 = T3
+T4 = 9999
+print(T4)
+T5 = size-1
+
+aux01 = T5
+T6 = push 0
+push aux01
+call thisSort
+pop params
+
+
+aux01 = T6
+T7 = push 
+call thisPrint
+pop params
+
+
+aux01 = T7
+
+push 0
+RET
+T8 = 0
+t = T8
+if left<right
+goto L16
+T38 = 0
+nt = T38
+
+goto L17
+L16T9 = number[right]
+
+v = T9
+T10 = left-1
+
+i = T10
+T11 = right
+j = T11
+T12 = true
+cont01 = T12
+L13 : if cont01 goto L14
+goto L15
+L14:T13 = true
+cont02 = T13
+L3 : if cont02 goto L4
+goto L5
+L4:T14 = i+1
+
+i = T14
+T15 = number[i]
+
+aux03 = T15
+if not aux03<v
+goto L1
+T17 = true
+cont02 = T17
+
+goto L2
+L1T16 = false
+cont02 = T16
+
+L2: 
+
+goto L3
+L5: 
+T18 = true
+cont02 = T18
+L8 : if cont02 goto L9
+goto L10
+L9:T19 = j-1
+
+j = T19
+T20 = number[j]
+
+aux03 = T20
+if not v<aux03
+goto L6
+T22 = true
+cont02 = T22
+
+goto L7
+L6T21 = false
+cont02 = T21
+
+L7: 
+
+goto L8
+L10: 
+T23 = number[i]
+
+t = T23
+T24 = i
+T25 = i
+number[T24] = T25
+T26 = j
+T27 = j
+number[T26] = T27
+if j<i+1
+
+goto L11
+T29 = true
+cont01 = T29
+
+goto L12
+L11T28 = false
+cont01 = T28
+
+L12: 
+
+goto L13
+L15: 
+T30 = j
+T31 = j
+number[T30] = T31
+T32 = i
+T33 = i
+number[T32] = T33
+T34 = right
+T35 = right
+number[T34] = T35
+T36 = push left
+push i-1
+
+call thisSort
+pop params
+
+
+nt = T36
+T37 = push i+1
+
+push right
+call thisSort
+pop params
+
+
+nt = T37
+
+L17: 
+
+push 0
+RET
+T39 = 0
+j = T39
+L18 : if j<size
+ goto L19
+goto L20
+L19:T40 = number[j]
+
+print(T40)
+T41 = j+1
+
+j = T41
+
+goto L18
+L20: 
+
+push 0
+RET
+T42 = sz
+size = T42
+T43 = sz
+number = T43
+T44 = 0
+T45 = 0
+number[T44] = T45
+T46 = 1
+T47 = 1
+number[T46] = T47
+T48 = 2
+T49 = 2
+number[T48] = T49
+T50 = 3
+T51 = 3
+number[T50] = T51
+T52 = 4
+T53 = 4
+number[T52] = T53
+T54 = 5
+T55 = 5
+number[T54] = T55
+T56 = 6
+T57 = 6
+number[T56] = T57
+T58 = 7
+T59 = 7
+number[T58] = T59
+T60 = 8
+T61 = 8
+number[T60] = T61
+T62 = 9
+T63 = 9
+number[T62] = T63
+
+push 0
+RET
+
+
+Process finished with exit code 0
