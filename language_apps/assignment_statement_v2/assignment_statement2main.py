@@ -280,18 +280,18 @@ def main(args):
     parse_tree = parser.start()
 
     # Step 6: Create an instance of AssignmentStListener
-    # code_generator_listener = ThreeAddressCodeGeneratorListener()
+    code_generator_listener = ThreeAddressCodeGeneratorListener()
     # code_generator_listener = ThreeAddressCodeGenerator2Listener()
-    ast_generator = ASTListener()
+    # ast_generator = ASTListener()
 
     # Step 7(a): Walk parse tree with a customized listener (Automatically)
     walker = ParseTreeWalker()
-    # walker.walk(t=parse_tree, listener=code_generator_listener)  # or
-    walker.walk(t=parse_tree, listener=ast_generator)
+    walker.walk(t=parse_tree, listener=code_generator_listener)  # or
+    # walker.walk(t=parse_tree, listener=ast_generator)
 
     # print('\nG=', ast_generator.g.edges)
     # draw(g=ast_generator.g)
-    draw_graphviz(g=ast_generator.g)
+    # draw_graphviz(g=ast_generator.g)
 
     # Step 7(b): Walk parse tree with a customize visitor (Manually)
     # code_generator_vistor = ThreeAddressCodeGeneratorVisitor()

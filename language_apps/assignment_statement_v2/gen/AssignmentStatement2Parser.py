@@ -1,4 +1,4 @@
-# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars\AssignmentStatement2.g4 by ANTLR 4.8
+# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars/AssignmentStatement2.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -8,36 +8,33 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
-
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
-        buf.write("N\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\7\3\31\n\3\f\3\16")
-        buf.write("\3\34\13\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\7\5/\n\5\f\5\16\5\62\13\5\3\6")
-        buf.write("\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\7\6=\n\6\f\6\16\6@\13")
-        buf.write("\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7H\n\7\3\b\3\b\5\bL\n\b\3")
-        buf.write("\b\2\5\4\b\n\t\2\4\6\b\n\f\16\2\3\3\3\17\17\2O\2\20\3")
-        buf.write("\2\2\2\4\23\3\2\2\2\6\35\3\2\2\2\b\"\3\2\2\2\n\63\3\2")
-        buf.write("\2\2\fG\3\2\2\2\16K\3\2\2\2\20\21\5\4\3\2\21\22\7\2\2")
-        buf.write("\3\22\3\3\2\2\2\23\24\b\3\1\2\24\25\5\6\4\2\25\32\3\2")
-        buf.write("\2\2\26\27\f\4\2\2\27\31\5\6\4\2\30\26\3\2\2\2\31\34\3")
-        buf.write("\2\2\2\32\30\3\2\2\2\32\33\3\2\2\2\33\5\3\2\2\2\34\32")
-        buf.write("\3\2\2\2\35\36\7\r\2\2\36\37\7\3\2\2\37 \5\b\5\2 !\t\2")
-        buf.write("\2\2!\7\3\2\2\2\"#\b\5\1\2#$\5\n\6\2$\60\3\2\2\2%&\f\6")
-        buf.write("\2\2&\'\7\4\2\2\'/\5\n\6\2()\f\5\2\2)*\7\5\2\2*/\5\n\6")
-        buf.write("\2+,\f\4\2\2,-\7\20\2\2-/\5\n\6\2.%\3\2\2\2.(\3\2\2\2")
-        buf.write(".+\3\2\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\t")
-        buf.write("\3\2\2\2\62\60\3\2\2\2\63\64\b\6\1\2\64\65\5\f\7\2\65")
-        buf.write(">\3\2\2\2\66\67\f\5\2\2\678\7\6\2\28=\5\f\7\29:\f\4\2")
-        buf.write("\2:;\7\7\2\2;=\5\f\7\2<\66\3\2\2\2<9\3\2\2\2=@\3\2\2\2")
-        buf.write("><\3\2\2\2>?\3\2\2\2?\13\3\2\2\2@>\3\2\2\2AB\7\b\2\2B")
-        buf.write("C\5\b\5\2CD\7\t\2\2DH\3\2\2\2EH\7\r\2\2FH\5\16\b\2GA\3")
-        buf.write("\2\2\2GE\3\2\2\2GF\3\2\2\2H\r\3\2\2\2IL\7\13\2\2JL\7\n")
-        buf.write("\2\2KI\3\2\2\2KJ\3\2\2\2L\17\3\2\2\2\t\32.\60<>GK")
-        return buf.getvalue()
-
+    return [
+        4,1,14,76,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,5,1,23,8,1,10,1,12,1,26,9,1,1,
+        2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,
+        3,5,3,45,8,3,10,3,12,3,48,9,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,
+        4,5,4,59,8,4,10,4,12,4,62,9,4,1,5,1,5,1,5,1,5,1,5,1,5,3,5,70,8,5,
+        1,6,1,6,3,6,74,8,6,1,6,0,3,2,6,8,7,0,2,4,6,8,10,12,0,1,1,1,13,13,
+        77,0,14,1,0,0,0,2,17,1,0,0,0,4,27,1,0,0,0,6,32,1,0,0,0,8,49,1,0,
+        0,0,10,69,1,0,0,0,12,73,1,0,0,0,14,15,3,2,1,0,15,16,5,0,0,1,16,1,
+        1,0,0,0,17,18,6,1,-1,0,18,19,3,4,2,0,19,24,1,0,0,0,20,21,10,2,0,
+        0,21,23,3,4,2,0,22,20,1,0,0,0,23,26,1,0,0,0,24,22,1,0,0,0,24,25,
+        1,0,0,0,25,3,1,0,0,0,26,24,1,0,0,0,27,28,5,11,0,0,28,29,5,1,0,0,
+        29,30,3,6,3,0,30,31,7,0,0,0,31,5,1,0,0,0,32,33,6,3,-1,0,33,34,3,
+        8,4,0,34,46,1,0,0,0,35,36,10,4,0,0,36,37,5,2,0,0,37,45,3,8,4,0,38,
+        39,10,3,0,0,39,40,5,3,0,0,40,45,3,8,4,0,41,42,10,2,0,0,42,43,5,14,
+        0,0,43,45,3,8,4,0,44,35,1,0,0,0,44,38,1,0,0,0,44,41,1,0,0,0,45,48,
+        1,0,0,0,46,44,1,0,0,0,46,47,1,0,0,0,47,7,1,0,0,0,48,46,1,0,0,0,49,
+        50,6,4,-1,0,50,51,3,10,5,0,51,60,1,0,0,0,52,53,10,3,0,0,53,54,5,
+        4,0,0,54,59,3,10,5,0,55,56,10,2,0,0,56,57,5,5,0,0,57,59,3,10,5,0,
+        58,52,1,0,0,0,58,55,1,0,0,0,59,62,1,0,0,0,60,58,1,0,0,0,60,61,1,
+        0,0,0,61,9,1,0,0,0,62,60,1,0,0,0,63,64,5,6,0,0,64,65,3,6,3,0,65,
+        66,5,7,0,0,66,70,1,0,0,0,67,70,5,11,0,0,68,70,3,12,6,0,69,63,1,0,
+        0,0,69,67,1,0,0,0,69,68,1,0,0,0,70,11,1,0,0,0,71,74,5,9,0,0,72,74,
+        5,8,0,0,73,71,1,0,0,0,73,72,1,0,0,0,74,13,1,0,0,0,7,24,44,46,58,
+        60,69,73
+    ]
 
 class AssignmentStatement2Parser ( Parser ):
 
@@ -51,7 +48,7 @@ class AssignmentStatement2Parser ( Parser ):
 
     literalNames = [ "<INVALID>", "':='", "'+'", "'-'", "'*'", "'/'", "'('", 
                      "')'", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'\n'" ]
+                     "<INVALID>", "'\\n'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -86,7 +83,7 @@ class AssignmentStatement2Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.8")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -94,6 +91,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class StartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -148,6 +146,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class ProgContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -224,6 +223,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class AssignContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -279,7 +279,7 @@ class AssignmentStatement2Parser ( Parser ):
             self.expr(0)
             self.state = 30
             _la = self._input.LA(1)
-            if not(_la==AssignmentStatement2Parser.EOF or _la==AssignmentStatement2Parser.NEWLINE):
+            if not(_la==-1 or _la==13):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -294,6 +294,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -505,6 +506,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class TermContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -673,6 +675,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class FactorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -775,7 +778,7 @@ class AssignmentStatement2Parser ( Parser ):
             self.state = 69
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [AssignmentStatement2Parser.T__5]:
+            if token in [6]:
                 localctx = AssignmentStatement2Parser.Fact_exprContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 63
@@ -785,13 +788,13 @@ class AssignmentStatement2Parser ( Parser ):
                 self.state = 65
                 self.match(AssignmentStatement2Parser.T__6)
                 pass
-            elif token in [AssignmentStatement2Parser.ID]:
+            elif token in [11]:
                 localctx = AssignmentStatement2Parser.Fact_idContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 67
                 self.match(AssignmentStatement2Parser.ID)
                 pass
-            elif token in [AssignmentStatement2Parser.INT, AssignmentStatement2Parser.FLOAT]:
+            elif token in [8, 9]:
                 localctx = AssignmentStatement2Parser.Fact_numberContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 68
@@ -810,6 +813,7 @@ class AssignmentStatement2Parser ( Parser ):
 
 
     class NumberContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -886,13 +890,13 @@ class AssignmentStatement2Parser ( Parser ):
             self.state = 73
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [AssignmentStatement2Parser.FLOAT]:
+            if token in [9]:
                 localctx = AssignmentStatement2Parser.Number_floatContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 71
                 self.match(AssignmentStatement2Parser.FLOAT)
                 pass
-            elif token in [AssignmentStatement2Parser.INT]:
+            elif token in [8]:
                 localctx = AssignmentStatement2Parser.Number_intContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 72

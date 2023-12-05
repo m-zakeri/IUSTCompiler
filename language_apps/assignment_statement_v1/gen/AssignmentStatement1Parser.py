@@ -1,4 +1,4 @@
-# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars\AssignmentStatement1.g4 by ANTLR 4.8
+# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars/AssignmentStatement1.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -8,35 +8,31 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
-
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
-        buf.write("J\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\7\3\31\n\3\f\3\16")
-        buf.write("\3\34\13\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\7\5,\n\5\f\5\16\5/\13\5\3\6\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\3\6\3\6\3\6\7\6:\n\6\f\6\16\6=\13\6\3\7\3\7\3\7")
-        buf.write("\3\7\3\7\3\7\3\7\5\7F\n\7\3\b\3\b\3\b\2\5\4\b\n\t\2\4")
-        buf.write("\6\b\n\f\16\2\4\3\3\17\17\3\2\13\f\2J\2\20\3\2\2\2\4\23")
-        buf.write("\3\2\2\2\6\35\3\2\2\2\b\"\3\2\2\2\n\60\3\2\2\2\fE\3\2")
-        buf.write("\2\2\16G\3\2\2\2\20\21\5\4\3\2\21\22\7\2\2\3\22\3\3\2")
-        buf.write("\2\2\23\24\b\3\1\2\24\25\5\6\4\2\25\32\3\2\2\2\26\27\f")
-        buf.write("\4\2\2\27\31\5\6\4\2\30\26\3\2\2\2\31\34\3\2\2\2\32\30")
-        buf.write("\3\2\2\2\32\33\3\2\2\2\33\5\3\2\2\2\34\32\3\2\2\2\35\36")
-        buf.write("\7\n\2\2\36\37\7\3\2\2\37 \5\b\5\2 !\t\2\2\2!\7\3\2\2")
-        buf.write("\2\"#\b\5\1\2#$\5\n\6\2$-\3\2\2\2%&\f\5\2\2&\'\7\4\2\2")
-        buf.write("\',\5\n\6\2()\f\4\2\2)*\7\5\2\2*,\5\n\6\2+%\3\2\2\2+(")
-        buf.write("\3\2\2\2,/\3\2\2\2-+\3\2\2\2-.\3\2\2\2.\t\3\2\2\2/-\3")
-        buf.write("\2\2\2\60\61\b\6\1\2\61\62\5\f\7\2\62;\3\2\2\2\63\64\f")
-        buf.write("\5\2\2\64\65\7\6\2\2\65:\5\f\7\2\66\67\f\4\2\2\678\7\7")
-        buf.write("\2\28:\5\f\7\29\63\3\2\2\29\66\3\2\2\2:=\3\2\2\2;9\3\2")
-        buf.write("\2\2;<\3\2\2\2<\13\3\2\2\2=;\3\2\2\2>?\7\b\2\2?@\5\b\5")
-        buf.write("\2@A\7\t\2\2AF\3\2\2\2BF\7\n\2\2CF\5\16\b\2DF\7\r\2\2")
-        buf.write("E>\3\2\2\2EB\3\2\2\2EC\3\2\2\2ED\3\2\2\2F\r\3\2\2\2GH")
-        buf.write("\t\3\2\2H\17\3\2\2\2\b\32+-9;E")
-        return buf.getvalue()
-
+    return [
+        4,1,14,72,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,5,1,23,8,1,10,1,12,1,26,9,1,1,
+        2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,5,3,42,8,3,
+        10,3,12,3,45,9,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,56,8,4,
+        10,4,12,4,59,9,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,3,5,68,8,5,1,6,1,6,
+        1,6,0,3,2,6,8,7,0,2,4,6,8,10,12,0,2,1,1,13,13,1,0,9,10,72,0,14,1,
+        0,0,0,2,17,1,0,0,0,4,27,1,0,0,0,6,32,1,0,0,0,8,46,1,0,0,0,10,67,
+        1,0,0,0,12,69,1,0,0,0,14,15,3,2,1,0,15,16,5,0,0,1,16,1,1,0,0,0,17,
+        18,6,1,-1,0,18,19,3,4,2,0,19,24,1,0,0,0,20,21,10,2,0,0,21,23,3,4,
+        2,0,22,20,1,0,0,0,23,26,1,0,0,0,24,22,1,0,0,0,24,25,1,0,0,0,25,3,
+        1,0,0,0,26,24,1,0,0,0,27,28,5,8,0,0,28,29,5,1,0,0,29,30,3,6,3,0,
+        30,31,7,0,0,0,31,5,1,0,0,0,32,33,6,3,-1,0,33,34,3,8,4,0,34,43,1,
+        0,0,0,35,36,10,3,0,0,36,37,5,2,0,0,37,42,3,8,4,0,38,39,10,2,0,0,
+        39,40,5,3,0,0,40,42,3,8,4,0,41,35,1,0,0,0,41,38,1,0,0,0,42,45,1,
+        0,0,0,43,41,1,0,0,0,43,44,1,0,0,0,44,7,1,0,0,0,45,43,1,0,0,0,46,
+        47,6,4,-1,0,47,48,3,10,5,0,48,57,1,0,0,0,49,50,10,3,0,0,50,51,5,
+        4,0,0,51,56,3,10,5,0,52,53,10,2,0,0,53,54,5,5,0,0,54,56,3,10,5,0,
+        55,49,1,0,0,0,55,52,1,0,0,0,56,59,1,0,0,0,57,55,1,0,0,0,57,58,1,
+        0,0,0,58,9,1,0,0,0,59,57,1,0,0,0,60,61,5,6,0,0,61,62,3,6,3,0,62,
+        63,5,7,0,0,63,68,1,0,0,0,64,68,5,8,0,0,65,68,3,12,6,0,66,68,5,11,
+        0,0,67,60,1,0,0,0,67,64,1,0,0,0,67,65,1,0,0,0,67,66,1,0,0,0,68,11,
+        1,0,0,0,69,70,7,1,0,0,70,13,1,0,0,0,6,24,41,43,55,57,67
+    ]
 
 class AssignmentStatement1Parser ( Parser ):
 
@@ -50,7 +46,7 @@ class AssignmentStatement1Parser ( Parser ):
 
     literalNames = [ "<INVALID>", "':='", "'+'", "'-'", "'*'", "'/'", "'('", 
                      "')'", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'\n'" ]
+                     "<INVALID>", "'\\n'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -85,7 +81,7 @@ class AssignmentStatement1Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.8")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -93,6 +89,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class StartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -115,12 +112,6 @@ class AssignmentStatement1Parser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStart" ):
                 listener.exitStart(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitStart" ):
-                return visitor.visitStart(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -145,6 +136,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class ProgContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -168,12 +160,6 @@ class AssignmentStatement1Parser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitProg" ):
                 listener.exitProg(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitProg" ):
-                return visitor.visitProg(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -219,6 +205,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class AssignContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -248,12 +235,6 @@ class AssignmentStatement1Parser ( Parser ):
             if hasattr( listener, "exitAssign" ):
                 listener.exitAssign(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitAssign" ):
-                return visitor.visitAssign(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -272,7 +253,7 @@ class AssignmentStatement1Parser ( Parser ):
             self.expr(0)
             self.state = 30
             _la = self._input.LA(1)
-            if not(_la==AssignmentStatement1Parser.EOF or _la==AssignmentStatement1Parser.NEWLINE):
+            if not(_la==-1 or _la==13):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -287,6 +268,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -310,12 +292,6 @@ class AssignmentStatement1Parser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitExpr" ):
                 listener.exitExpr(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpr" ):
-                return visitor.visitExpr(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -383,6 +359,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class TermContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -406,12 +383,6 @@ class AssignmentStatement1Parser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTerm" ):
                 listener.exitTerm(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitTerm" ):
-                return visitor.visitTerm(self)
-            else:
-                return visitor.visitChildren(self)
 
 
 
@@ -479,6 +450,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class FactorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -509,12 +481,6 @@ class AssignmentStatement1Parser ( Parser ):
             if hasattr( listener, "exitFactor" ):
                 listener.exitFactor(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFactor" ):
-                return visitor.visitFactor(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -526,7 +492,7 @@ class AssignmentStatement1Parser ( Parser ):
             self.state = 67
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [AssignmentStatement1Parser.T__5]:
+            if token in [6]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 60
                 self.match(AssignmentStatement1Parser.T__5)
@@ -535,17 +501,17 @@ class AssignmentStatement1Parser ( Parser ):
                 self.state = 62
                 self.match(AssignmentStatement1Parser.T__6)
                 pass
-            elif token in [AssignmentStatement1Parser.Id]:
+            elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 64
                 self.match(AssignmentStatement1Parser.Id)
                 pass
-            elif token in [AssignmentStatement1Parser.INT, AssignmentStatement1Parser.FLOAT]:
+            elif token in [9, 10]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 65
                 self.number()
                 pass
-            elif token in [AssignmentStatement1Parser.String]:
+            elif token in [11]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 66
                 self.match(AssignmentStatement1Parser.String)
@@ -563,6 +529,7 @@ class AssignmentStatement1Parser ( Parser ):
 
 
     class NumberContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -585,12 +552,6 @@ class AssignmentStatement1Parser ( Parser ):
             if hasattr( listener, "exitNumber" ):
                 listener.exitNumber(self)
 
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNumber" ):
-                return visitor.visitNumber(self)
-            else:
-                return visitor.visitChildren(self)
-
 
 
 
@@ -603,7 +564,7 @@ class AssignmentStatement1Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 69
             _la = self._input.LA(1)
-            if not(_la==AssignmentStatement1Parser.INT or _la==AssignmentStatement1Parser.FLOAT):
+            if not(_la==9 or _la==10):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

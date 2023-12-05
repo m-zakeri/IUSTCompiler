@@ -38,8 +38,28 @@ import argparse
 
 
 class MyListener(AssignmentStatement1Listener):
+
+    def __init__(self):
+        self._count = 0
+
+    def helper(self):
+        pass
+
+    def get_count(self):
+        return self._count
+
     def exitFactor(self, ctx: AssignmentStatement1Parser.FactorContext):
-        print('Dummy listener!')
+        # print('Dummy listener!')
+        # self._count += 1
+        pass
+
+    def enterExpr(self, ctx:AssignmentStatement1Parser.ExprContext):
+        if ctx.getChildCount() == 3:
+            if ctx.getChild(1).getText() == '+':
+                self._count += 1
+
+    def enterTerm(self, ctx:AssignmentStatement1Parser.TermContext):
+        pass
 
     def exitNumber(self, ctx: AssignmentStatement1Parser.NumberContext):
         pass
@@ -61,9 +81,12 @@ def main(args):
     lexer = AssignmentStatement1Lexer(stream)
     # Step 3: Convert the input source into a list of tokens
     token_stream = CommonTokenStream(lexer)
+    #
+    # quit()
+
     # Step 4: Create an instance of the AssignmentStParser
     parser = AssignmentStatement1Parser(token_stream)
-    parser._interp.predictionMode = PredictionMode.SLL
+    # parser._interp.predictionMode = PredictionMode.SLL
 
     #x = DescriptiveErrorListener()
     #parser.addErrorListener()
@@ -71,11 +94,21 @@ def main(args):
     # Step 5: Create parse tree
     parse_tree = parser.start()
 
+    # print(parse_tree)
+    # quit()
+
     # Step 6: Create an instance of AssignmentStListener
     my_listener = MyListener()
     walker = ParseTreeWalker()
     walker.walk(t=parse_tree, listener=my_listener)
+
+    print(f'Number of "+" operators: {my_listener.get_count()}')
+
+    # print(parse_tree.getText())
     quit()
+
+
+
     # return
     lexer.reset()
     token = lexer.nextToken()
