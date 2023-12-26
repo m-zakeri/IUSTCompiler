@@ -9,17 +9,21 @@ class A
     public void m(int i)
     {
         this.f = i * this.f;
+        G();
     }
 }
 
 // class B
 class B {
 public A a = new A();
-
+// class X
 }
 
 /* class C perform task t*/
 class C {
+private int x = 10;
+//private int x = 10;
+private int x = 10;
 protected A a = new A();
 private int x = 10;
 
@@ -30,5 +34,6 @@ private int x = 10;
 class Z
 
 {
-
+    class Y {
+    }
 }

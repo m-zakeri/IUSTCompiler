@@ -1,7 +1,5 @@
-from antlr4 import *
-from HW4.gen.Q2Listener import Q2Listener
-from HW4.gen.Q2Lexer import Q2Lexer
-from HW4.gen.Q2Parser import Q2Parser
+from assignments.spring2021.HW4.gen.Q2Listener import Q2Listener
+from assignments.spring2021.HW4.gen.Q2Parser import Q2Parser
 
 class ThreeACListener(Q2Listener):
     def __init__(self):

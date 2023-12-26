@@ -6,7 +6,7 @@ if len(sys.argv) > 1:
 else:
     filename = input("Enter parser script's filename (Leave empty to automatically find in the current directory): ")
     if filename == "":
-        current_dir_filemames = os.listdir(".")
+        current_dir_filemames = os.listdir("")
         for name in current_dir_filemames:
             if name.endswith("Parser.py"):
                 filename = name

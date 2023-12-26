@@ -1,8 +1,8 @@
 from antlr4 import *
 
-from HW4.gen.Q2Lexer import Q2Lexer
-from HW4.gen.Q2Parser import Q2Parser
-from HW4.Q4.ast import ASTListener
+from assignments.spring2021.HW4.gen.Q2Lexer import Q2Lexer
+from assignments.spring2021.HW4.gen.Q2Parser import Q2Parser
+from assignments.spring2021.HW4.Q4.ast import ASTListener
 
 
 import argparse

@@ -60,7 +60,7 @@ def main(args):
                 index=token.tokenIndex,
                 text=f'{token.text[:2]} @author: Morteza {token.text[2:]}'
             )
-    print(token_stream_rewriter.getDefaultText())
+    # print(token_stream_rewriter.getDefaultText())
 
     # Step 6: Create an instance of JavaListener based on the specific application, `--app`
     if args.app == 1:
@@ -68,7 +68,7 @@ def main(args):
     elif args.app == 2:
         my_listener = DesignMetrics()
     elif args.app == 3:
-        my_listener = DesignMetrics2(class_name='A')
+        my_listener = DesignMetrics2(class_name='C')
     elif args.app == 4:
         my_listener = ManipulateComments2(common_token_stream=token_stream, name='Morteza')
     else:
@@ -84,7 +84,7 @@ def main(args):
     elif args.app == 2:
         print(f'DSC={my_listener.get_design_size}')
     elif args.app == 3:
-        print(f'number of private field in class A is {my_listener.get_number_of_private_attr}')
+        print(f'number of private field in class C is {my_listener.get_number_of_private_attr}')
 
 
 if __name__ == '__main__':
@@ -92,6 +92,6 @@ if __name__ == '__main__':
     argparser.add_argument(
         '-n', '--file',
         help='Input source', default=r'A.java')
-    argparser.add_argument('--app', type=int, required=True, default=1)
+    argparser.add_argument('--app', type=int, required=True, default=2)
     args = argparser.parse_args()
     main(args)
