@@ -1,7 +1,7 @@
 from antlr4 import *
-from assignments.spring2021.HW4.gen.Q2Lexer import Q2Lexer
-from assignments.spring2021.HW4.gen.Q2Parser import Q2Parser
-from assignments.spring2021.HW4.Q3.ThreeAC import ThreeACListener
+from semesters.spring2021.HW4.gen.Q2Lexer import Q2Lexer
+from semesters.spring2021.HW4.gen.Q2Parser import Q2Parser
+from semesters.spring2021.HW4.Q3.ThreeAC import ThreeACListener
 import argparse
 
 def main(args):

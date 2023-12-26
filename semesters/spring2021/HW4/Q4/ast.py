@@ -1,8 +1,8 @@
 import queue
 import networkx as nx
 
-from assignments.spring2021.HW4.gen.Q2Parser import Q2Parser
-from assignments.spring2021.HW4.gen.Q2Listener import Q2Listener
+from semesters.spring2021.HW4.gen.Q2Parser import Q2Parser
+from semesters.spring2021.HW4.gen.Q2Listener import Q2Listener
 
 
 # Listener pattern

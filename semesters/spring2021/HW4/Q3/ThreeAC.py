@@ -1,5 +1,5 @@
-from assignments.spring2021.HW4.gen.Q2Listener import Q2Listener
-from assignments.spring2021.HW4.gen.Q2Parser import Q2Parser
+from semesters.spring2021.HW4.gen.Q2Listener import Q2Listener
+from semesters.spring2021.HW4.gen.Q2Parser import Q2Parser
 
 class ThreeACListener(Q2Listener):
     def __init__(self):
