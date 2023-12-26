@@ -84,6 +84,6 @@ if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         '-n', '--file',
-        help='Input source', default=r'A.java')
+        help='Input source', default=r'input.txt')
     args = argparser.parse_args()
     main(args)

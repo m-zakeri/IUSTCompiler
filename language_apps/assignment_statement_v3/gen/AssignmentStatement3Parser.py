@@ -1,4 +1,4 @@
-# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars\AssignmentStatement3.g4 by ANTLR 4.8
+# Generated from D:/AnacondaProjects/iust_compilers_teaching/grammars/AssignmentStatement3.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -8,42 +8,38 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
-
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
-        buf.write("a\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\7\3\33\n")
-        buf.write("\3\f\3\16\3\36\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3")
-        buf.write("\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
-        buf.write("\3\5\7\5\67\n\5\f\5\16\5:\13\5\3\6\3\6\3\6\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\7\6J\n\6\f\6\16\6M\13")
-        buf.write("\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7Y\n\7\3")
-        buf.write("\b\3\b\3\b\3\b\5\b_\n\b\3\b\2\5\4\b\n\t\2\4\6\b\n\f\16")
-        buf.write("\2\3\3\3\20\20\2b\2\20\3\2\2\2\4\24\3\2\2\2\6\37\3\2\2")
-        buf.write("\2\b%\3\2\2\2\n;\3\2\2\2\fX\3\2\2\2\16^\3\2\2\2\20\21")
-        buf.write("\5\4\3\2\21\22\7\2\2\3\22\23\b\2\1\2\23\3\3\2\2\2\24\25")
-        buf.write("\b\3\1\2\25\26\5\6\4\2\26\27\b\3\1\2\27\34\3\2\2\2\30")
-        buf.write("\31\f\4\2\2\31\33\5\6\4\2\32\30\3\2\2\2\33\36\3\2\2\2")
-        buf.write("\34\32\3\2\2\2\34\35\3\2\2\2\35\5\3\2\2\2\36\34\3\2\2")
-        buf.write("\2\37 \7\r\2\2 !\7\3\2\2!\"\5\b\5\2\"#\t\2\2\2#$\b\4\1")
-        buf.write("\2$\7\3\2\2\2%&\b\5\1\2&\'\5\n\6\2\'(\b\5\1\2(8\3\2\2")
-        buf.write("\2)*\f\6\2\2*+\7\4\2\2+,\5\n\6\2,-\b\5\1\2-\67\3\2\2\2")
-        buf.write("./\f\5\2\2/\60\7\5\2\2\60\61\5\n\6\2\61\62\b\5\1\2\62")
-        buf.write("\67\3\2\2\2\63\64\f\4\2\2\64\65\7\16\2\2\65\67\5\n\6\2")
-        buf.write("\66)\3\2\2\2\66.\3\2\2\2\66\63\3\2\2\2\67:\3\2\2\28\66")
-        buf.write("\3\2\2\289\3\2\2\29\t\3\2\2\2:8\3\2\2\2;<\b\6\1\2<=\5")
-        buf.write("\f\7\2=>\b\6\1\2>K\3\2\2\2?@\f\5\2\2@A\7\6\2\2AB\5\f\7")
-        buf.write("\2BC\b\6\1\2CJ\3\2\2\2DE\f\4\2\2EF\7\7\2\2FG\5\f\7\2G")
-        buf.write("H\b\6\1\2HJ\3\2\2\2I?\3\2\2\2ID\3\2\2\2JM\3\2\2\2KI\3")
-        buf.write("\2\2\2KL\3\2\2\2L\13\3\2\2\2MK\3\2\2\2NO\7\b\2\2OP\5\b")
-        buf.write("\5\2PQ\7\t\2\2QR\b\7\1\2RY\3\2\2\2ST\7\r\2\2TY\b\7\1\2")
-        buf.write("UV\5\16\b\2VW\b\7\1\2WY\3\2\2\2XN\3\2\2\2XS\3\2\2\2XU")
-        buf.write("\3\2\2\2Y\r\3\2\2\2Z[\7\n\2\2[_\b\b\1\2\\]\7\13\2\2]_")
-        buf.write("\b\b\1\2^Z\3\2\2\2^\\\3\2\2\2_\17\3\2\2\2\t\34\668IKX")
-        buf.write("^")
-        return buf.getvalue()
-
+    return [
+        4,1,14,95,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,5,1,25,8,1,10,1,12,1,28,
+        9,1,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
+        1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,5,3,53,8,3,10,3,12,3,56,9,3,1,4,
+        1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,72,8,4,10,
+        4,12,4,75,9,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,3,5,87,8,5,
+        1,6,1,6,1,6,1,6,3,6,93,8,6,1,6,0,3,2,6,8,7,0,2,4,6,8,10,12,0,1,1,
+        1,14,14,96,0,14,1,0,0,0,2,18,1,0,0,0,4,29,1,0,0,0,6,35,1,0,0,0,8,
+        57,1,0,0,0,10,86,1,0,0,0,12,92,1,0,0,0,14,15,3,2,1,0,15,16,5,0,0,
+        1,16,17,6,0,-1,0,17,1,1,0,0,0,18,19,6,1,-1,0,19,20,3,4,2,0,20,21,
+        6,1,-1,0,21,26,1,0,0,0,22,23,10,2,0,0,23,25,3,4,2,0,24,22,1,0,0,
+        0,25,28,1,0,0,0,26,24,1,0,0,0,26,27,1,0,0,0,27,3,1,0,0,0,28,26,1,
+        0,0,0,29,30,5,11,0,0,30,31,5,1,0,0,31,32,3,6,3,0,32,33,7,0,0,0,33,
+        34,6,2,-1,0,34,5,1,0,0,0,35,36,6,3,-1,0,36,37,3,8,4,0,37,38,6,3,
+        -1,0,38,54,1,0,0,0,39,40,10,4,0,0,40,41,5,2,0,0,41,42,3,8,4,0,42,
+        43,6,3,-1,0,43,53,1,0,0,0,44,45,10,3,0,0,45,46,5,3,0,0,46,47,3,8,
+        4,0,47,48,6,3,-1,0,48,53,1,0,0,0,49,50,10,2,0,0,50,51,5,12,0,0,51,
+        53,3,8,4,0,52,39,1,0,0,0,52,44,1,0,0,0,52,49,1,0,0,0,53,56,1,0,0,
+        0,54,52,1,0,0,0,54,55,1,0,0,0,55,7,1,0,0,0,56,54,1,0,0,0,57,58,6,
+        4,-1,0,58,59,3,10,5,0,59,60,6,4,-1,0,60,73,1,0,0,0,61,62,10,3,0,
+        0,62,63,5,4,0,0,63,64,3,10,5,0,64,65,6,4,-1,0,65,72,1,0,0,0,66,67,
+        10,2,0,0,67,68,5,5,0,0,68,69,3,10,5,0,69,70,6,4,-1,0,70,72,1,0,0,
+        0,71,61,1,0,0,0,71,66,1,0,0,0,72,75,1,0,0,0,73,71,1,0,0,0,73,74,
+        1,0,0,0,74,9,1,0,0,0,75,73,1,0,0,0,76,77,5,6,0,0,77,78,3,6,3,0,78,
+        79,5,7,0,0,79,80,6,5,-1,0,80,87,1,0,0,0,81,82,5,11,0,0,82,87,6,5,
+        -1,0,83,84,3,12,6,0,84,85,6,5,-1,0,85,87,1,0,0,0,86,76,1,0,0,0,86,
+        81,1,0,0,0,86,83,1,0,0,0,87,11,1,0,0,0,88,89,5,8,0,0,89,93,6,6,-1,
+        0,90,91,5,9,0,0,91,93,6,6,-1,0,92,88,1,0,0,0,92,90,1,0,0,0,93,13,
+        1,0,0,0,7,26,52,54,71,73,86,92
+    ]
 
 class AssignmentStatement3Parser ( Parser ):
 
@@ -57,7 +53,7 @@ class AssignmentStatement3Parser ( Parser ):
 
     literalNames = [ "<INVALID>", "':='", "'+'", "'-'", "'*'", "'/'", "'('", 
                      "')'", "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'\n'" ]
+                     "<INVALID>", "<INVALID>", "'\\n'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -92,7 +88,7 @@ class AssignmentStatement3Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.8")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -113,6 +109,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class StartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -172,6 +169,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class ProgContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -253,6 +251,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class AssignContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -310,7 +309,7 @@ class AssignmentStatement3Parser ( Parser ):
             localctx.e = self.expr(0)
             self.state = 32
             _la = self._input.LA(1)
-            if not(_la==AssignmentStatement3Parser.EOF or _la==AssignmentStatement3Parser.NEWLINE):
+            if not(_la==-1 or _la==14):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -330,6 +329,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -409,19 +409,20 @@ class AssignmentStatement3Parser ( Parser ):
                         localctx.t = self.term(0)
 
                         if localctx.e.type_attr != localctx.t.type_attr:
-                            print('Semantic error4 in "+" operator: Inconsistent types!')
+                              print('Semantic error4 in "+" operator: Inconsistent types!')
                         else:
-                            localctx.type_attr = localctx.t.type_attr
-                            if localctx.t.type_attr=='float':
-                                localctx.value_attr = str(float(localctx.e.value_attr) + float(localctx.t.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
-                            elif localctx.t.type_attr=='int':
-                                localctx.value_attr = str(int(float(localctx.e.value_attr)) + int(float(localctx.t.value_attr)))
-                                print(localctx.value_attr, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
-                            elif localctx.t.type_attr=='str':
-                                temp = self.create_temp()
-                                print(temp, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
-                                localctx.value_attr = temp
+                              localctx.type_attr = localctx.t.type_attr
+                              if localctx.t.type_attr=='float':
+                                  localctx.value_attr = str(float(localctx.e.value_attr) + float(localctx.t.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
+                              elif localctx.t.type_attr=='int':
+                                  localctx.value_attr = str(int(localctx.e.value_attr) + int(localctx.t.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
+                              elif localctx.t.type_attr=='str':
+                                  temp = self.create_temp()
+                                  print(temp, ' = ', localctx.e.value_attr, ' + ', localctx.t.value_attr)
+                                  localctx.value_attr = temp
+                                  
                         pass
 
                     elif la_ == 2:
@@ -438,20 +439,20 @@ class AssignmentStatement3Parser ( Parser ):
                         localctx.t = self.term(0)
 
                         if localctx.e.type_attr != localctx.t.type_attr:
-                            print('Semantic error3 in "-" operator: Inconsistent types!')
+                              print('Semantic error3 in "-" operator: Inconsistent types!')
                         else:
-                            localctx.type_attr = localctx.t.type_attr
-                            if localctx.t.type_attr=='float':
-                                localctx.value_attr = str(float(localctx.e.value_attr) - float(localctx.t.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.e.value_attr, ' - ', localctx.t.value_attr)
-                            elif localctx.t.type_attr:
-                                localctx.value_attr = str(int(localctx.e.value_attr) - int(localctx.t.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.e.value_attr, ' - ', localctx.t.value_attr)
-                            elif localctx.t.type_attr=='str':
-                                temp = self.create_temp()
-                                print(temp, '=', localctx.e.value_attr, '-', localctx.t.value_attr)
-                                localctx.value_attr = temp
-                                  
+                              localctx.type_attr = localctx.t.type_attr
+                              if localctx.t.type_attr=='float':
+                                  localctx.value_attr = str(float(localctx.e.value_attr) - float(localctx.t.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.e.value_attr, ' - ', localctx.t.value_attr)
+                              elif localctx.t.type_attr == 'int':
+                                  localctx.value_attr = str(int(localctx.e.value_attr) - int(localctx.t.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.e.value_attr, ' - ', localctx.t.value_attr)
+                              elif localctx.t.type_attr=='str':
+                                  temp = self.create_temp()
+                                  print(temp, '=', localctx.e.value_attr, '-', localctx.t.value_attr)
+                                  localctx.value_attr = temp
+
                         pass
 
                     elif la_ == 3:
@@ -482,6 +483,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class TermContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -558,19 +560,20 @@ class AssignmentStatement3Parser ( Parser ):
                         localctx.f = self.factor()
 
                         if localctx.t.type_attr != localctx.f.type_attr:
-                            print('Semantic error2 in "*" operator: Inconsistent types!')
+                              print('Semantic error2 in "*" operator: Inconsistent types!')
                         else:
-                            localctx.type_attr = localctx.f.type_attr
-                            if localctx.f.type_attr=='float':
-                                localctx.value_attr = str(float(localctx.t.value_attr) * float(localctx.f.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.t.value_attr, ' * ', localctx.f.value_attr)
-                            elif localctx.f.type_attr=='int':
-                                localctx.value_attr = str(int(localctx.t.value_attr) * int(localctx.f.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.t.value_attr, ' * ', localctx.f.value_attr)
-                            elif localctx.f.type_attr=='str':
-                                temp = self.create_temp()
-                                print(temp, '=', localctx.t.value_attr, '*', localctx.f.value_attr)
-                                localctx.value_attr = temp
+                              localctx.type_attr = localctx.f.type_attr
+                              if localctx.f.type_attr=='float':
+                                  localctx.value_attr = str(float(localctx.t.value_attr) * float(localctx.f.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.t.value_attr, ' * ', localctx.f.value_attr)
+                              elif localctx.f.type_attr=='int':
+                                  localctx.value_attr = str(int(localctx.t.value_attr) * int(localctx.f.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.t.value_attr, ' * ', localctx.f.value_attr)
+                              elif localctx.f.type_attr=='str':
+                                  temp = self.create_temp()
+                                  print(temp, '=', localctx.t.value_attr, '*', localctx.f.value_attr)
+                                  localctx.value_attr = temp
+                                  
                         pass
 
                     elif la_ == 2:
@@ -587,19 +590,20 @@ class AssignmentStatement3Parser ( Parser ):
                         localctx.f = self.factor()
 
                         if localctx.t.type_attr != localctx.f.type_attr:
-                            print('Semantic error1 in "/" operator: Inconsistent types!')
+                              print('Semantic error1 in "/" operator: Inconsistent types!')
                         else:
-                            localctx.type_attr = localctx.f.type_attr
-                            if localctx.f.type_attr=='float':
-                                localctx.value_attr = str(float(localctx.t.value_attr) / float(localctx.f.value_attr))
-                                print(localctx.value_attr, ' = ', localctx.t.value_attr, ' / ', localctx.f.value_attr)
-                            elif localctx.f.type_attr=='int':
-                                localctx.value_attr = str(int(int(localctx.t.value_attr) / int(localctx.f.value_attr)))
-                                print(localctx.value_attr, ' = ', localctx.t.value_attr, ' / ', localctx.f.value_attr)
-                            elif localctx.f.type_attr=='str':
-                                temp = self.create_temp()
-                                print(temp, '=', localctx.t.value_attr, '/', localctx.f.value_attr)
-                                localctx.value_attr = temp
+                              localctx.type_attr = localctx.f.type_attr
+                              if localctx.f.type_attr=='float':
+                                  localctx.value_attr = str(float(localctx.t.value_attr) / float(localctx.f.value_attr))
+                                  print(localctx.value_attr, ' = ', localctx.t.value_attr, ' / ', localctx.f.value_attr)
+                              elif localctx.f.type_attr=='int':
+                                  localctx.value_attr = str(int(int(localctx.t.value_attr) / int(localctx.f.value_attr)))
+                                  print(localctx.value_attr, ' = ', localctx.t.value_attr, ' / ', localctx.f.value_attr)
+                              elif localctx.f.type_attr=='str':
+                                  temp = self.create_temp()
+                                  print(temp, '=', localctx.t.value_attr, '/', localctx.f.value_attr)
+                                  localctx.value_attr = temp
+                                  
                         pass
 
              
@@ -617,6 +621,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class FactorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -666,7 +671,7 @@ class AssignmentStatement3Parser ( Parser ):
             self.state = 86
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [AssignmentStatement3Parser.T__5]:
+            if token in [6]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 76
                 self.match(AssignmentStatement3Parser.T__5)
@@ -678,7 +683,7 @@ class AssignmentStatement3Parser ( Parser ):
                 localctx.value_attr = localctx.e.value_attr
 
                 pass
-            elif token in [AssignmentStatement3Parser.ID]:
+            elif token in [11]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 81
                 localctx._ID = self.match(AssignmentStatement3Parser.ID)
@@ -686,7 +691,7 @@ class AssignmentStatement3Parser ( Parser ):
                 localctx.value_attr = (None if localctx._ID is None else localctx._ID.text)
 
                 pass
-            elif token in [AssignmentStatement3Parser.INT, AssignmentStatement3Parser.FLOAT]:
+            elif token in [8, 9]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 83
                 localctx.n = self.number()
@@ -707,6 +712,7 @@ class AssignmentStatement3Parser ( Parser ):
 
 
     class NumberContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -750,7 +756,7 @@ class AssignmentStatement3Parser ( Parser ):
             self.state = 92
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [AssignmentStatement3Parser.INT]:
+            if token in [8]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 88
                 localctx._INT = self.match(AssignmentStatement3Parser.INT)
@@ -758,7 +764,7 @@ class AssignmentStatement3Parser ( Parser ):
                 localctx.type_attr = 'int'
 
                 pass
-            elif token in [AssignmentStatement3Parser.FLOAT]:
+            elif token in [9]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 90
                 localctx._FLOAT = self.match(AssignmentStatement3Parser.FLOAT)
