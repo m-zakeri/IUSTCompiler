@@ -1,0 +1,1251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Compiler (dragon) course materials and codes">
+      
+      
+        <meta name="author" content="Morteza Zakeri">
+      
+      
+        <link rel="canonical" href="https://m-zakeri.github.io/lectures/06_Syntax-Analysis/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>Unit 6 Syntax analysis - IUST Compiler (v0.1.3)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#syntax-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IUST Compiler (v0.1.3)" class="md-header__button md-logo" aria-label="IUST Compiler (v0.1.3)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IUST Compiler (v0.1.3)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit 6 Syntax analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/m-zakeri/IUSTCompiler" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IUST Compiler (v0.1.3)" class="md-nav__button md-logo" aria-label="IUST Compiler (v0.1.3)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IUST Compiler (v0.1.3)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/m-zakeri/IUSTCompiler" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../announcements/" class="md-nav__link">
+        Announcements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Lectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lectures" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_Introduction/" class="md-nav__link">
+        Unit 0 Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Compiler-Basic/" class="md-nav__link">
+        Unit 1 Compiler basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Bootstrapping/" class="md-nav__link">
+        Unit 2 Bootstrapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_Regular-Expressions-and-Lexical-Analysis/" class="md-nav__link">
+        Unit 3 Lexical analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_Manual_Construction_of_Lexers/" class="md-nav__link">
+        Unit 4 Manual constructions of lexers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Automatic_construction_of_Lexers/" class="md-nav__link">
+        Unit 5 Automatic constructions of lexers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Unit 6 Syntax analysis
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Types-of-Grammar/" class="md-nav__link">
+        Unit 7 Type of grammars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_Ambiguity-Problems-and-Eliminating-the-Ambiguity/" class="md-nav__link">
+        Unit 8 Eliminating ambiguity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Top-down/" class="md-nav__link">
+        Unit 9 Top-down parsing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Bottom-up_I/" class="md-nav__link">
+        Unit 10 Bottom-up parsing (I)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Bottom-up_II/" class="md-nav__link">
+        Unit 11 Bottom-up parsing (II)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_LR0_parsing/" class="md-nav__link">
+        Unit 12 LR(0) parsing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_SLR_parsing/" class="md-nav__link">
+        Unit 13 SLR parsing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_LR1_parsing/" class="md-nav__link">
+        Unit 14 LR(1) parsing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          ANTLR tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ANTLR tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          ANTLR tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../antlr_tutorials/antlr_basics/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../antlr_tutorials/antlr_advanced/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../antlr_tutorials/antlr_slides/" class="md-nav__link">
+        Slides
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Language applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Language applications" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Language applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_applications/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_applications/assignment_statement1main/" class="md-nav__link">
+        Assignment statement 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_applications/assignment_statement2main/" class="md-nav__link">
+        Assignment statement 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_applications/assignment_statement3main/" class="md-nav__link">
+        Assignment statement 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_applications/assignment_statement4main/" class="md-nav__link">
+        Assignment statement 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Assignments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assignments" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Assignments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semesters/writing_assignments.md" class="md-nav__link">
+        Writing assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semesters/programming_assignment.md" class="md-nav__link">
+        Programming assignments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_symbol_table_development/" class="md-nav__link">
+        Symbol table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_software_metrics_development/" class="md-nav__link">
+        Software metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_code_smell_development/" class="md-nav__link">
+        Code smell detection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_refactoring_to_design_patterns_development/" class="md-nav__link">
+        Refactoring to patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_refactorings_development/" class="md-nav__link">
+        Source code refactoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_clean_code_development/" class="md-nav__link">
+        Clean code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/core_source_code_instrumentation_development/" class="md-nav__link">
+        Source code instrumentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/mini_java_compiler_development/" class="md-nav__link">
+        MiniJava compiler development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/m-zakeri/IUSTCompiler/issues" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/06_Syntax-Analysis.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="syntax-analysis"><center> Syntax Analysis</h1>
+<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p>When an input string (source code or a program in some language) is given to a compiler, the compiler processes it in several phases, starting from <code>lexical analysis</code> (As mentioned scans the input and divides it into tokens) to target code generation.</p>
+<p><code>Syntax analysis</code> or <code>parsing</code> constitutes the <strong><em>second</em></strong> phase within the compiler's workflow. This chapter delves into fundamental concepts crucial for constructing a parser.</p>
+<p>As previously explored, a <code>lexical analyzer</code> proficiently identifies tokens using regular expressions and pattern rules. However, its capacity is constrained when it comes to scrutinizing the syntax of a given sentence, particularly in tasks involving balancing tokens like parentheses. To overcome this limitation, <code>syntax analysis</code> employs <code>context-free grammar</code> <strong>(CFG)</strong>, a construct recognized by push-down automata.</p>
+<p><code>Syntax Analysis</code>, situated after the <code>lexical analysis</code>, scrutinizes the syntactical structure of the input. It verifies whether the provided input adheres to the correct syntax of the relevant programming language. This verification process involves constructing a data structure known as a <code>Parse tree</code> or <code>Syntax tree</code>. By leveraging the predefined Grammar of the language and the input string, the parse tree is crafted. Successful derivation of the input string from this syntax tree indicates correct syntax usage. Conversely, any deviation triggers an error report from the syntax analyzer.</p>
+<p><code>Syntax analysis</code>, often referred to as <code>parsing</code>, is a critical phase in compiler design where the compiler assesses whether the source code aligns with the grammatical rules of the programming language. Typically occurring as the second stage in the compilation process, following <code>lexical analysis</code>, the primary objective is to generate a parse tree or <code>abstract syntax tree</code> <strong><em>(AST)</em></strong>. This hierarchical representation mirrors the grammatical structure of the program encapsulated in the source code.</p>
+<p>So, let's to Learn...</p>
+<p>CFG, on the other hand, is a superset of Regular Grammar, as depicted below:</p>
+<h1 id="_2"><center><img src="pictures/types-of-grammar.png" width="600"/></h1>
+<blockquote>
+<p>which are fully explained in the next lesson</p>
+</blockquote>
+<h2 id="syntax-analyzers">Syntax Analyzers</h2>
+<p>A syntax analyzer, also known as a parser, receives input in the form of token streams from a lexical analyzer. Its primary role is to examine the source code (presented as a token stream) against production rules, aiming to identify and flag any errors within the code. The outcome of this process is the creation of a parse tree.</p>
+<p>In essence, the parser performs two essential tasks: 
+1. parsing the code to detect errors
+2. generating a parse tree as the result of this analysis.</p>
+<p>It's important to note that parsers are designed to handle the <code>entire code</code>, <u>even in the presence of errors</u>. To achieve this, parsers employ error recovery strategies, which we will delve into later in this chapter. These strategies enable parsers to effectively navigate and process code, providing a comprehensive analysis and aiding in the identification and handling of errors within a program.</p>
+<h1 id="_3"><center><img src="pictures/syntax-analysis.JPG" width="600"/></h1>
+<h3 id="lets-dive-into-derivations">Let's Dive into Derivations!</h3>
+<p>In the world of compiler design, there are two types of derivations that we often encounter: left-most and right-most derivations. These are like the two sides of a coin, each with its own unique characteristics. </p>
+<p><strong>Production Rules</strong></p>
+<p>Let's start with some production rules. These are like the recipes that our compiler follows to understand and process the input string. Here are some example production rules:</p>
+<pre><code class="language-Algorithm">E → E + E
+E → E * E
+E → id 
+</code></pre>
+<p>And here's the input string that we'll be working with: <code>id + id * id</code></p>
+<p><strong>Left-most Derivation</strong></p>
+<p>Now, let's see how the compiler would process this input string using a left-most derivation. This is like saying, "Hey compiler, let's start from the left and work our way to the right." Here's how it looks:</p>
+<pre><code class="language-Algorithm">E → E * E
+E → E + E * E
+E → id + E * E
+E → id + id * E
+E → id + id * id
+</code></pre>
+<p>Notice that the left-most non-terminal is always processed first. It's like the compiler is saying, "I'll handle the leftmost thing first, then move on to the next one on the left."</p>
+<p><strong>Right-most Derivation</strong></p>
+<p>Now, let's see how the compiler would process the same input string using a right-most derivation. This is like saying, "Hey compiler, let's start from the right and work our way to the left." Here's how it looks:</p>
+<pre><code class="language-Algorithm">E → E + E
+E → E + E * E
+E → E + E * id
+E → E + id * id
+E → id + id * id
+</code></pre>
+<p>And that's it! We've now explored both left-most and right-most derivations. Remember, these are just the two sides of a coin. Depending on the parsing strategy that the compiler uses, it might prefer one side over the other.</p>
+<h3 id="understanding-parse-trees">Understanding Parse Trees</h3>
+<p>Parse trees are like a roadmap for your compiler. They are graphical representations of a derivation, showing how strings are derived from the start symbol. The start symbol becomes the root of the parse tree, and it's great to visualize this process.</p>
+<p>Let's take a look at an example using the left-most derivation of <code>a + b * c</code>.</p>
+<p><strong>The Left-most Derivation</strong></p>
+<p>For example for write parse tree for this left-most derivation:</p>
+<pre><code>E → E * E
+E → E + E * E
+E → id + E * E
+E → id + id * E
+E → id + id * id
+</code></pre>
+<p><strong>Step-by-Step Parse Tree Construction</strong></p>
+<p>Now, let's build the parse tree step-by-step:</p>
+<p>step 1: <code>E → E * E</code></p>
+<h1 id="_4"><center><img src="pictures/parser_1.JPG" /></h1>
+<p>step 2: <code>E → E + E * E</code></p>
+<h1 id="_5"><center><img src="pictures/parser_2.JPG" /></h1>
+<p>step 3: <code>E → id + E * E</code></p>
+<h1 id="_6"><center><img src="pictures/parser_3.JPG"/></h1>
+<p>step 4: <code>E → id + id * E</code></p>
+<h1 id="_7"><center><img src="pictures/parser_4.JPG" /></h1>
+<p>step 5: <code>E → id + id * id</code></p>
+<h1 id="_8"><center><img src="pictures/parser_5.JPG" /></h1>
+<p><strong>Parse Tree Characteristics</strong></p>
+<p>In a parse tree, we have:</p>
+<ul>
+<li>All leaf nodes are terminals.</li>
+<li>All interior nodes are non-terminals.</li>
+<li>In-order traversal gives the original input string.</li>
+<li>The parse tree shows the associativity and precedence of operators. The deepest sub-tree is traversed first, so the operator in that sub-tree gets precedence over the operator in the parent nodes.</li>
+</ul>
+<p><strong>Ambiguity in Grammar</strong></p>
+<p>A grammar is said to be ambiguous if it has more than one parse tree (left or right derivation) for at least one string. For example, consider the following grammar:</p>
+<pre><code>E → E + E
+E → E – E
+E → id
+</code></pre>
+<p>For the string <code>id + id – id</code>, the above grammar generates two parse trees. The language generated by an ambiguous grammar is said to be inherently ambiguous. While no method can automatically detect and remove ambiguity, it can be manually removed by re-writing the whole grammar without ambiguity, or by setting and following associativity and precedence constraints.</p>
+<p>in another word:</p>
+<p>Parse trees and derivations are key concepts in compiler design. They help us understand how to process and evaluate expressions.</p>
+<p><strong>Context-Free Grammar and Parse Trees</strong></p>
+<p>A context-free grammar (CFG) is a type of grammar where every production rule is of the form <code>A → α</code>, where <code>A</code> is a single non-terminal and <code>α</code> is a string of terminals and/or non-terminals. </p>
+<p>A parse tree, on the other hand, is a tree structure that represents the syntactic structure of a string according to some grammar. In the context of a CFG, a parse tree is a derivation or parse tree for <code>G</code> if and only if it has the following properties:</p>
+<ul>
+<li>The root is labeled <code>S</code>.</li>
+<li>Every leaf has a label from <code>T ∪ {ε}</code>.</li>
+<li>Every interior vertex (a vertex that is not a leaf) has a label from <code>V</code>.</li>
+<li>If a vertex has label <code>A ∈ V</code>, and its children are labeled (from left to right) <code>a1, a2, ..., an</code>, then <code>P</code> must contain a production of the form <code>A → a1a2...an</code>.</li>
+<li>A leaf labeled <code>ε</code> has no siblings, that is, a vertex with a child labeled <code>ε</code> can have no other children.</li>
+</ul>
+<p><strong>Example of Derivation (Parse) Trees</strong></p>
+<p>Consider the following grammar and string:</p>
+<ul>
+<li>Grammar: <code>E → E + E | E * E | -E | (E) | id</code></li>
+<li>String: <code>-(id + id)</code></li>
+</ul>
+<p>The leftmost derivation for this grammar and string is:</p>
+<pre><code>E ⇒ -E ⇒ -(E) ⇒ -(E + E) ⇒ -(id + E) ⇒ -(id + id)
+</code></pre>
+<p>The rightmost derivation for the same grammar and string is:</p>
+<pre><code>E ⇒ -E ⇒ -(E) ⇒ -(E + E) ⇒ -(E + id) ⇒ -(id + id)
+</code></pre>
+<p>Both derivations result in the same parse tree.</p>
+<p><strong>Derivation and Parse Trees</strong></p>
+<p>There is a many-to-one relationship between derivations and parse trees. Indeed, no information on the order of derivation steps is associated with the final parse tree.</p>
+<h2 id="parse-trees-and-abstract-syntax-tree-ast">Parse trees and abstract syntax tree (AST)</h2>
+<p>An AST does not include inessential punctuation and delimiters (braces, semicolons, parentheses, etc.).</p>
+<h1 id="_9"><center><img src="pictures/AST.JPG" /></h1>
+<h2 id="understanding-associativity">Understanding Associativity</h2>
+<p>Associativity is like a rule that helps us decide the order of operations when an operand has operators on both sides. If the operation is left-associative, the operand will be taken by the left operator. If it's right-associative, the right operator will take the operand. </p>
+<p><strong>Left Associative Operations</strong></p>
+<p>Operations like Addition, Multiplication, Subtraction, and Division are left associative. This means that when an expression contains more than one of these operations, the operations are performed from left to right. </p>
+<p>For example, if we have an expression like <code>id op id op id</code>, it will be evaluated as <code>(id op id) op id</code>. To illustrate, consider the expression <code>(id + id) + id</code>.</p>
+<p><strong>Right Associative Operations</strong></p>
+<p>Operations like Exponentiation are right associative. This means that when an expression contains more than one of these operations, the operations are performed from right to left. </p>
+<p>For example, if we have an expression like <code>id op (id op id)</code>, it will be evaluated as <code>id op (id op id)</code>. To illustrate, consider the expression <code>id ^ (id ^ id)</code>.</p>
+<p><strong>Important Points</strong></p>
+<p>Here are a few key points to remember about associativity:</p>
+<ul>
+<li>All operators with the same precedence have the same associativity. This is necessary because it helps the compiler decide the order of operations when an expression has two operators of the same precedence.</li>
+<li>The associativity of postfix and prefix operators is different. The associativity of postfix is left to right, while the associativity of prefix is right to left.</li>
+<li>The comma operator has the lowest precedence among all operators. It's important to use it carefully to avoid unexpected results.</li>
+</ul>
+<h2 id="precedence">Precedence</h2>
+<p>Precedence is like a rule that helps us decide which operation to perform first when two different operators share a common operand. For example, in the expression <code>2+3*4</code>, both addition and multiplication are operators that share the operand <code>3</code>. </p>
+<p>By setting precedence among operators, we can easily decide which operation to perform first. Mathematically, multiplication (*) has precedence over addition (+), so the expression <code>2+3*4</code> will always be interpreted as <code>(2 + (3 * 4))</code>.</p>
+<h2 id="left-recursion">Left Recursion</h2>
+<p>Left recursion is a situation where a grammar has a non-terminal that appears as the left-most symbol in its own derivation. This can cause problems for top-down parsers, which start parsing from the start symbol and can get stuck in an infinite loop when they encounter the same non-terminal in their derivation.</p>
+<p>For example, consider the following grammar:</p>
+<ol>
+<li><code>A =&gt; Aα | β</code></li>
+<li><code>S =&gt; Aα | β</code>
+  <code>A =&gt; Sd</code></li>
+</ol>
+<p>The first example is an example of immediate left recursion, where <code>A</code> is any non-terminal symbol and <code>α</code> represents a string of non-terminals.
+The second example is an example of indirect left recursion.</p>
+<h1 id="_10"><center><img src="pictures/left-recursion.JPG" width="200"/></h1>
+<p>In a top-down parser, it will first parse <code>A</code>, which in turn will yield a string consisting of <code>A</code> itself and the parser may go into an infinite loop.</p>
+<p>By understanding and managing precedence and left recursion, we can make sure that our compiler can correctly parse and evaluate expressions.</p>
+<h2 id="summary">Summary</h2>
+<h3 id="understanding-syntax-analyzers">Understanding Syntax Analyzers</h3>
+<p>Syntax analyzers play a crucial role in the field of compiler design. They validate the syntax of the source code written in a programming language using a component called a parser. The aim is to test whether a source code (𝑤) belongs to a programming language (𝐿) with grammar (𝐺). The answer is a simple "yes" or "no". </p>
+<p>However, the syntax analyzer in a compiler must do more than just validate the syntax. It must also generate a syntax tree and handle errors gracefully if the string is not in the language. </p>
+<p>The parser uses the stream of tokens produced by the lexical analyzer to create a tree-like intermediate representation that depicts the grammatical structure of the token stream. The parser also reports any syntax errors in an intelligible fashion and recovers from commonly occurring errors to continue processing the remainder of the program.</p>
+<h3 id="prerequisites-for-syntax-analysis">Prerequisites for Syntax Analysis</h3>
+<p>Syntax analysis requires two main components:</p>
+<ol>
+<li>An expressive description technique to describe the syntax.</li>
+<li>An acceptor mechanism to determine if the input token stream satisfies the syntax description.</li>
+</ol>
+<p>For lexical analysis, regular expressions are used to describe tokens, and finite automata is used as an acceptor for regular expressions.</p>
+<h3 id="limitations-of-regular-expressions-for-syntax-analysis">Limitations of Regular Expressions for Syntax Analysis</h3>
+<p>General-purpose programming languages like C, C++, C#, Java, etc., are not regular languages, so they cannot be described by regular expressions. Consider nested constructs (blocks, expressions, statements), and you'll see that regular expressions fall short. For example, the syntax of the '{' construct in the second code snippet can be described with a language like 𝐿 = {︀𝑎𝑛𝑏𝑛|𝑛 ≥ 0}, which is a context-free language, not regular.</p>
+<h3 id="non-context-free-language-constructs">Non-Context-Free Language Constructs</h3>
+<p>Not all constructs found in typical programming languages can be specified using Context-Free Grammar (CFG) grammars alone. For instance, the declaration of identifiers before their use and checking that the number of formal parameters in the declaration of a function agrees with the number of actual parameters are examples of constructs that cannot be specified using CFG grammars alone.</p>
+<h3 id="syntax-analysis-scope">Syntax Analysis Scope</h3>
+<p>Syntax analysis cannot check whether variables are of types on which operations are allowed, whether a variable has been declared before use, or whether a variable has been initialized. These issues will be handled in the semantic analysis phase. For now, let's focus on syntax analysis.</p>
+<h3 id="context-free-grammars-for-programming-languages">Context-Free Grammars for Programming Languages</h3>
+<p>Programming languages grammar uses Context-Free Grammar (CFG) instead of regular grammar to precisely describe the syntactic properties of the programming languages. A specification of the balanced-parenthesis language using context-free grammar is a good example of this. </p>
+<h2 id="example">Example</h2>
+<p>Unambiguous, with precedence and associativity rules honored:</p>
+<h3 id="ambiguous">Ambiguous:</h3>
+<p>E -&gt; E + E | E * E | (E) | num | id</p>
+<h3 id="unambiguous">Unambiguous:</h3>
+<p>E -&gt; E + T | T</p>
+<p>T -&gt; T * F | F</p>
+<p>F -&gt; (E) | num | id</p>
+<p>For another example for operation(+, -, *, /, ^), we have:</p>
+<p>E -&gt; E + T | T</p>
+<p>T -&gt; T * F | T * F | F</p>
+<p>F -&gt; G ^ F | G</p>
+<p>G -&gt; num | id | (E)</p>
+<pre><code>                     E
+                    /|\
+                   / | \
+                  /  |  \
+                 E   +   T
+                 |      /|\ 
+                 |     / | \
+                num   T  *  F
+                 |    |     |
+                 1    F     G
+                     /|\    |
+                    G ^ F  num
+                    |   |   | 
+                   num  G   3
+                    |   |
+                    2  num
+                        |
+                        3
+</code></pre>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../05_Automatic_construction_of_Lexers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit 5 Automatic constructions of lexers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Unit 5 Automatic constructions of lexers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../07_Types-of-Grammar/" class="md-footer__link md-footer__link--next" aria-label="Next: Unit 7 Type of grammars" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Unit 7 Type of grammars
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2020-2024 Zakeri
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
