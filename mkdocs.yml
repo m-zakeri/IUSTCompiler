@@ -1,9 +1,9 @@
-site_name: IUST Compiler (v0.1.2)
+site_name: IUST Compiler (v0.1.3)
 site_url: https://m-zakeri.github.io
 repo_url: https://github.com/m-zakeri/IUSTCompiler
 site_description: Compiler (dragon) course materials and codes
-site_author: Morteza Zakeri-Nasrabadi
-copyright: © 2020-2022 Reverse engineering laboratory
+site_author: Morteza Zakeri
+copyright: © 2020-2024 Zakeri
 
 theme:
   name: material
@@ -29,7 +29,6 @@ theme:
       - icon: fontawesome/brands/linkedin
         link: https://www.linkedin.com/in/mortazazakeri/
 
-
 plugins:
   - search
   - mkdocstrings:
@@ -45,7 +44,21 @@ nav:
     - Home: index.md
     - Announcements: announcements.md
     - Lectures:
-        - Lexical analysis: lectures/lexical_analysis.md
+        - Unit 0 Introduction: lectures/00_Introduction.md
+        - Unit 1 Compiler basics: lectures/01_Compiler-Basic.md
+        - Unit 2 Bootstrapping: lectures/02_Bootstrapping.md
+        - Unit 3 Lexical analysis: lectures/03_Regular-Expressions-and-Lexical-Analysis.md
+        - Unit 4 Manual constructions of lexers: lectures/04_Manual_Construction_of_Lexers.md
+        - Unit 5 Automatic constructions of lexers: lectures/05_Automatic_construction_of_Lexers.md
+        - Unit 6 Syntax analysis: lectures/06_Syntax-Analysis.md
+        - Unit 7 Type of grammars: lectures/07_Types-of-Grammar.md
+        - Unit 8 Eliminating ambiguity: lectures/08_Ambiguity-Problems-and-Eliminating-the-Ambiguity.md
+        - Unit 9 Top-down parsing: lectures/09_Top-down.md
+        - Unit 10 Bottom-up parsing (I): lectures/10_Bottom-up_I.md
+        - Unit 11 Bottom-up parsing (II): lectures/11_Bottom-up_II.md
+        - Unit 12 LR(0) parsing: lectures/12_LR0_parsing.md
+        - Unit 13 SLR parsing: lectures/13_SLR_parsing.md
+        - Unit 14 LR(1) parsing: lectures/14_LR1_parsing.md
     - ANTLR tutorials:
         - Basic: antlr_tutorials/antlr_basics.md
         - Advanced: antlr_tutorials/antlr_advanced.md
@@ -57,8 +70,8 @@ nav:
         - Assignment statement 3: language_applications/assignment_statement3main.md
         - Assignment statement 4: language_applications/assignment_statement4main.md
     - Assignments:
-        - Writing assignments: assignments/writing_assignments.md
-        - Programming assignments: assignments/programming_assignment.md
+        - Writing assignments: semesters/writing_assignments.md
+        - Programming assignments: semesters/programming_assignment.md
     - Projects:
         - Index: projects/index.md
         - Symbol table: projects/core_symbol_table_development.md
