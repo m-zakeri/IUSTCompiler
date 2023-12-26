@@ -39,6 +39,8 @@ plugins:
             - import os
           selection:
             members: True
+extra_css:
+  - stylex.css
 
 nav:
     - Home: index.md

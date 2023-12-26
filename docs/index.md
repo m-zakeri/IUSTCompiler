@@ -2,14 +2,14 @@
 
 **Morteza Zakeri**†
 
-† Ph.D. Student, Iran University of Science and Technology, Tehran, Iran (m-zakeri@live.com).
+† Ph.D., Computer Science, ACM Member (m-zakeri@live.com).
 
-Version 0.1.2 (29 March 2021) ├ Download [PDF] version
+Version 0.1.3 (24 December 2023) ├ Download [PDF] version
 
 
-![Dragon](./figs/logo.png)
+![Dragon](./figs/compiler_logo2.png)
 
-**Abstract—** **O**ur IUST-Compiler Course is now more practical than ever. This repository contains several code snippets that I developed to teach the ANTLR compiler generator at Iran University of Science and Technology (UST). Grammars have been written in ANTRL v4 format. For each grammar, the source code of Lexer and Parser is available in Python 3.x. 
+**Abstract—** My compiler course is now more practical than ever. This repository contains several code snippets that I developed to teach the ANTLR compiler generator at Iran University of Science and Technology (UST). Grammars have been written in ANTRL v4 format. For each grammar, the source code of Lexer and Parser is available in Python 3.x. 
 The repository is assumed to be updated regularly. It would be appreciated if you use this repository by forking it. For any question please contact me `m-zakeri[at]live.com`.
 
 
