@@ -2,7 +2,7 @@
 
 # 🎓 Compiler Design Course Pamphlets 📚
 
-<img src="Handout/pictures/compiler-readme.jpg" height="300" width="1200" />
+<img src="pictures/compiler-readme.jpg" height="300" width="1200" />
 
 Welcome to the repository for the Compiler Design Course Pamphlets! 🎉
 
