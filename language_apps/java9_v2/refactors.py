@@ -18,7 +18,7 @@ from language_apps.java9_v2.gen.Java9_v2Listener import Java9_v2Listener
 from language_apps.java9_v2.gen.Java9_v2Visitor import Java9_v2Visitor
 
 
-class EncapsulateFiledRefactoringListener(Java9_v2Listener):
+class EncapsulateFieldRefactoringListener(Java9_v2Listener):
     """
     This class implements the encapsulate-filed refactoring.
     Encapsulate-field: Make a public field private and provide accessors.

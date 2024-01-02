@@ -28,7 +28,7 @@ from antlr4.TokenStreamRewriter import TokenStreamRewriter
 
 from language_apps.java9_v2.gen.Java9_v2Lexer import Java9_v2Lexer
 from language_apps.java9_v2.gen.Java9_v2Parser import Java9_v2Parser
-from language_apps.java9_v2.refactors import EncapsulateFiledRefactoringListener, ManipulateComments, ManipulateComments2
+from language_apps.java9_v2.refactors import EncapsulateFieldRefactoringListener, ManipulateComments, ManipulateComments2
 from language_apps.java9_v2.metrics import DesignMetrics, DesignMetrics2
 
 
@@ -64,7 +64,7 @@ def main(args):
 
     # Step 6: Create an instance of JavaListener based on the specific application, `--app`
     if args.app == 1:
-        my_listener = EncapsulateFiledRefactoringListener(common_token_stream=token_stream, field_identifier='f')
+        my_listener = EncapsulateFieldRefactoringListener(common_token_stream=token_stream, field_identifier='g')
     elif args.app == 2:
         my_listener = DesignMetrics()
     elif args.app == 3:
