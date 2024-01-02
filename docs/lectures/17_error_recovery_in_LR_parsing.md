@@ -1,6 +1,6 @@
 # Mastering LR Parsing Errors
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 LR parsing is a powerful technique used in computer programming language compilers and other associated tools. One of the challenges it faces is handling errors. An LR parser will detect an error when it consults the parsing action table and finds an error entry. Errors are never detected by consulting the goto table. 

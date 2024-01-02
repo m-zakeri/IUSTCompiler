@@ -1,7 +1,7 @@
 # <center> Compiler Basic
 
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 ## Compiler Formalization
@@ -70,8 +70,8 @@ int main() {
 ## Compiler Phases
 
 
+<img src="../pictures/compiler-phses.JPG" width="800" class="center"/>
 
-# <center><img src="pictures/compiler-phses.JPG" width="800"/>
 
 
 ### Compiler Architecture:
@@ -190,7 +190,7 @@ The JIT compiler, or dynamic translator, reads bytecodes (in a bytecode-compiled
    - JIT compilation allows for adaptability to the runtime environment, optimizing the code based on the specific characteristics of the executing system.
 
 
-# <center><img src="pictures/JIT.JPG" width="800"/>
+<img src="../pictures/JIT.JPG" width="800" class="center"/>
 
 
 

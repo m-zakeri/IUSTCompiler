@@ -1,6 +1,6 @@
 # <center> Syntax Analysis
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 When an input string (source code or a program in some language) is given to a compiler, the compiler processes it in several phases, starting from `lexical analysis` (As mentioned scans the input and divides it into tokens) to target code generation.
 
@@ -19,7 +19,8 @@ So, let's to Learn...
 
 CFG, on the other hand, is a superset of Regular Grammar, as depicted below:
 
-# <center><img src="pictures/types-of-grammar.png" width="600"/>
+<img src="../pictures/types-of-grammar.png" width="600" class="center"/>
+
 
 > which are fully explained in the next lesson
 
@@ -34,7 +35,8 @@ In essence, the parser performs two essential tasks:
 It's important to note that parsers are designed to handle the `entire code`, <u>even in the presence of errors</u>. To achieve this, parsers employ error recovery strategies, which we will delve into later in this chapter. These strategies enable parsers to effectively navigate and process code, providing a comprehensive analysis and aiding in the identification and handling of errors within a program.
 
 
-# <center><img src="pictures/syntax-analysis.JPG" width="600"/>
+<img src="../pictures/syntax-analysis.JPG" width="600" class="center"/>
+
 
 ### Let's Dive into Derivations!
 
@@ -107,23 +109,24 @@ Now, let's build the parse tree step-by-step:
 
 step 1: `E → E * E`
 
-# <center><img src="pictures/parser_1.JPG" />
+<img src="../pictures/parser_1.JPG" class="center"/>
+
 
 step 2: `E → E + E * E`
 
-# <center><img src="pictures/parser_2.JPG" />
+<img src="../pictures/parser_2.JPG" class="center"/>
 
 step 3: `E → id + E * E`
 
-# <center><img src="pictures/parser_3.JPG"/>
+<img src="../pictures/parser_3.JPG" class="center"/>
 
 step 4: `E → id + id * E`
 
-# <center><img src="pictures/parser_4.JPG" />
+<img src="../pictures/parser_4.JPG" class="center"/>
 
 step 5: `E → id + id * id`
 
-# <center><img src="pictures/parser_5.JPG" />
+<img src="../pictures/parser_5.JPG" class="center"/>
 
 **Parse Tree Characteristics**
 
@@ -193,7 +196,7 @@ There is a many-to-one relationship between derivations and parse trees. Indeed,
 
 ## Parse trees and abstract syntax tree (AST)
 An AST does not include inessential punctuation and delimiters (braces, semicolons, parentheses, etc.).
-# <center><img src="pictures/AST.JPG" />
+<img src="../pictures/AST.JPG" class="center"/>
 
 ## Understanding Associativity
 
@@ -243,7 +246,8 @@ For example, consider the following grammar:
 The first example is an example of immediate left recursion, where `A` is any non-terminal symbol and `α` represents a string of non-terminals.
 The second example is an example of indirect left recursion.
 
-# <center><img src="pictures/left-recursion.JPG" width="200"/>
+<img src="../pictures/left-recursion.JPG" width="200" class="center"/>
+
 
 In a top-down parser, it will first parse `A`, which in turn will yield a string consisting of `A` itself and the parser may go into an infinite loop.
 

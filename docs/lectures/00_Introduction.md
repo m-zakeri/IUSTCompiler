@@ -1,6 +1,6 @@
 # <center> Introduction
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 ## What is Compiler?
 
@@ -50,7 +50,8 @@ The main advantages of using a compiler include:
 ### Compiled Code VS Interpreted Code
 
 
-# <center><img src="pictures/compiler-vs-interpreter.jpg" width="1000"/>
+<img src="../pictures/compiler-vs-interpreter.jpg" width="700" class="center"/>
+
 
 Compiled code and interpreted code represent two different approaches to executing computer programs. Here are the key differences between them:
 
@@ -90,5 +91,4 @@ Compiled code and interpreted code represent two different approaches to executi
 > in summary, A compiler translates a programming language (source language) into executable code (target language)
 
 
-
-# <center><img src="pictures/what-is-Compiler.JPG" width="700"/>
+<img src="../pictures/what-is-Compiler.JPG" width="700" class="center"/>

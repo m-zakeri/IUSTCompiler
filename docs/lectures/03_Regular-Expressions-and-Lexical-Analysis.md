@@ -1,6 +1,6 @@
 # <center> Formal Languages and Lexical Analysis  
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 
@@ -39,6 +39,7 @@
 
 
 # <center><img src="pictures/regular-expresion.JPG" width="500"/>
+<img src="../pictures/regular-expresion.JPG" width="500" class="center"/>
 
 
 4. **Regular Expressions (Regex):** Used only for regular languages.

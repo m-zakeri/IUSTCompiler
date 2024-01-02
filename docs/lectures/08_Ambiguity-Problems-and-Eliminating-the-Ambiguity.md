@@ -1,7 +1,6 @@
 # Ambiguity Problems and Eliminating the Ambiguity
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 ## Understanding Ambiguity in Compilers
 
@@ -18,8 +17,7 @@ if E1 then if E2 then S1 else S2
 Here, `E1`, `E2`, `S1`, and `S2` represent any expressions or statements. The dangling else problem arises because it's unclear to which `if` statement the `else` clause should be attached. 
 
 
-
-# <center><img src="pictures/if-else.JPG" width="500"/>
+<img src="../pictures/if-else.JPG" width="500" class="center"/>
 
 
 

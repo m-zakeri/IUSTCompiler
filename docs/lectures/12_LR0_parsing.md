@@ -1,7 +1,6 @@
 # Expanding the Concepts
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 ## Representing Item Sets
 

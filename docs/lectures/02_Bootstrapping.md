@@ -1,7 +1,7 @@
 # <center> Bootstrapping
 
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 
@@ -27,34 +27,32 @@ The goal of full bootstrapping is to implement a compiler for language `X` on a 
 1. **Write Compiler for Subset `X` in `C`:**
    - Begin by writing a compiler for a small part (subset) of language `X` using the language `C`. Compile this on machine `M`, where the `C` compiler already exists.
 
-# <center><img src="pictures/step-1.JPG" width="500"/>
+<img src="../pictures/step-1.JPG" width="500" class="center"/>
 
 2. **Compile Compiler for Sub `X`:**
    - Use the existing language `C` compiler to compile the compiler written in **Step 1**. This creates a compiler that can process the subset language `Sub X`.
 
-
-# <center><img src="pictures/step-2.JPG" width="500"/>
+<img src="../pictures/step-2.JPG" width="500" class="center"/>
 
 
 3. **Translate Subset Compiler (Sub X):**
    - Translate the subset compiler (Sub X) written in **Step 1** into the subset language (Sub X). This is a necessary step in the process.
 
 
-# <center><img src="pictures/step-3.JPG" width="500"/>
-
+<img src="../pictures/step-3.JPG" width="500" class="center"/>
 
 4. **Compile Subset Compiler (Sub X):**
    - Compile the subset compiler (Sub X) from **Step 3** using the compiler built in **Step 2**. This further refines the compiler for `Sub X`.
 
 
-# <center><img src="pictures/step-4.JPG" width="500"/>
+<img src="../pictures/step-4.JPG" width="500" class="center"/>
 
 
 5. **Extend Subset Language (Sub X):**
    - Extend the subset language (Sub X) compiler from **Step 3** into a compiler for the full language `X`. Importantly, this step is still performed using only the subset language `Sub X`.
 
 
-# <center><img src="pictures/step-5.JPG" width="500"/>
+<img src="../pictures/step-5.JPG" width="500" class="center"/>
 
 
 
@@ -63,7 +61,7 @@ The goal of full bootstrapping is to implement a compiler for language `X` on a 
    - Finally, compile the full language `X` compiler using the compiler built in **Step 4**. At this point, you have a compiler for the full language `X` implemented on machine `M`.
 
 
-# <center><img src="pictures/step-6.JPG" width="500"/>
+<img src="../pictures/step-6.JPG" width="500" class="center"/>
 
 This comprehensive process demonstrates the self-sustaining nature of bootstrapping, where each step builds upon the capabilities of the previous one, ultimately leading to the creation of a compiler for a more complex language.
 
