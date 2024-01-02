@@ -30,25 +30,25 @@ This repository contains a collection of pamphlets that I've created to help oth
 
 09. [Top Down](./09_Top-down.md)
 
-10. [Bottom Down](./10_Bottom-up_I.md)
+10. [Bottom up I](./10_Bottom-up_I.md)
 
-11. [Bottom Down](./11_Bottom-up_II.md)
+11. [Bottom up II](./11_Bottom-up_II.md)
 
-12. [Bottom Down](./12_LR0_parsing.md)
+12. [Bottom LR0 parsing](./12_LR0_parsing.md)
 
-13. [Bottom Down](./13_SLR_parsing.md)
+13. [Bottom SLR parsing](./13_SLR_parsing.md)
 
-14. [Bottom Down](./14_LR1_parsing.md)
+14. [Bottom LR1 parsing](./14_LR1_parsing.md)
 
-15. [Bottom Down](./15_LALR1_parsing.md)
+15. [Bottom LALR1 parsing](./15_LALR1_parsing.md)
 
-16. [Bottom Down](./16_ambiguous_whit_SLR.md)
+16. [Bottom ambiguous whit SLR](./16_ambiguous_whit_SLR.md)
 
-17. [Bottom Down](./17_error_recovery_in_LR_parsing.md)
+17. [Bottom error recovery in LR parsing](./17_error_recovery_in_LR_parsing.md)
 
-18. [Bottom Down](./18_Bottom-up-Parser-Generators.md)
+18. [Bottom Bottom up Parser Generators](./18_Bottom-up-Parser-Generators.md)
 
-19. [Bottom Down](./19-CYK_parsing_algorithm.md)
+19. [Bottom CYK parsing algorithm](./19-CYK_parsing_algorithm.md)
 
 ## 📚 Course Topics
 
