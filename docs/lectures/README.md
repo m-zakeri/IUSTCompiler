@@ -10,28 +10,45 @@ This repository contains a collection of pamphlets that I've created to help oth
 
 ## 📖 Table of Contents
 
-00. [Introduction](./Handout/00_Introduction.md)
+00. [Introduction](./00_Introduction.md)
 
-01. [Compiler Basic](./Handout/01_Compiler-Basic.md)
+01. [Compiler Basic](./01_Compiler-Basic.md)
 
-02. [Bootstrapping](./Handout/02_Bootstrapping.md)
+02. [Bootstrapping](./02_Bootstrapping.md)
 
-03. [Regular Expresion and Lexical Analysis](./Handout/03_Regular-Expressions-and-Lexical-Analysis.md)
+03. [Regular Expresion and Lexical Analysis](./03_Regular-Expressions-and-Lexical-Analysis.md)
 
-04. [Manual Construction of Lexers](./Handout/04_1_Manual_Construction_of_Lexers.md)
+04. [Manual Construction of Lexers](./04_1_Manual_Construction_of_Lexers.md)
 
-05. [05 Automatic construction of Lexers](./Handout/05_Automatic_construction_of_Lexers.md)
+05. [05 Automatic construction of Lexers](./05_Automatic_construction_of_Lexers.md)
 
-06. [Syntax Analysis](./Handout/06_Syntax-Analysis.md)
+06. [Syntax Analysis](./06_Syntax-Analysis.md)
 
-07. [Types of Grammar](./Handout/07_Types-of-Grammar.md)
+07. [Types of Grammar](./07_Types-of-Grammar.md)
 
-08. [Ambiguity Problems and Eliminating the Ambiguity](./Handout/08_Ambiguity-Problems-and-Eliminating-the-Ambiguity.md)
+08. [Ambiguity Problems and Eliminating the Ambiguity](./08_Ambiguity-Problems-and-Eliminating-the-Ambiguity.md)
 
-09. [Top Down](./Handout/09_Top-down.md)
+09. [Top Down](./09_Top-down.md)
 
-10. [Bottom Down](./Handout/10_Bottom-down.md)
+10. [Bottom Down](./10_Bottom-up_I.md)
 
+11. [Bottom Down](./11_Bottom-up_II.md)
+
+12. [Bottom Down](./12_LR0_parsing.md)
+
+13. [Bottom Down](./13_SLR_parsing.md)
+
+14. [Bottom Down](./14_LR1_parsing.md)
+
+15. [Bottom Down](./15_LALR1_parsing.md)
+
+16. [Bottom Down](./16_ambiguous_whit_SLR.md)
+
+17. [Bottom Down](./17_error_recovery_in_LR_parsing.md)
+
+18. [Bottom Down](./18_Bottom-up-Parser-Generators.md)
+
+19. [Bottom Down](./19-CYK_parsing_algorithm.md)
 
 ## 📚 Course Topics
 
