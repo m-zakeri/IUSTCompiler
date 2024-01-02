@@ -1,8 +1,7 @@
 # LR(1) Parsing and LR(1) Grammars
 
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be `S → ·S + E`, and an LR(1) item could be `S → ·S + E , +`. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.

@@ -1,8 +1,7 @@
 
 ## Bottom-Up Parsing Process
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 Bottom-up parsing is the process of reducing an input string to the start symbol S of the grammar. At each reduction step, a specific substring matching the body of a production (RHS) is replaced by the nonterminal at the head of that production (LHS). The key decisions during bottom-up parsing are about when to reduce and about what production to apply, as the parse proceeds.
 

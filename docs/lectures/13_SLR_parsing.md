@@ -1,7 +1,6 @@
 # Simple LR Parsing (SLR or SLR(1))
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 Simple LR parsing, also known as SLR or SLR(1), is an extension of LR(0) parsing. It introduces a single token of lookahead to help resolve conflicts between shift and reduce operations. 

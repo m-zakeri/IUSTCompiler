@@ -1,6 +1,6 @@
 # <center> Manual Construction of Lexers
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 #### Recognition of Tokens
@@ -34,24 +34,26 @@ As an intermediate step, patterns are converted into stylized flowcharts called 
 1. **Relational Operations (RELOPs):**
    - Diagram for recognizing relational operators like `<`, `<>`, `=`, `>=`, `<=`, `==`, etc.
 
-# <center><img src="pictures/RELOPs.JPG" width="600"/>
+<img src="../pictures/RELOPs.JPG" width="600" class="center"/>
 
 2. **Reserved Words and Identifiers:**
    - Diagram for recognizing reserved words and identifiers in the source code.
 
-# <center><img src="pictures/identifers.JPG" width="600"/>
+<img src="../pictures/identifers.JPG" width="600" class="center"/>
+
 
 3. **Unsigned Numbers:**
    - Diagram for recognizing unsigned numerical values.
 
-# <center><img src="pictures/unsigned-numbers.JPG" width="600"/>
+<img src="../pictures/unsigned-numbers.JPG" width="600" class="center"/>
+
 
 #### Lexer Input and Output:
 
 The lexical analyzer takes the source code as input and produces a stream of tokens as output. This token stream is then passed to the parser for further syntactic analysis.
 
+<img src="../pictures/Lexer.JPG" width="600" class="center"/>
 
-# <center><img src="pictures/Lexer.JPG" width="600"/>
 
 
 #### Static Scope and Block Structure:
@@ -62,8 +64,8 @@ The lexical analyzer takes the source code as input and produces a stream of tok
 
 #### Static scope and block structure in C++
 
+<img src="../pictures/structure-C++.JPG" width="600" class="center"/>
 
-# <center><img src="pictures/structure-C++.JPG" width="600"/>
 
 
 #### White Spaces:

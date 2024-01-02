@@ -1,6 +1,6 @@
 # Bottom down Parsing
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 Bottom-up parsing starts from the leaf nodes of a tree and works in upward direction till it reaches the root node. Here, we start from a sentence and then apply production rules in reverse manner in order to reach the start symbol. The image given below depicts the bottom-up parsers available.
 
@@ -153,8 +153,8 @@ Remaining Input: Accepted
 > **Note:** Bottom-Up Don't need to figure out as much of the parse tree for a given amount of input (more powerful)
 
 
+<img src="../pictures/bottom-up-pic.JPG" width="500" class="center"/>
 
-# <center><img src="pictures/bottom-up-pic.JPG" width="400"/>
 
 ```
                     ________________________29_______________________
@@ -194,7 +194,7 @@ Remaining Input: Accepted
 
 
 
-# <center><img src="pictures/flowchart.JPG" width="600"/>
+<img src="../pictures/flowchart.JPG" width="600" class="center"/>
 
 
 

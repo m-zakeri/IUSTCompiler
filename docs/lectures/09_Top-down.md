@@ -1,7 +1,6 @@
 # Top Dawn Parsing
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 We have learnt in the last chapter that the top-down parsing technique parses the input, and starts constructing a parse tree from the root node gradually moving down to the leaf nodes. The types of top-down parsing are depicted below:
 
@@ -42,8 +41,7 @@ It will start with `S` from the production rules and will match its yield to the
 
 Now the parser matches all the input letters in an ordered manner. The string is accepted.
 
-
-# <center><img src="pictures/back-tracking.JPG" width="600"/>
+<img src="../pictures/back-tracking.JPG" width="600" class="center"/>
 
 ### Predictive Parser
 
@@ -52,11 +50,11 @@ Predictive parser is a recursive descent parser, which has the capability to pre
 
 To accomplish its tasks, the predictive parser uses a look-ahead pointer, which points to the next input symbols. To make the parser back-tracking free, the predictive parser puts some constraints on the grammar and accepts only a class of grammar known as LL(k) grammar.
 
-# <center><img src="pictures/predictive-parser1.JPG" width="500"/>
+<img src="../pictures/predictive-parser1.JPG" width="500" class="center"/>
 
 Predictive parsing uses a stack and a parsing table to parse the input and generate a parse tree. Both the stack and the input contains an end symbol $ to denote that the stack is empty and the input is consumed. The parser refers to the parsing table to take any decision on the input and stack element combination.
 
-# <center><img src="pictures/predictive-parser2.JPG" width="500"/>
+<img src="../pictures/predictive-parser2.JPG" width="500" class="center"/>
 
 In recursive descent parsing, the parser may have more than one production to choose from for a single instance of input, whereas in predictive parser, each step has at most one production to choose. There might be instances where there is no production matching the input string, making the parsing procedure to fail.
 
@@ -66,7 +64,8 @@ An LL Parser accepts LL grammar. LL grammar is a subset of context-free grammar 
 
 LL parser is denoted as LL(k). The first L in LL(k) is parsing the input from left to right, the second L in LL(k) stands for left-most derivation and k itself represents the number of look aheads. Generally k = 1, so LL(k) may also be written as LL(1).
 
-# <center><img src="pictures/ll-parser.JPG" width="500"/>
+<img src="../pictures/ll-parser.JPG" width="500" class="center"/>
+
 
 ### LL Parsing Algorithm
 We may stick to deterministic LL(1) for parser explanation, as the size of table grows exponentially with the value of k. Secondly, if a given grammar is not LL(1), then usually, it is not LL(k), for any given k.
@@ -243,8 +242,8 @@ Remaining Input: Accepted!
 
 > **Note:** Top-Down is easier to understand and program manually
 
+<img src="../pictures/top-down-pic.JPG" width="400" class="center"/>
 
-# <center><img src="pictures/top-down-pic.JPG" width="400"/>
 
 
 ```

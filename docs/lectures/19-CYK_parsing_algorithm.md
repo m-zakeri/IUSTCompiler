@@ -1,7 +1,7 @@
 # Designing More Powerful Parsers
 
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 
@@ -27,8 +27,7 @@ The CYK algorithm is one of the earliest recognition and parsing algorithms, dev
 
 # CYK Parsing
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
- 
+
 
 The CYK algorithm operates on a dynamic programming or table-filling approach. It constructs solutions compositionally from sub-solutions. Notably, the CYK algorithm recognizes any context-free grammar in Chomsky Normal Form. It operates on a binary parse tree.
 

@@ -1,7 +1,6 @@
 # <center> LALR(1)
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
-
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 
 

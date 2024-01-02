@@ -1,6 +1,6 @@
 # <center> Automatic construction of Lexers
 
-# <center><img src="pictures/compiler.jpg" width="300"/>
+<img src="../pictures/compiler.jpg" width="300" class="center"/>
 
 #### Lexer Construction Steps
 
@@ -89,7 +89,7 @@ However, there are also some disadvantages:
 - **Limited Support for Unicode**: Flex has limited support for Unicode, which can make it difficult to work with non-ASCII characters.
 - **Code Maintenance**: Flex-generated code can be difficult to maintain over time, especially as the programming language evolves and changes. This can make it challenging to keep the lexical analyzer up to date with the latest version of the language.
 
-# <center><img src="pictures/Lex.JPG" width="800"/>
+<img src="../pictures/Lex.JPG" width="800" class="center"/>
 
 
 
@@ -99,7 +99,7 @@ However, there are also some disadvantages:
 - Describes how Lex works in terms of token recognition.
 - Lex takes a set of regular expressions and corresponding actions to create a lexer.
 
-# <center><img src="pictures/lex-work.JPG" width="800"/>
+<img src="../pictures/lex-work.JPG" width="800" class="center"/>
 
 
 #### Regular Expression to NFA
