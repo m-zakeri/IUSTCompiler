@@ -971,7 +971,7 @@
 
 
 <h1 id="simple-lr-parsing-slr-or-slr1">Simple LR Parsing (SLR or SLR(1))</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <p>Simple LR parsing, also known as SLR or SLR(1), is an extension of LR(0) parsing. It introduces a single token of lookahead to help resolve conflicts between shift and reduce operations. </p>
 <p>For each reduction item <code>A → γ·</code>, the parser looks at the lookahead symbol <code>c</code>. It applies the reduction only if <code>c</code> is in the <code>FOLLOW(A)</code> set, which contains all the terminal symbols that can appear immediately after <code>A</code> in a sentential form derived from the start symbol.</p>
 <h1 id="slr-parsing-table">SLR Parsing Table</h1>

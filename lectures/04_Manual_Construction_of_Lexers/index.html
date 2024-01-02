@@ -362,9 +362,123 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 4 Manual constructions of lexers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 4 Manual constructions of lexers
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recognition-of-tokens" class="md-nav__link">
+    Recognition of Tokens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-diagrams-notations" class="md-nav__link">
+    Transition Diagrams: Notations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-diagram-examples" class="md-nav__link">
+    Transition Diagram Examples:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexer-input-and-output" class="md-nav__link">
+    Lexer Input and Output:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-scope-and-block-structure" class="md-nav__link">
+    Static Scope and Block Structure:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-scope-and-block-structure-in-c" class="md-nav__link">
+    Static scope and block structure in C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#white-spaces" class="md-nav__link">
+    White Spaces:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-errors-and-error-recovery" class="md-nav__link">
+    Lexical Errors and Error Recovery:
+  </a>
+  
+    <nav class="md-nav" aria-label="Lexical Errors and Error Recovery:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#panic-mode-recovery" class="md-nav__link">
+    Panic Mode Recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis-challenges" class="md-nav__link">
+    Lexical Analysis Challenges:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lookahead" class="md-nav__link">
+    Lookahead:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +1068,104 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recognition-of-tokens" class="md-nav__link">
+    Recognition of Tokens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-diagrams-notations" class="md-nav__link">
+    Transition Diagrams: Notations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transition-diagram-examples" class="md-nav__link">
+    Transition Diagram Examples:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexer-input-and-output" class="md-nav__link">
+    Lexer Input and Output:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-scope-and-block-structure" class="md-nav__link">
+    Static Scope and Block Structure:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-scope-and-block-structure-in-c" class="md-nav__link">
+    Static scope and block structure in C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#white-spaces" class="md-nav__link">
+    White Spaces:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-errors-and-error-recovery" class="md-nav__link">
+    Lexical Errors and Error Recovery:
+  </a>
+  
+    <nav class="md-nav" aria-label="Lexical Errors and Error Recovery:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#panic-mode-recovery" class="md-nav__link">
+    Panic Mode Recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis-challenges" class="md-nav__link">
+    Lexical Analysis Challenges:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lookahead" class="md-nav__link">
+    Lookahead:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1183,7 @@
 
 
 <h1 id="manual-construction-of-lexers"><center> Manual Construction of Lexers</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <h4 id="recognition-of-tokens">Recognition of Tokens</h4>
 <p>The manual construction of a lexical analyzer involves several steps:</p>
 <ol>
@@ -1015,27 +1227,27 @@
 <li><strong>Relational Operations (RELOPs):</strong></li>
 <li>Diagram for recognizing relational operators like <code>&lt;</code>, <code>&lt;&gt;</code>, <code>=</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, etc.</li>
 </ol>
-<h1 id="_2"><center><img src="pictures/RELOPs.JPG" width="600"/></h1>
+<p><img src="../pictures/RELOPs.JPG" width="600" class="center"/></p>
 <ol>
 <li><strong>Reserved Words and Identifiers:</strong></li>
 <li>Diagram for recognizing reserved words and identifiers in the source code.</li>
 </ol>
-<h1 id="_3"><center><img src="pictures/identifers.JPG" width="600"/></h1>
+<p><img src="../pictures/identifers.JPG" width="600" class="center"/></p>
 <ol>
 <li><strong>Unsigned Numbers:</strong></li>
 <li>Diagram for recognizing unsigned numerical values.</li>
 </ol>
-<h1 id="_4"><center><img src="pictures/unsigned-numbers.JPG" width="600"/></h1>
+<p><img src="../pictures/unsigned-numbers.JPG" width="600" class="center"/></p>
 <h4 id="lexer-input-and-output">Lexer Input and Output:</h4>
 <p>The lexical analyzer takes the source code as input and produces a stream of tokens as output. This token stream is then passed to the parser for further syntactic analysis.</p>
-<h1 id="_5"><center><img src="pictures/Lexer.JPG" width="600"/></h1>
+<p><img src="../pictures/Lexer.JPG" width="600" class="center"/></p>
 <h4 id="static-scope-and-block-structure">Static Scope and Block Structure:</h4>
 <ul>
 <li>The scope of a declaration is implicitly determined by where it appears in the program.</li>
 <li>Code blocks group declarations and statements, often delimited by braces <code>{}</code> or keywords like <code>begin</code> and <code>end</code>.</li>
 </ul>
 <h4 id="static-scope-and-block-structure-in-c">Static scope and block structure in C++</h4>
-<h1 id="_6"><center><img src="pictures/structure-C++.JPG" width="600"/></h1>
+<p><img src="../pictures/structure-C++.JPG" width="600" class="center"/></p>
 <h4 id="white-spaces">White Spaces:</h4>
 <ul>
 <li>Whitespaces are defined as tokens using <strong><em>space characters</em></strong> (' '), <strong><em>tabs</em></strong> ('\t), and <strong><em>end-of-line characters</em></strong> ('\r', '\n').</li>

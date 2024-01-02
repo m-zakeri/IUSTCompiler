@@ -12,14 +12,14 @@
         <meta name="author" content="Morteza Zakeri">
       
       
-        <link rel="canonical" href="https://m-zakeri.github.io/lectures/14_LR1_parsing/">
+        <link rel="canonical" href="https://m-zakeri.github.io/lectures/19-CYK_parsing_algorithm/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.0">
     
     
       
-        <title>Unit 14 LR(1) parsing - IUST Compiler (v0.1.3)</title>
+        <title>Designing More Powerful Parsers - IUST Compiler (v0.1.3)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lr1-parsing-and-lr1-grammars" class="md-skip">
+        <a href="#designing-more-powerful-parsers" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unit 14 LR(1) parsing
+              Designing More Powerful Parsers
             
           </span>
         </div>
@@ -267,14 +267,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -491,21 +489,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../14_LR1_parsing/" class="md-nav__link">
         Unit 14 LR(1) parsing
       </a>
-      
     </li>
   
 
@@ -964,45 +952,125 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/14_LR1_parsing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/19-CYK_parsing_algorithm.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="lr1-parsing-and-lr1-grammars">LR(1) Parsing and LR(1) Grammars</h1>
+<h1 id="designing-more-powerful-parsers">Designing More Powerful Parsers</h1>
 <p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-closure">LR(1) Closure</h1>
-<p>Similar to LR(0) closure, but also keeps track of the lookahead symbol. If <code>I</code> is a set of items, <code>CLOSURE(I)</code> is the set of items such that:</p>
+<p>Designing more powerful parsers often involves considering different parsing methods. Two of the most prevalent types of parsers are LL and LR parsers. These parsers are deterministic, directional, and operate in linear time, making them capable of recognizing restricted forms of context-free grammars.</p>
+<p>However, parsing more grammars non-directionally poses a challenge, especially when we consider allowing more time-consuming algorithms. To address this, we can employ various strategies:</p>
+<ul>
+<li><strong>Brute Forcing:</strong> This approach involves enumerating everything possible. While straightforward, it can be computationally expensive due to its exhaustive nature.</li>
+<li><strong>Backtracking:</strong> This strategy involves trying different subtrees and discarding partial solutions if they prove unsuccessful. This allows the parser to explore different branches of the parse tree until a valid parse is found.</li>
+<li><strong>Dynamic Programming:</strong> This method involves saving partial solutions in a table for later use. This technique is efficient as it avoids recomputation by storing the result of a subproblem and reusing it when needed. However, dynamic programming requires a non-directional parsing method, which is not inherent in LL and LR parsers.</li>
+</ul>
+<h1 id="directionality-of-parsing-methods">Directionality of Parsing Methods</h1>
+<p>Parsing methods can be categorized into two types: directional and non-directional methods.</p>
+<p>Directional methods process the input symbol by symbol from left to right. LL and LR parsers fall under this category. The advantage of directional methods is that parsing starts and makes progress before the last symbol of the input is seen.</p>
+<p>Non-directional methods, on the other hand, allow access to input in an arbitrary order. They require the entire input to be in memory before parsing can start. This flexibility allows non-directional parsers to handle more flexible grammars than directional parsers. An example of a non-directional parser is the CYK parser.</p>
+<h1 id="cyk-cocke-younger-kasami">CYK (Cocke-Younger-Kasami)</h1>
+<p>The CYK algorithm is one of the earliest recognition and parsing algorithms, developed independently by three Russian scientists: J. Cocke, D.H. Younger, and T. Kasami. This algorithm uses a bottom-up parsing approach, reducing already recognized right-hand sides of a production rule to its left-hand side non-terminal. As it is non-directional, it accesses input in an arbitrary order, necessitating the entire input to be in memory before parsing can begin.</p>
+<h1 id="cyk-parsing">CYK Parsing</h1>
+<p>The CYK algorithm operates on a dynamic programming or table-filling approach. It constructs solutions compositionally from sub-solutions. Notably, the CYK algorithm recognizes any context-free grammar in Chomsky Normal Form. It operates on a binary parse tree.</p>
+<h1 id="chomsky-normal-form">Chomsky Normal Form</h1>
+<p>A Context-Free Grammar (CFG) is said to be in Chomsky Normal Form (CNF) if each rule is of the form <code>A → BC</code> or <code>A → a</code>, where <code>a</code> is any terminal, and <code>A</code>, <code>B</code>, <code>C</code> are non-terminals. <code>B</code> and <code>C</code> cannot be the start variable. We allow the rule <code>S → ε</code> if <code>ε</code> is in <code>L</code>.</p>
+<h1 id="cyk-algorithm-basic-idea">CYK Algorithm: Basic Idea</h1>
+<p>The CYK algorithm works as follows:</p>
 <ol>
-<li>Initially, every item in <code>I</code> is in <code>CLOSURE(I)</code>,</li>
-<li>If <code>A → α · B</code> and <code>B → γ</code> is a production whose closures are not in <code>I</code> then add the item <code>B → γ</code> , <code>FIRST(β)</code> to <code>CLOSURE(I)</code>.</li>
-<li>In step (2) if <code>β → ε</code> then add the item <code>B → γ , δ</code> to <code>CLOSURE(I)</code>.</li>
-<li>For recursive items with form <code>A → ·Aα , δ</code> and <code>`A → ·β , δ</code> replace the items with <code>A → ·Aα , δ, FIRST(α)</code> and <code>A → ·β , δ, FIRST(α)</code>.
-Apply these steps (2), (3), and (4) until no more new items can be added to <code>CLOSURE(I)</code>.</li>
+<li>For a grammar <code>G</code> (in CNF) and a word (or string) <code>w</code>:</li>
+<li>For every substring <code>v1</code> of length 1, find all non-terminals <code>A</code> such that <code>Av1 ⇒ *</code>.</li>
+<li>For every substring <code>v2</code> of length 2, find all non-terminals <code>A</code> such that <code>Av2 ⇒ *</code>.</li>
+<li>...</li>
+<li>For the unique substring <code>w</code> of length <code>|w|</code>, find all non-terminals <code>A</code> such that <code>Aw ⇒ *</code>.</li>
+<li>Check whether the start symbol <code>S</code> belongs to the last set.</li>
 </ol>
-<h1 id="lr1-goto-and-states">LR(1) GOTO and States</h1>
-<p>Initial state: start with <code>[S' → S$ , $]</code> as the kernel of <code>I0</code>, then apply the <code>CLOSURE(I)</code> operation. The GOTO function is analogous to GOTO in LR(0) parsing.</p>
-<h1 id="lr1-items">LR(1) Items</h1>
-<p>An LR(1) item is a pair <code>[α; β]</code>, where <code>α</code> is a production from the grammar with a dot at some position in the RHS and <code>β</code> is a lookahead string containing one symbol (terminal or EOF). What about LR(1) items? Several LR(1) items may have the same core. For instance, <code>[A ::= X · Y Z; a]</code> and <code>[A ::= X · Y Z; b]</code> would be represented as <code>[A ::= X · Y Z; {a, b}]</code>.</p>
-<h1 id="lr1-parsing-and-lr1-grammars_1">LR(1) Parsing and LR(1) Grammars</h1>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-parsing-table-example">LR(1) Parsing Table: Example</h1>
-<p>Let's consider the following grammar:</p>
-<pre><code>(0) S' → S$
-(1) S → CC
-(2) C → aC
-(3) C → d
+<p>For more details about converting a CFG grammar to the CNF form, please refer to the appendix slides.</p>
+<h2 id="solution-representation-for-substring-recognition">Solution Representation for Substring Recognition</h2>
+<p>In the context of the CYK (Cocke-Younger-Kasami) algorithm, solution representation for substring recognition is essential. The CYK algorithm is a dynamic programming algorithm that is used for parsing context-free grammars. It constructs parse trees by recognizing and combining smaller parse trees. Therefore, the ability to recognize specific subsequences within a larger string is crucial.</p>
+<h2 id="substring-recognition">Substring Recognition</h2>
+<p>Substring recognition is a key component of the CYK algorithm. It involves identifying and recognizing specific subsequences within a larger string. This process is fundamental to the operation of the CYK algorithm, which constructs parse trees by recognizing and combining smaller parse trees. The recognition of these smaller parse trees is done through the recognition table.</p>
+<h2 id="recognition-table">Recognition Table</h2>
+<p>The recognition table is a two-dimensional array that is used to store the potential non-terminal symbols that can generate a particular substring of the input string. Each cell in the table represents a substring of the input string. The value of a cell indicates the set of non-terminal symbols that can generate the corresponding substring. This table is filled iteratively, with each cell being updated based on the values of its neighboring cells.</p>
+<h2 id="cyk-algorithm-example-trace">CYK Algorithm: Example Trace</h2>
+<p>An example trace of the CYK algorithm involves stepping through the algorithm and observing how it processes a given input string and applies the grammar rules. This involves iterating over the input string and the grammar rules, applying the rules, and updating the recognition table accordingly.</p>
+<h2 id="cyk-pseudocode">CYK Pseudocode</h2>
+<p>The CYK algorithm can be represented in pseudocode, which is a high-level description of the algorithm that can be easily understood and translated into any programming language. The pseudocode for the CYK algorithm would involve loops to iterate over the input string and the grammar rules, conditional statements to apply the rules, and data structures like arrays or matrices to store the recognition table.</p>
+<h2 id="cyk-complexity-analysis">CYK Complexity Analysis</h2>
+<p>The time and space complexity of the CYK algorithm can be analyzed to understand its efficiency. The space complexity of the CYK algorithm is O(n²), where n is the size of the input word. This is because the algorithm uses a n x n table to store the recognition table.</p>
+<p>The time complexity of the CYK algorithm is O(|G|n³), where |G| is the size of the grammar and n is the size of the input word. This is because the algorithm needs to iterate over the input string and the grammar rules, which results in a cubic time complexity.</p>
+<h2 id="cyk-parsing-problems">CYK Parsing: Problems</h2>
+<p>While the CYK algorithm is powerful, it does come with certain challenges. The high time and space complexity can make it less suitable for large inputs or complex grammars. Additionally, converting the grammar to Chomsky Normal Form (CNF) can sometimes make it difficult to retain the intended structure of the grammar.</p>
+<h2 id="cyk-parsing-exercises">CYK Parsing: Exercises</h2>
+<p>There are several exercises associated with the CYK algorithm. These exercises provide practical applications of the algorithm and help to deepen understanding of its workings.</p>
+<p>For instance, one exercise asks to show the CYK algorithm with a given grammar and input word. Another exercise asks to use the CYK method to determine if a specific string is in the language generated by a given grammar. There are also exercises on modifying the CYK algorithm to count the number of parse trees for a given input string and discussing the probabilistic version of the CYK method.</p>
+<h1 id="cyk-complexity-analysis_1">CYK Complexity Analysis</h1>
+<p>The time and space complexity of the CYK algorithm can be analyzed to understand its efficiency. </p>
+<p>The space complexity of the CYK algorithm is O(n²), where n is the size of the input word. This is because the algorithm uses a n x n table to store the recognition table.</p>
+<p>The time complexity of the CYK algorithm is O(|G|n³), where |G| is the size of the grammar and n is the size of the input word. This is because the algorithm needs to iterate over the input string and the grammar rules, which results in a cubic time complexity.</p>
+<p>The complexity of the grammar |G| is defined as the sum of the lengths of the right-hand sides of all production rules in the grammar.</p>
+<h1 id="cyk-algorithm-pseudocode">CYK Algorithm Pseudocode</h1>
+<p>The CYK algorithm can be represented in pseudocode, which is a high-level description of the algorithm that can be easily understood and translated into any programming language. The pseudocode for the CYK algorithm would involve loops to iterate over the input string and the grammar rules, conditional statements to apply the rules, and data structures like arrays or matrices to store the recognition table.</p>
+<p>The pseudocode for the CYK algorithm is as follows:</p>
+<pre><code>For i = 1 to n:
+ For each variable A:
+    We check if A -&gt; b is a rule and b = w[i]
+    If so, we place A in cell (i, i) of our table.
+
+For l = 2 to n:
+ For i = 1 to n-l+1:
+      j = i+l-1
+       For k = i to j-1:
+          For each rule A -&gt; BC: 
+       We check if (i, k) cell contains B and (k + 1, j) cell contains C:
+            If so, we put A in cell (i, j) of our table.
+
+We check if S is in (1, n):
+ If so, we accept the string
+ Else, we reject.
 </code></pre>
-<p>First, we augment the grammar by adding a new start symbol and a new production that starts with the old start symbol followed by a special end marker <code>$</code>. Then we compute the closure of the set of items derived from the new start symbol. We repeat this process for each new state until no more new states can be added. For each state and input symbol, we determine the action to take (shift, reduce, or go to) based on the transitions in the state machine. Finally, we write the resulting actions into the ACTION and GOTO fields of the parsing table.</p>
-<h1 id="lr1-parsing-table-exercise">LR(1) Parsing Table: Exercise</h1>
-<p>Let's consider the following grammar:</p>
-<pre><code>S → E + S | E
-E → num
+<h1 id="cyk-parsing-exercise-solutions">CYK Parsing: Exercise Solutions</h1>
+<ol>
+<li>For the given grammar and input word, the CYK algorithm can be shown by manually applying the algorithm's steps to the given input and grammar.</li>
+<li>To determine if the string <code>w = aaabbbb</code> is in the language generated by the grammar <code>S → aSb | b</code>, we can apply the CYK algorithm to this string and grammar.</li>
+<li>To modify the CYK algorithm to count the number of parse trees of a given input string, we can add a counter to the algorithm that increments whenever a new parse tree is formed.</li>
+<li>For the probabilistic version of the CYK method (P-CYK), weights (probabilities) are stored in the table instead of booleans, so P[i,j,A] will contain the minimum weight (maximum probability) that the substring from i to j can be derived from A. Further extensions of the algorithm allow all parses of a string to be enumerated from lowest to highest weight (highest to lowest probability).</li>
+</ol>
+<h1 id="cyk-complexity-analysis_2">CYK Complexity Analysis</h1>
+<p>The time and space complexity of the CYK algorithm can be analyzed as follows:</p>
+<p>The space complexity of the CYK algorithm is O(n²), where n is the size of the input word. This is because the algorithm uses a n x n table to store the recognition table.</p>
+<p>The time complexity of the CYK algorithm is O(|G|n³), where |G| is the size of the grammar and n is the size of the input word. This is because the algorithm needs to iterate over the input string and the grammar rules, which results in a cubic time complexity.</p>
+<p>The complexity of the grammar |G| is defined as the sum of the lengths of the right-hand sides of all production rules in the grammar, denoted as:</p>
+<p>|G| = ∑_{(A→v)∈P} (1 + |v|)</p>
+<h1 id="cyk-algorithm-pseudocode_1">CYK Algorithm Pseudocode</h1>
+<p>The CYK algorithm can be represented in pseudocode, which is a high-level description of the algorithm that can be easily understood and translated into any programming language. The pseudocode for the CYK algorithm would involve loops to iterate over the input string and the grammar rules, conditional statements to apply the rules, and data structures like arrays or matrices to store the recognition table.</p>
+<p>The pseudocode for the CYK algorithm is as follows:</p>
+<pre><code>For i = 1 to n:
+ For each variable A:
+   We check if A -&gt; b is a rule and b = w[i]
+   If so, we place A in cell (i, i) of our table.
+
+For l = 2 to n:
+ For i = 1 to n-l+1:
+     j = i+l-1
+      For k = i to j-1:
+         For each rule A -&gt; BC: 
+      We check if (i, k) cell contains B and (k + 1, j) cell contains C:
+           If so, we put A in cell (i, j) of our table.
+
+We check if S is in (1, n):
+ If so, we accept the string
+ Else, we reject.
 </code></pre>
-<p>We would follow the same steps as in the example to construct the LR(1) parsing table for this grammar. However, since the grammar is quite simple, the resulting table should also be relatively straightforward.</p>
-<p>Remember, the goal is to identify any conflicts in the parsing table. A conflict occurs when there are multiple possible actions for a given state and input symbol. If there are no conflicts, then the grammar is suitable for LR(1) parsing.</p>
+<h1 id="cyk-parsing-exercise-solutions_1">CYK Parsing: Exercise Solutions</h1>
+<ol>
+<li>For the given grammar and input word, the CYK algorithm can be shown by manually applying the algorithm's steps to the given input and grammar.</li>
+<li>To determine if the string <code>w = aaabbbb</code> is in the language generated by the grammar <code>S → aSb | b</code>, we can apply the CYK algorithm to this string and grammar.</li>
+<li>To modify the CYK algorithm to count the number of parse trees of a given input string, we can add a counter to the algorithm that increments whenever a new parse tree is formed.</li>
+<li>For the probabilistic version of the CYK method (P-CYK), weights (probabilities) are stored in the table instead of booleans, so P[i,j,A] will contain the minimum weight (maximum probability) that the substring from i to j can be derived from A. Further extensions of the algorithm allow all parses of a string to be enumerated from lowest to highest weight (highest to lowest probability).</li>
+</ol>
 
 
 
@@ -1016,42 +1084,6 @@ E → num
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../13_SLR_parsing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit 13 SLR parsing" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Unit 13 SLR parsing
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../antlr_tutorials/antlr_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Basic
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

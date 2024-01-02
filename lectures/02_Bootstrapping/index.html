@@ -334,9 +334,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 2 Bootstrapping
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 2 Bootstrapping
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#t-diagrams" class="md-nav__link">
+    T-Diagrams:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-bootstrapping" class="md-nav__link">
+    Full Bootstrapping:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-bootstrapping" class="md-nav__link">
+    Simple Bootstrapping:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +999,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#t-diagrams" class="md-nav__link">
+    T-Diagrams:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-bootstrapping" class="md-nav__link">
+    Full Bootstrapping:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-bootstrapping" class="md-nav__link">
+    Simple Bootstrapping:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1045,7 @@
 
 
 <h1 id="bootstrapping"><center> Bootstrapping</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <p><strong>Definition:</strong>
 Bootstrapping is a technique where a simple program initiates a more complex system of programs. In the context of compilers, it often involves the process of writing a compiler for a programming language using another compiler written in the same language. This self-compiling process allows for the creation of more sophisticated compilers.</p>
 <p><strong>Example:</strong>
@@ -987,32 +1061,32 @@ The goal of full bootstrapping is to implement a compiler for language <code>X</
 <li><strong>Write Compiler for Subset <code>X</code> in <code>C</code>:</strong></li>
 <li>Begin by writing a compiler for a small part (subset) of language <code>X</code> using the language <code>C</code>. Compile this on machine <code>M</code>, where the <code>C</code> compiler already exists.</li>
 </ol>
-<h1 id="_2"><center><img src="pictures/step-1.JPG" width="500"/></h1>
+<p><img src="../pictures/step-1.JPG" width="500" class="center"/></p>
 <ol>
 <li><strong>Compile Compiler for Sub <code>X</code>:</strong></li>
 <li>Use the existing language <code>C</code> compiler to compile the compiler written in <strong>Step 1</strong>. This creates a compiler that can process the subset language <code>Sub X</code>.</li>
 </ol>
-<h1 id="_3"><center><img src="pictures/step-2.JPG" width="500"/></h1>
+<p><img src="../pictures/step-2.JPG" width="500" class="center"/></p>
 <ol>
 <li><strong>Translate Subset Compiler (Sub X):</strong></li>
 <li>Translate the subset compiler (Sub X) written in <strong>Step 1</strong> into the subset language (Sub X). This is a necessary step in the process.</li>
 </ol>
-<h1 id="_4"><center><img src="pictures/step-3.JPG" width="500"/></h1>
+<p><img src="../pictures/step-3.JPG" width="500" class="center"/></p>
 <ol>
 <li><strong>Compile Subset Compiler (Sub X):</strong></li>
 <li>Compile the subset compiler (Sub X) from <strong>Step 3</strong> using the compiler built in <strong>Step 2</strong>. This further refines the compiler for <code>Sub X</code>.</li>
 </ol>
-<h1 id="_5"><center><img src="pictures/step-4.JPG" width="500"/></h1>
+<p><img src="../pictures/step-4.JPG" width="500" class="center"/></p>
 <ol>
 <li><strong>Extend Subset Language (Sub X):</strong></li>
 <li>Extend the subset language (Sub X) compiler from <strong>Step 3</strong> into a compiler for the full language <code>X</code>. Importantly, this step is still performed using only the subset language <code>Sub X</code>.</li>
 </ol>
-<h1 id="_6"><center><img src="pictures/step-5.JPG" width="500"/></h1>
+<p><img src="../pictures/step-5.JPG" width="500" class="center"/></p>
 <ol>
 <li><strong>Compile Full Language Compiler:</strong></li>
 <li>Finally, compile the full language <code>X</code> compiler using the compiler built in <strong>Step 4</strong>. At this point, you have a compiler for the full language <code>X</code> implemented on machine <code>M</code>.</li>
 </ol>
-<h1 id="_7"><center><img src="pictures/step-6.JPG" width="500"/></h1>
+<p><img src="../pictures/step-6.JPG" width="500" class="center"/></p>
 <p>This comprehensive process demonstrates the self-sustaining nature of bootstrapping, where each step builds upon the capabilities of the previous one, ultimately leading to the creation of a compiler for a more complex language.</p>
 <h3 id="simple-bootstrapping">Simple Bootstrapping:</h3>
 <p><strong>Process:</strong>

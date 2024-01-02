@@ -12,14 +12,14 @@
         <meta name="author" content="Morteza Zakeri">
       
       
-        <link rel="canonical" href="https://m-zakeri.github.io/lectures/14_LR1_parsing/">
+        <link rel="canonical" href="https://m-zakeri.github.io/lectures/16_ambiguous_whit_SLR/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.0">
     
     
       
-        <title>Unit 14 LR(1) parsing - IUST Compiler (v0.1.3)</title>
+        <title>Embrace the Power of Ambiguous Grammars - IUST Compiler (v0.1.3)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lr1-parsing-and-lr1-grammars" class="md-skip">
+        <a href="#embrace-the-power-of-ambiguous-grammars" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unit 14 LR(1) parsing
+              Embrace the Power of Ambiguous Grammars
             
           </span>
         </div>
@@ -267,14 +267,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -491,21 +489,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../14_LR1_parsing/" class="md-nav__link">
         Unit 14 LR(1) parsing
       </a>
-      
     </li>
   
 
@@ -964,45 +952,32 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/14_LR1_parsing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/16_ambiguous_whit_SLR.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="lr1-parsing-and-lr1-grammars">LR(1) Parsing and LR(1) Grammars</h1>
+<h1 id="embrace-the-power-of-ambiguous-grammars">Embrace the Power of Ambiguous Grammars</h1>
 <p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-closure">LR(1) Closure</h1>
-<p>Similar to LR(0) closure, but also keeps track of the lookahead symbol. If <code>I</code> is a set of items, <code>CLOSURE(I)</code> is the set of items such that:</p>
-<ol>
-<li>Initially, every item in <code>I</code> is in <code>CLOSURE(I)</code>,</li>
-<li>If <code>A → α · B</code> and <code>B → γ</code> is a production whose closures are not in <code>I</code> then add the item <code>B → γ</code> , <code>FIRST(β)</code> to <code>CLOSURE(I)</code>.</li>
-<li>In step (2) if <code>β → ε</code> then add the item <code>B → γ , δ</code> to <code>CLOSURE(I)</code>.</li>
-<li>For recursive items with form <code>A → ·Aα , δ</code> and <code>`A → ·β , δ</code> replace the items with <code>A → ·Aα , δ, FIRST(α)</code> and <code>A → ·β , δ, FIRST(α)</code>.
-Apply these steps (2), (3), and (4) until no more new items can be added to <code>CLOSURE(I)</code>.</li>
-</ol>
-<h1 id="lr1-goto-and-states">LR(1) GOTO and States</h1>
-<p>Initial state: start with <code>[S' → S$ , $]</code> as the kernel of <code>I0</code>, then apply the <code>CLOSURE(I)</code> operation. The GOTO function is analogous to GOTO in LR(0) parsing.</p>
-<h1 id="lr1-items">LR(1) Items</h1>
-<p>An LR(1) item is a pair <code>[α; β]</code>, where <code>α</code> is a production from the grammar with a dot at some position in the RHS and <code>β</code> is a lookahead string containing one symbol (terminal or EOF). What about LR(1) items? Several LR(1) items may have the same core. For instance, <code>[A ::= X · Y Z; a]</code> and <code>[A ::= X · Y Z; b]</code> would be represented as <code>[A ::= X · Y Z; {a, b}]</code>.</p>
-<h1 id="lr1-parsing-and-lr1-grammars_1">LR(1) Parsing and LR(1) Grammars</h1>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-parsing-table-example">LR(1) Parsing Table: Example</h1>
-<p>Let's consider the following grammar:</p>
+<p>Every ambiguous grammar fails to be LR and thus is not part of any of the classes of the LR grammars discussed. Yet, certain types of ambiguous grammars prove to be quite useful in the specification and implementation of languages. For language constructs like expressions, an ambiguous grammar provides a shorter, more natural specification than any equivalent unambiguous grammar. Furthermore, ambiguous grammars result in fewer productions, leading to parsing tables with a smaller size. Disambiguating rules that allow only one parse tree for each sentence add to the appeal of ambiguous grammars.</p>
+<h1 id="the-impact-of-unambiguous-vs-ambiguous-grammars">The Impact of Unambiguous vs. Ambiguous Grammars</h1>
+<p>Consider the parsing tables for an unambiguous expression grammar. The SLR parsing table contains 12 rows, while the LR(1) parsing table contains 22 rows. This difference in size underscores the benefits of ambiguous grammars. They simplify the specification of language constructs and reduce the size of the parsing tables, making them more manageable and efficient.</p>
+<h1 id="resolving-conflicts-with-precedence-and-associativity">Resolving Conflicts with Precedence and Associativity</h1>
+<p>When dealing with ambiguous grammars, conflicts can arise due to operator precedence and associativity. For instance, in an augmented expression grammar, the sets of LR(0) items can reveal potential conflicts. However, by carefully applying precedence and associativity rules, these conflicts can be effectively resolved.</p>
+<h1 id="showcasing-the-power-of-lr1-grammars">Showcasing the Power of LR(1) Grammars</h1>
+<p>While some ambiguous grammars are LR(1), others are not. For example, the following grammar is LR(1) but not LALR(1):</p>
 <pre><code>(0) S' → S$
-(1) S → CC
-(2) C → aC
-(3) C → d
+(1) S → AbC
+(2) S → Ba
+(3) A → a
+(4) B → a
+(5) C → Aa
+(6) C → Bb
 </code></pre>
-<p>First, we augment the grammar by adding a new start symbol and a new production that starts with the old start symbol followed by a special end marker <code>$</code>. Then we compute the closure of the set of items derived from the new start symbol. We repeat this process for each new state until no more new states can be added. For each state and input symbol, we determine the action to take (shift, reduce, or go to) based on the transitions in the state machine. Finally, we write the resulting actions into the ACTION and GOTO fields of the parsing table.</p>
-<h1 id="lr1-parsing-table-exercise">LR(1) Parsing Table: Exercise</h1>
-<p>Let's consider the following grammar:</p>
-<pre><code>S → E + S | E
-E → num
-</code></pre>
-<p>We would follow the same steps as in the example to construct the LR(1) parsing table for this grammar. However, since the grammar is quite simple, the resulting table should also be relatively straightforward.</p>
-<p>Remember, the goal is to identify any conflicts in the parsing table. A conflict occurs when there are multiple possible actions for a given state and input symbol. If there are no conflicts, then the grammar is suitable for LR(1) parsing.</p>
+<p>Merging items 1 and 7 results in reduce-reduce conflicts in action[1-7, a] and action[1-7, b]. This example illustrates the limitations of LALR(1) parsing and highlights the power of LR(1) parsing .</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Ambiguous grammars offer a powerful tool for specifying and implementing languages. They simplify the specification of language constructs, reduce the size of parsing tables, and allow for the resolution of conflicts through disambiguation rules. While LR(1) parsing offers significant advantages, it's essential to remember that not all ambiguous grammars are LR(1). Understanding these nuances can help us leverage the strengths of ambiguous grammars while mitigating their limitations.</p>
 
 
 
@@ -1016,42 +991,6 @@ E → num
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../13_SLR_parsing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit 13 SLR parsing" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Unit 13 SLR parsing
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../antlr_tutorials/antlr_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Basic
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -474,9 +474,75 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 12 LR(0) parsing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 12 LR(0) parsing
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representing-item-sets" class="md-nav__link">
+    Representing Item Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-and-goto-of-item-sets" class="md-nav__link">
+    Closure and Goto of Item Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-and-goto-of-item-sets-example" class="md-nav__link">
+    Closure and Goto of Item Sets: Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonical-collection-of-sets-of-lr0-items" class="md-nav__link">
+    Canonical Collection of Sets of LR(0) Items
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lr0-item-sets-example" class="md-nav__link">
+    LR(0) Item Sets: Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-lr-parsing-table" class="md-nav__link">
+    Structure of the LR Parsing Table
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +1020,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representing-item-sets" class="md-nav__link">
+    Representing Item Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-and-goto-of-item-sets" class="md-nav__link">
+    Closure and Goto of Item Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-and-goto-of-item-sets-example" class="md-nav__link">
+    Closure and Goto of Item Sets: Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canonical-collection-of-sets-of-lr0-items" class="md-nav__link">
+    Canonical Collection of Sets of LR(0) Items
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lr0-item-sets-example" class="md-nav__link">
+    LR(0) Item Sets: Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-lr-parsing-table" class="md-nav__link">
+    Structure of the LR Parsing Table
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1087,7 @@
 
 
 <h1 id="expanding-the-concepts">Expanding the Concepts</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <h2 id="representing-item-sets">Representing Item Sets</h2>
 <p>In the context of LR(0) parsing, an item set represents the current state of the parser. Each item in the set corresponds to a production in the grammar, with a dot indicating the current position in the production. For example, if we have a production <code>A -&gt; BC</code>, there will be four items corresponding to this production:</p>
 <ul>

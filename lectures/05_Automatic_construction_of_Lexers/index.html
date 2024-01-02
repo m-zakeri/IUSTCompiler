@@ -376,9 +376,163 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 5 Automatic constructions of lexers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 5 Automatic constructions of lexers
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lexer-construction-steps" class="md-nav__link">
+    Lexer Construction Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lexflex-tool" class="md-nav__link">
+    The Lex/Flex Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-lex-programs" class="md-nav__link">
+    Structure of Lex Programs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis" class="md-nav__link">
+    Lexical Analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-lex-program" class="md-nav__link">
+    Running a Lex Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages-of-flex" class="md-nav__link">
+    Advantages and Disadvantages of Flex
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages and Disadvantages of Flex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lex-architecture" class="md-nav__link">
+    Lex Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-to-nfa" class="md-nav__link">
+    Regular Expression to NFA
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expression to NFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions-re" class="md-nav__link">
+    Regular Expressions (RE):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nondeterministic-finite-automaton-nfa" class="md-nav__link">
+    Nondeterministic Finite Automaton (NFA):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-convert-re-to-nfa" class="md-nav__link">
+    Steps to Convert RE to NFA:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-nfa-to-dfa" class="md-nav__link">
+    Converting NFA to DFA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfa-minimization" class="md-nav__link">
+    DFA Minimization
+  </a>
+  
+    <nav class="md-nav" aria-label="DFA Minimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolving-ambiguities-in-lexers" class="md-nav__link">
+    Resolving Ambiguities in Lexers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-flex-manual" class="md-nav__link">
+    The Flex Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +1108,144 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lexer-construction-steps" class="md-nav__link">
+    Lexer Construction Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lexflex-tool" class="md-nav__link">
+    The Lex/Flex Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-lex-programs" class="md-nav__link">
+    Structure of Lex Programs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lexical-analysis" class="md-nav__link">
+    Lexical Analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-lex-program" class="md-nav__link">
+    Running a Lex Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages-of-flex" class="md-nav__link">
+    Advantages and Disadvantages of Flex
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages and Disadvantages of Flex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lex-architecture" class="md-nav__link">
+    Lex Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression-to-nfa" class="md-nav__link">
+    Regular Expression to NFA
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expression to NFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions-re" class="md-nav__link">
+    Regular Expressions (RE):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nondeterministic-finite-automaton-nfa" class="md-nav__link">
+    Nondeterministic Finite Automaton (NFA):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-convert-re-to-nfa" class="md-nav__link">
+    Steps to Convert RE to NFA:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-nfa-to-dfa" class="md-nav__link">
+    Converting NFA to DFA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfa-minimization" class="md-nav__link">
+    DFA Minimization
+  </a>
+  
+    <nav class="md-nav" aria-label="DFA Minimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolving-ambiguities-in-lexers" class="md-nav__link">
+    Resolving Ambiguities in Lexers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-flex-manual" class="md-nav__link">
+    The Flex Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1263,7 @@
 
 
 <h1 id="automatic-construction-of-lexers"><center> Automatic construction of Lexers</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <h4 id="lexer-construction-steps">Lexer Construction Steps</h4>
 <p><strong>Input: Token Specifications</strong>
 - A list of regular expressions (RE) in priority order that define the patterns of tokens in a programming language.</p>
@@ -1058,13 +1350,13 @@ gcc lex.yy.c
 <li><strong>Limited Support for Unicode</strong>: Flex has limited support for Unicode, which can make it difficult to work with non-ASCII characters.</li>
 <li><strong>Code Maintenance</strong>: Flex-generated code can be difficult to maintain over time, especially as the programming language evolves and changes. This can make it challenging to keep the lexical analyzer up to date with the latest version of the language.</li>
 </ul>
-<h1 id="_2"><center><img src="pictures/Lex.JPG" width="800"/></h1>
+<p><img src="../pictures/Lex.JPG" width="800" class="center"/></p>
 <h4 id="lex-architecture">Lex Architecture</h4>
 <ul>
 <li>Describes how Lex works in terms of token recognition.</li>
 <li>Lex takes a set of regular expressions and corresponding actions to create a lexer.</li>
 </ul>
-<h1 id="_3"><center><img src="pictures/lex-work.JPG" width="800"/></h1>
+<p><img src="../pictures/lex-work.JPG" width="800" class="center"/></p>
 <h4 id="regular-expression-to-nfa">Regular Expression to NFA</h4>
 <ul>
 <li>Illustrates the process of converting a regular expression to a Non-deterministic Finite Automaton (NFA).</li>

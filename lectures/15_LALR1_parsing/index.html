@@ -12,14 +12,14 @@
         <meta name="author" content="Morteza Zakeri">
       
       
-        <link rel="canonical" href="https://m-zakeri.github.io/lectures/14_LR1_parsing/">
+        <link rel="canonical" href="https://m-zakeri.github.io/lectures/15_LALR1_parsing/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.0">
     
     
       
-        <title>Unit 14 LR(1) parsing - IUST Compiler (v0.1.3)</title>
+        <title>LALR(1) - IUST Compiler (v0.1.3)</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lr1-parsing-and-lr1-grammars" class="md-skip">
+        <a href="#lalr1" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unit 14 LR(1) parsing
+              <center> LALR(1)
             
           </span>
         </div>
@@ -267,14 +267,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -491,21 +489,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../14_LR1_parsing/" class="md-nav__link">
         Unit 14 LR(1) parsing
       </a>
-      
     </li>
   
 
@@ -954,6 +942,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#precedence-declarations" class="md-nav__link">
+    Precedence Declarations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lr1-construction" class="md-nav__link">
+    LR(1) Construction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalr-grammars" class="md-nav__link">
+    LALR Grammars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalr1-parser-behavior" class="md-nav__link">
+    LALR(1) Parser Behavior
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -964,45 +988,69 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/14_LR1_parsing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/m-zakeri/IUSTCompiler/edit/master/docs/lectures/15_LALR1_parsing.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="lr1-parsing-and-lr1-grammars">LR(1) Parsing and LR(1) Grammars</h1>
+<h1 id="lalr1"><center> LALR(1)</h1>
 <p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-closure">LR(1) Closure</h1>
-<p>Similar to LR(0) closure, but also keeps track of the lookahead symbol. If <code>I</code> is a set of items, <code>CLOSURE(I)</code> is the set of items such that:</p>
-<ol>
-<li>Initially, every item in <code>I</code> is in <code>CLOSURE(I)</code>,</li>
-<li>If <code>A → α · B</code> and <code>B → γ</code> is a production whose closures are not in <code>I</code> then add the item <code>B → γ</code> , <code>FIRST(β)</code> to <code>CLOSURE(I)</code>.</li>
-<li>In step (2) if <code>β → ε</code> then add the item <code>B → γ , δ</code> to <code>CLOSURE(I)</code>.</li>
-<li>For recursive items with form <code>A → ·Aα , δ</code> and <code>`A → ·β , δ</code> replace the items with <code>A → ·Aα , δ, FIRST(α)</code> and <code>A → ·β , δ, FIRST(α)</code>.
-Apply these steps (2), (3), and (4) until no more new items can be added to <code>CLOSURE(I)</code>.</li>
-</ol>
-<h1 id="lr1-goto-and-states">LR(1) GOTO and States</h1>
-<p>Initial state: start with <code>[S' → S$ , $]</code> as the kernel of <code>I0</code>, then apply the <code>CLOSURE(I)</code> operation. The GOTO function is analogous to GOTO in LR(0) parsing.</p>
-<h1 id="lr1-items">LR(1) Items</h1>
-<p>An LR(1) item is a pair <code>[α; β]</code>, where <code>α</code> is a production from the grammar with a dot at some position in the RHS and <code>β</code> is a lookahead string containing one symbol (terminal or EOF). What about LR(1) items? Several LR(1) items may have the same core. For instance, <code>[A ::= X · Y Z; a]</code> and <code>[A ::= X · Y Z; b]</code> would be represented as <code>[A ::= X · Y Z; {a, b}]</code>.</p>
-<h1 id="lr1-parsing-and-lr1-grammars_1">LR(1) Parsing and LR(1) Grammars</h1>
-<p>LR(1) parsing, also known as canonical LR(1) parsing, is an extension of LR(0) parsing. It uses similar concepts as SLR, but it uses one lookahead symbol instead of none. The idea is to get as much as possible out of one lookahead symbol. The LR(1) item is an LR(0) item combined with lookahead symbols possibly following the production locally within the same item set. For instance, an LR(0) item could be <code>S → ·S + E</code>, and an LR(1) item could be <code>S → ·S + E , +</code>. Similar to SLR parsing, lookahead only impacts reduce operations in LR(1). If the LR(1) parsing action function has no multiply defined entries, then the given grammar is called an LR(1) grammar.</p>
-<h1 id="lr1-parsing-table-example">LR(1) Parsing Table: Example</h1>
-<p>Let's consider the following grammar:</p>
-<pre><code>(0) S' → S$
-(1) S → CC
-(2) C → aC
-(3) C → d
+<p>Expanding on the topic of LALR(1) parsing and LALR(1) grammars, we can discuss some advanced features and considerations:</p>
+<h2 id="precedence-declarations">Precedence Declarations</h2>
+<p>In some grammars, operators may have different precedences, such as multiplication having higher precedence than addition. This can be represented in a grammar using precedence declarations. For instance:</p>
+<pre><code>precedence left PLUS;
+precedence left TIMES;
 </code></pre>
-<p>First, we augment the grammar by adding a new start symbol and a new production that starts with the old start symbol followed by a special end marker <code>$</code>. Then we compute the closure of the set of items derived from the new start symbol. We repeat this process for each new state until no more new states can be added. For each state and input symbol, we determine the action to take (shift, reduce, or go to) based on the transitions in the state machine. Finally, we write the resulting actions into the ACTION and GOTO fields of the parsing table.</p>
-<h1 id="lr1-parsing-table-exercise">LR(1) Parsing Table: Exercise</h1>
-<p>Let's consider the following grammar:</p>
-<pre><code>S → E + S | E
-E → num
+<p>These declarations would cause the parser to reduce the left state on token <code>+</code> and to shift the right state on token <code>*</code>, achieving the desired precedence. LALR parser generators also allow a precedence declaration to be attached directly to a production, specifying its priority with respect to other productions of the same nonterminal .</p>
+<h2 id="lr1-construction">LR(1) Construction</h2>
+<p>The LR(1) construction extends the LR(0) automaton construction to an LR(1) automaton. Just as in the LR(0) automaton, the states are a set of items that is closed under prediction. However, the items now contain a set of lookahead tokens. Thus, an LR(1) item has the form <code>X→α.,β~~~~λ</code>, where the symbols <code>α</code> represent the top of the automaton stack, the dot represents the current input position, the symbols <code>β</code> derive possible future input, and the set of tokens <code>λ</code> describes tokens that could appear in the input stream after the derivation of <code>β</code> .</p>
+<h2 id="lalr-grammars">LALR Grammars</h2>
+<p>The number of LR(1) states is often unnecessarily large, because the LR(1) automaton ends up with many states that are identical other than lookahead tokens. This insight leads to LALR automata. An LALR automaton is exactly the same as an LR(1) automaton except that it merges together all states that are identical other than lookaheads. In the merge, the lookahead sets are combined for each item. Many parser generators are based on LALR, including commonly used software like yacc, bison, CUP, mlyacc, ocamlyacc, and Menhir.</p>
+<p>While LALR is in practice just about as good as full LR, it does occasionally lose some expressive power. To see why, consider what happens when the two LR(1) states in the following diagram are merged to form the state marked M: The two states on the top are unambiguous LR(1) states in which the lookahead character indicates which of the two productions to reduce. But when merged, the resulting state has reduce–reduce conflicts on both <code>+</code> and <code>$</code>. When merging LR(1) states creates a new conflict, the grammar must be LR(1) but not LALR(1) .</p>
+<h2 id="lalr1-parser-behavior">LALR(1) Parser Behavior</h2>
+<p>The LALR(1) parser behaves similarly to the LR(1) parser for correct inputs, producing the same sequence of reduce and shift actions. On an incorrect input, the LALR parser produces the same sequence of actions up to the last shift action, although it might then do a few more reduce actions before reporting the error. So although the LALR parser has fewer states, its behavior is identical for correct inputs, and extremely similar for incorrect inputs .</p>
+<p>Let's illustrate LALR(1) parsing with an example. Consider the following context-free grammar:</p>
+<pre><code>A -&gt; CxA | ε
+B -&gt; xC y | xC
+C -&gt; xB x | z
 </code></pre>
-<p>We would follow the same steps as in the example to construct the LR(1) parsing table for this grammar. However, since the grammar is quite simple, the resulting table should also be relatively straightforward.</p>
-<p>Remember, the goal is to identify any conflicts in the parsing table. A conflict occurs when there are multiple possible actions for a given state and input symbol. If there are no conflicts, then the grammar is suitable for LR(1) parsing.</p>
+<p>And suppose we want to parse the input string <code>xxzxx</code>.</p>
+<p>First, we need to construct the LALR(1) parsing table. This table guides the parsing process by mapping pairs of the form (state, input symbol) to actions (shift, reduce, accept, or error). The construction of the LALR(1) parsing table involves several steps, including the calculation of the FIRST and FOLLOW sets, the creation of the canonical collection of LR(1) items, and the merging of states to eliminate reduce-reduce conflicts.</p>
+<p>Once the LALR(1) parsing table is constructed, we can start parsing the input string. At each step, we examine the top symbol of the stack and the next input symbol, and follow the corresponding entry in the parsing table to decide whether to shift, reduce, or accept.</p>
+<p>Here's a simplified version of the parsing process for the input string <code>xxzxx</code>:</p>
+<pre><code>State Stack Input Action
+0    A    xxzxx Shift
+1    Ax   zxx  Reduce A -&gt; CxA
+2    CxA  zxx  Shift
+3    zxA  xx   Shift
+4    xxzxA xx   Reduce B -&gt; xC y
+5    xy   xx   Reduce C -&gt; xB x
+6    xx   zx   Reduce C -&gt; z
+7    z    xx   Reduce A -&gt; ε
+8    xx   xx   Accept
+</code></pre>
+<p>In this example, the LALR(1) parser successfully parses the input string <code>xxzxx</code> according to the given grammar. Note that the actual parsing process would involve more steps and more complex entries in the parsing table.</p>
+<p>Keep in mind that this is a simplified example. In practice, the construction of the LALR(1) parsing table can be complex and time-consuming, especially for larger grammars. Also, the LALR(1) parser may produce different results for incorrect inputs, depending on how the parsing table is constructed and how conflicts are resolved.</p>
+<p>Let's illustrate LALR(1) parsing with an example. Consider the following context-free grammar:</p>
+<pre><code>S -&gt; xAy | xBy | xAz
+A -&gt; aS | q
+B -&gt; q
+</code></pre>
+<p>We want to parse the input string <code>xqy</code>.</p>
+<p>First, let's construct the LALR(1) parsing table. The construction of the LALR(1) parsing table involves several steps, including the calculation of the FIRST and FOLLOW sets, the creation of the canonical collection of LR(1) items, and the merging of states to eliminate reduce-reduce conflicts.</p>
+<p>Once the LALR(1) parsing table is constructed, we can start parsing the input string. At each step, we examine the top symbol of the stack and the next input symbol, and follow the corresponding entry in the parsing table to decide whether to shift, reduce, or accept.</p>
+<p>Here's a simplified version of the parsing process for the input string <code>xqy</code>:</p>
+<pre><code>State Stack Input Action
+0   S   xqy Shift
+1   Sx  qy  Reduce A -&gt; q
+2   Sxq y   Shift
+3   Sxy q   Reduce S -&gt; xBy
+4   By  q   Reduce B -&gt; q
+5   S   q   Accept
+</code></pre>
+<p>In this example, the LALR(1) parser successfully parses the input string <code>xqy</code> according to the given grammar. Note that the actual parsing process would involve more steps and more complex entries in the parsing table.</p>
+<p>Keep in mind that this is a simplified example. In practice, the construction of the LALR(1) parsing table can be complex and time-consuming, especially for larger grammars. Also, the LALR(1) parser may produce different results for incorrect inputs, depending on how the parsing table is constructed and how conflicts are resolved.</p>
 
 
 
@@ -1016,42 +1064,6 @@ E → num
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../13_SLR_parsing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit 13 SLR parsing" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Unit 13 SLR parsing
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../antlr_tutorials/antlr_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Basic
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

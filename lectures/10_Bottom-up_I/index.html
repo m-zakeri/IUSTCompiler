@@ -446,9 +446,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 10 Bottom-up parsing (I)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 10 Bottom-up parsing (I)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shift-reduce-parsing" class="md-nav__link">
+    Shift-Reduce Parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lr-parser" class="md-nav__link">
+    LR Parser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-summary" class="md-nav__link">
+    in summary
+  </a>
+  
+    <nav class="md-nav" aria-label="in summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-example" class="md-nav__link">
+    For Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-complexity" class="md-nav__link">
+    parsing Complexity
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +1019,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shift-reduce-parsing" class="md-nav__link">
+    Shift-Reduce Parsing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lr-parser" class="md-nav__link">
+    LR Parser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-summary" class="md-nav__link">
+    in summary
+  </a>
+  
+    <nav class="md-nav" aria-label="in summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-example" class="md-nav__link">
+    For Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-complexity" class="md-nav__link">
+    parsing Complexity
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1085,7 @@
 
 
 <h1 id="bottom-down-parsing">Bottom down Parsing</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <p>Bottom-up parsing starts from the leaf nodes of a tree and works in upward direction till it reaches the root node. Here, we start from a sentence and then apply production rules in reverse manner in order to reach the start symbol. The image given below depicts the bottom-up parsers available.</p>
 <h3 id="shift-reduce-parsing">Shift-Reduce Parsing</h3>
 <p>Shift-reduce parsing uses two unique steps for bottom-up parsing. These steps are known as shift-step and reduce-step.</p>
@@ -1197,7 +1311,7 @@ grammar:
 <blockquote>
 <p><strong>Note:</strong> Bottom-Up Don't need to figure out as much of the parse tree for a given amount of input (more powerful)</p>
 </blockquote>
-<h1 id="_2"><center><img src="pictures/bottom-up-pic.JPG" width="400"/></h1>
+<p><img src="../pictures/bottom-up-pic.JPG" width="500" class="center"/></p>
 <pre><code>                    ________________________29_______________________
                     |                       |                       |
                     18                      |                       28
@@ -1234,7 +1348,7 @@ LR: Left-to-right scan, rightmost dervation in revese</p>
 <li>Any ambiguous CFG can neithr be LL nor LR</li>
 <li><strong>Deterministic:</strong> they produs a single correct parse without guessing or backtracking</li>
 </ul>
-<h1 id="_3"><center><img src="pictures/flowchart.JPG" width="600"/></h1>
+<p><img src="../pictures/flowchart.JPG" width="600" class="center"/></p>
 
 
 

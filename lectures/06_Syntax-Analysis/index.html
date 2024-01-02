@@ -390,9 +390,170 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit 6 Syntax analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Unit 6 Syntax analysis
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-analyzers" class="md-nav__link">
+    Syntax Analyzers
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax Analyzers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lets-dive-into-derivations" class="md-nav__link">
+    Let's Dive into Derivations!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-parse-trees" class="md-nav__link">
+    Understanding Parse Trees
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse-trees-and-abstract-syntax-tree-ast" class="md-nav__link">
+    Parse trees and abstract syntax tree (AST)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-associativity" class="md-nav__link">
+    Understanding Associativity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedence" class="md-nav__link">
+    Precedence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#left-recursion" class="md-nav__link">
+    Left Recursion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-syntax-analyzers" class="md-nav__link">
+    Understanding Syntax Analyzers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-for-syntax-analysis" class="md-nav__link">
+    Prerequisites for Syntax Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-regular-expressions-for-syntax-analysis" class="md-nav__link">
+    Limitations of Regular Expressions for Syntax Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-context-free-language-constructs" class="md-nav__link">
+    Non-Context-Free Language Constructs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-analysis-scope" class="md-nav__link">
+    Syntax Analysis Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-free-grammars-for-programming-languages" class="md-nav__link">
+    Context-Free Grammars for Programming Languages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguous" class="md-nav__link">
+    Ambiguous:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unambiguous" class="md-nav__link">
+    Unambiguous:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -954,6 +1115,151 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-analyzers" class="md-nav__link">
+    Syntax Analyzers
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax Analyzers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lets-dive-into-derivations" class="md-nav__link">
+    Let's Dive into Derivations!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-parse-trees" class="md-nav__link">
+    Understanding Parse Trees
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse-trees-and-abstract-syntax-tree-ast" class="md-nav__link">
+    Parse trees and abstract syntax tree (AST)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-associativity" class="md-nav__link">
+    Understanding Associativity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedence" class="md-nav__link">
+    Precedence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#left-recursion" class="md-nav__link">
+    Left Recursion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-syntax-analyzers" class="md-nav__link">
+    Understanding Syntax Analyzers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-for-syntax-analysis" class="md-nav__link">
+    Prerequisites for Syntax Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations-of-regular-expressions-for-syntax-analysis" class="md-nav__link">
+    Limitations of Regular Expressions for Syntax Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-context-free-language-constructs" class="md-nav__link">
+    Non-Context-Free Language Constructs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-analysis-scope" class="md-nav__link">
+    Syntax Analysis Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-free-grammars-for-programming-languages" class="md-nav__link">
+    Context-Free Grammars for Programming Languages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguous" class="md-nav__link">
+    Ambiguous:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unambiguous" class="md-nav__link">
+    Unambiguous:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -971,7 +1277,7 @@
 
 
 <h1 id="syntax-analysis"><center> Syntax Analysis</h1>
-<h1 id="_1"><center><img src="pictures/compiler.jpg" width="300"/></h1>
+<p><img src="../pictures/compiler.jpg" width="300" class="center"/></p>
 <p>When an input string (source code or a program in some language) is given to a compiler, the compiler processes it in several phases, starting from <code>lexical analysis</code> (As mentioned scans the input and divides it into tokens) to target code generation.</p>
 <p><code>Syntax analysis</code> or <code>parsing</code> constitutes the <strong><em>second</em></strong> phase within the compiler's workflow. This chapter delves into fundamental concepts crucial for constructing a parser.</p>
 <p>As previously explored, a <code>lexical analyzer</code> proficiently identifies tokens using regular expressions and pattern rules. However, its capacity is constrained when it comes to scrutinizing the syntax of a given sentence, particularly in tasks involving balancing tokens like parentheses. To overcome this limitation, <code>syntax analysis</code> employs <code>context-free grammar</code> <strong>(CFG)</strong>, a construct recognized by push-down automata.</p>
@@ -979,7 +1285,7 @@
 <p><code>Syntax analysis</code>, often referred to as <code>parsing</code>, is a critical phase in compiler design where the compiler assesses whether the source code aligns with the grammatical rules of the programming language. Typically occurring as the second stage in the compilation process, following <code>lexical analysis</code>, the primary objective is to generate a parse tree or <code>abstract syntax tree</code> <strong><em>(AST)</em></strong>. This hierarchical representation mirrors the grammatical structure of the program encapsulated in the source code.</p>
 <p>So, let's to Learn...</p>
 <p>CFG, on the other hand, is a superset of Regular Grammar, as depicted below:</p>
-<h1 id="_2"><center><img src="pictures/types-of-grammar.png" width="600"/></h1>
+<p><img src="../pictures/types-of-grammar.png" width="600" class="center"/></p>
 <blockquote>
 <p>which are fully explained in the next lesson</p>
 </blockquote>
@@ -989,7 +1295,7 @@
 1. parsing the code to detect errors
 2. generating a parse tree as the result of this analysis.</p>
 <p>It's important to note that parsers are designed to handle the <code>entire code</code>, <u>even in the presence of errors</u>. To achieve this, parsers employ error recovery strategies, which we will delve into later in this chapter. These strategies enable parsers to effectively navigate and process code, providing a comprehensive analysis and aiding in the identification and handling of errors within a program.</p>
-<h1 id="_3"><center><img src="pictures/syntax-analysis.JPG" width="600"/></h1>
+<p><img src="../pictures/syntax-analysis.JPG" width="600" class="center"/></p>
 <h3 id="lets-dive-into-derivations">Let's Dive into Derivations!</h3>
 <p>In the world of compiler design, there are two types of derivations that we often encounter: left-most and right-most derivations. These are like the two sides of a coin, each with its own unique characteristics. </p>
 <p><strong>Production Rules</strong></p>
@@ -1031,15 +1337,15 @@ E → id + id * id
 <p><strong>Step-by-Step Parse Tree Construction</strong></p>
 <p>Now, let's build the parse tree step-by-step:</p>
 <p>step 1: <code>E → E * E</code></p>
-<h1 id="_4"><center><img src="pictures/parser_1.JPG" /></h1>
+<p><img src="../pictures/parser_1.JPG" class="center"/></p>
 <p>step 2: <code>E → E + E * E</code></p>
-<h1 id="_5"><center><img src="pictures/parser_2.JPG" /></h1>
+<p><img src="../pictures/parser_2.JPG" class="center"/></p>
 <p>step 3: <code>E → id + E * E</code></p>
-<h1 id="_6"><center><img src="pictures/parser_3.JPG"/></h1>
+<p><img src="../pictures/parser_3.JPG" class="center"/></p>
 <p>step 4: <code>E → id + id * E</code></p>
-<h1 id="_7"><center><img src="pictures/parser_4.JPG" /></h1>
+<p><img src="../pictures/parser_4.JPG" class="center"/></p>
 <p>step 5: <code>E → id + id * id</code></p>
-<h1 id="_8"><center><img src="pictures/parser_5.JPG" /></h1>
+<p><img src="../pictures/parser_5.JPG" class="center"/></p>
 <p><strong>Parse Tree Characteristics</strong></p>
 <p>In a parse tree, we have:</p>
 <ul>
@@ -1083,8 +1389,8 @@ E → id
 <p><strong>Derivation and Parse Trees</strong></p>
 <p>There is a many-to-one relationship between derivations and parse trees. Indeed, no information on the order of derivation steps is associated with the final parse tree.</p>
 <h2 id="parse-trees-and-abstract-syntax-tree-ast">Parse trees and abstract syntax tree (AST)</h2>
-<p>An AST does not include inessential punctuation and delimiters (braces, semicolons, parentheses, etc.).</p>
-<h1 id="_9"><center><img src="pictures/AST.JPG" /></h1>
+<p>An AST does not include inessential punctuation and delimiters (braces, semicolons, parentheses, etc.).
+<img src="../pictures/AST.JPG" class="center"/></p>
 <h2 id="understanding-associativity">Understanding Associativity</h2>
 <p>Associativity is like a rule that helps us decide the order of operations when an operand has operators on both sides. If the operation is left-associative, the operand will be taken by the left operator. If it's right-associative, the right operator will take the operand. </p>
 <p><strong>Left Associative Operations</strong></p>
@@ -1113,7 +1419,7 @@ E → id
 </ol>
 <p>The first example is an example of immediate left recursion, where <code>A</code> is any non-terminal symbol and <code>α</code> represents a string of non-terminals.
 The second example is an example of indirect left recursion.</p>
-<h1 id="_10"><center><img src="pictures/left-recursion.JPG" width="200"/></h1>
+<p><img src="../pictures/left-recursion.JPG" width="200" class="center"/></p>
 <p>In a top-down parser, it will first parse <code>A</code>, which in turn will yield a string consisting of <code>A</code> itself and the parser may go into an infinite loop.</p>
 <p>By understanding and managing precedence and left recursion, we can make sure that our compiler can correctly parse and evaluate expressions.</p>
 <h2 id="summary">Summary</h2>
