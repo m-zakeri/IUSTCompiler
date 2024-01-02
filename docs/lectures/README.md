@@ -50,39 +50,6 @@ This repository contains a collection of pamphlets that I've created to help oth
 
 19. [Bottom CYK parsing algorithm](./19-CYK_parsing_algorithm.md)
 
-## 📚 Course Topics
-
-These pamphlets cover a wide range of topics in compiler design, including:
-
-## Course Overview
-
-
-- **Overall Compiler Architecture and Design:**
-  - Explore the fundamental structure and design principles underlying compilers.
-
-- **Compiler Internals and Compiler Generators:**
-  - Gain an in-depth understanding of the internal workings of compilers and explore tools for generating compilers.
-
-- **Understanding Compiler Functionality:**
-  - Learn what compilers do and unravel the intricacies of their functionality.
-
-- **Insights into Compilation Processes:**
-  - Grasp the inner workings of compilation processes and understand how they translate high-level code into executable machine code.
-
-- **Hands-On Compiler Construction:**
-  - Engage in practical exercises to build your own compilers, applying theoretical concepts to real-world scenarios.
-
-- **Applied Formal Language and Automata:**
-  - Explore formal language theory and automata, understanding their application in the context of compiler construction.
-
-- **Various Parsing Methods and Techniques:**
-  - Dive into different parsing methods and techniques employed in the analysis of source code.
-
-- **Low-Level Code Generation and Optimization:**
-  - Learn about the intricacies of generating efficient low-level code and optimizing it for enhanced performance.
-
-- **Intellectual Paradigms in System Programming and Testing:**
-  - Gain insights into the intellectual paradigms that underpin system programming and the crucial role of testing in compiler development.
 
 Embark on this educational journey, where you will not only gain theoretical knowledge but also acquire practical skills in building and understanding compilers. Let's explore the intricate world of compiler design together.
 
