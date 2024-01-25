@@ -279,6 +279,7 @@ def main(args):
     # Step 5: Create parse tree
     parse_tree = parser.start()
 
+
     # Step 6: Create an instance of AssignmentStListener
     code_generator_listener = ThreeAddressCodeGeneratorListener()
     # code_generator_listener = ThreeAddressCodeGenerator2Listener()

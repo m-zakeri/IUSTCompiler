@@ -6,10 +6,14 @@ class A
     public int f; /* public field */
     private double x = 10.5;
     private double x2 = 10.5;
+
+    public float g;
+
     public void m(int i)
     {
         this.f = i * this.f;
         G();
+        g = f; // this.setG(f)
     }
 }
 
